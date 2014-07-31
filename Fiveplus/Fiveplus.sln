@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiveplus.Data", "Fiveplus.Data\Fiveplus.Data.csproj", "{6360DCDE-8EB7-4DFC-AA42-D88C81A66706}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiveplus.Kicker", "Fiveplus.Kicker\Fiveplus.Kicker.csproj", "{B93E27FE-13DC-41F8-A5C1-8BE3493010B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiveplus.Tests", "Fiveplus.Tests\Fiveplus.Tests.csproj", "{089D6C22-AC6C-43BD-BDCA-6A1AE13C8476}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6360DCDE-8EB7-4DFC-AA42-D88C81A66706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6360DCDE-8EB7-4DFC-AA42-D88C81A66706}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6360DCDE-8EB7-4DFC-AA42-D88C81A66706}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6360DCDE-8EB7-4DFC-AA42-D88C81A66706}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B93E27FE-13DC-41F8-A5C1-8BE3493010B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B93E27FE-13DC-41F8-A5C1-8BE3493010B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B93E27FE-13DC-41F8-A5C1-8BE3493010B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B93E27FE-13DC-41F8-A5C1-8BE3493010B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{089D6C22-AC6C-43BD-BDCA-6A1AE13C8476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{089D6C22-AC6C-43BD-BDCA-6A1AE13C8476}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{089D6C22-AC6C-43BD-BDCA-6A1AE13C8476}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{089D6C22-AC6C-43BD-BDCA-6A1AE13C8476}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

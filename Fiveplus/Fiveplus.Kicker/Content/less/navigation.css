@@ -1,0 +1,33 @@
+﻿header input {
+  width: auto;
+  height: 100%;
+  background-color: transparent;
+  border: 0px solid;
+  padding: 28px 16px 28px 6px;
+  margin-right: 0;
+  font-size: 15px;
+  font-weight: normal;
+}
+header input:focus {
+  outline: none;
+}
+header .fa-search {
+  padding: 28px 0 0 28px;
+}
+header .glyphicon {
+  padding: 28px 10px 10px 28px;
+}
+header .navbar-brand {
+  margin-top: 0;
+}
+@media (max-width: 767px) {
+  header input {
+    color: #4c4c4c;
+    padding: 10px 20px !important;
+    margin-right: 0;
+  }
+  header .glyphicon {
+    padding: 0px !important;
+  }
+}
+/*# sourceMappingURL=navigation.css.map */

@@ -1,0 +1,16 @@
+C:\Projects\Web Apps\fiveplus\Fiveplus.Tests\bin\Debug\Fiveplus.Tests.dll.config
+C:\Projects\Web Apps\fiveplus\Fiveplus.Tests\bin\Debug\Fiveplus.Tests.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Tests\bin\Debug\Fiveplus.Tests.pdb
+C:\Projects\Web Apps\fiveplus\Fiveplus.Tests\bin\Debug\Fiveplus.Data.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Tests\bin\Debug\EntityFramework.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Tests\bin\Debug\EntityFramework.SqlServer.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Tests\bin\Debug\Fiveplus.Data.pdb
+C:\Projects\Web Apps\fiveplus\Fiveplus.Tests\bin\Debug\EntityFramework.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Tests\bin\Debug\EntityFramework.SqlServer.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Tests\obj\Debug\Fiveplus.Tests.csprojResolveAssemblyReference.cache
+C:\Projects\Web Apps\fiveplus\Fiveplus.Tests\obj\Debug\Fiveplus.Tests.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Tests\obj\Debug\Fiveplus.Tests.pdb

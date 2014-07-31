@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Add Gig";
+    ViewBag.InitModule = "AddGig";
+}
+
+@section styles
+{
+    <style type="text/css">
+    .fancybox-margin {
+        margin-right: 17px;
+    }
+    </style>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.css" rel="stylesheet" />
+    
+}
+
+
+@section scripts
+{
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+    <script src="~/Scripts/plugins/x-angular-limitTo.js"></script>
+    <script src="~/ng-App/js/home-index.js"></script>
+    <script src="~/ng-App/js/directives.js"></script>
+    <script src="~/ng-App/data/dataServices.js"></script>
+    <script src="~/ng-App/js/filters.js"></script>
+
+}
+
+<section class="slice animate-hover-slide bg-5" data-ng-controller="gigController">
+    <div class="w-section inverse">
+        <div class="container">
+            <h3 class="section-title">Most Popular</h3>
+            <span class="see-all pull-right inline"><a href="/discover/popular?ref=popular">See all</a></span>
+            <div class="row">
+                <div class="col-md-3" ng-repeat="gigItem in gigs">
+                    <hm-gig-item gig="gigItem"></hm-gig-item>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
