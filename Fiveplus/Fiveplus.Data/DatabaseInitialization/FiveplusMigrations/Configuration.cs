@@ -1,8 +1,3 @@
-using System.Collections.Generic;
-using System.Data.Entity.Migrations.Model;
-using System.Data.Entity.SqlServer;
-using Fiveplus.Data.Models;
-
 namespace Fiveplus.Data.DatabaseInitialization
 {
     using System;
@@ -10,25 +5,24 @@ namespace Fiveplus.Data.DatabaseInitialization
     using System.Data.Entity.Migrations;
     using System.Linq;
 
+    /// <summary>
+    /// Used in the startup.cs in Database.SetInitializer(new MigrateDatabaseToLatestVersion<FiveplusContext, Fiveplus.Data.DatabaseInitialization.Configuration>());
+    /// </summary>
     public sealed class Configuration : DbMigrationsConfiguration<Fiveplus.Data.DbContexts.FiveplusContext>
     {
         public Configuration()
         {
             AutomaticMigrationDataLossAllowed = true;
             AutomaticMigrationsEnabled = true;
-            MigrationsDirectory = @"DbContexts\FiveplusMigrations";
+            MigrationsDirectory = @"DatabaseInitialization\FiveplusMigrations";
             SetSqlGenerator("System.Data.SqlClient", new CustomSqlServerMigrationSqlGenerator());
         }
 
         protected override void Seed(Fiveplus.Data.DbContexts.FiveplusContext context)
         {
             //  This method will be called after migrating to the latest version.
-
-               // #if DEBUG
-
+             // #if DEBUG
                 SqlServerMigrationHelper.SeedAppData(context);
-
-
             // #endif
 
         }

@@ -32,12 +32,14 @@ namespace Fiveplus.Data.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public Decimal Price { get; set; }
+        public Double Price { get; set; }
         public RowStatus RowStatus { get; set; }
         public DateTime? Created { get; set; }
         [Timestamp]
         public byte[] RowVersion { get; set; }
-        
+
+        public string UserId { get; set; }
+        [ForeignKey("UserId")]
         public UserDetail User { get; set; }
 
         public int CategoryId { get; set; }
@@ -45,7 +47,7 @@ namespace Fiveplus.Data.Models
         public Category Category { get; set; }
 
         public ICollection<Addon> AddonServices { get; set; }
-        public ICollection<Media> MediaUrl { get; set; }
+        public ICollection<Media> MediaUrls { get; set; }
         public ICollection<UserCollectedGig> CollectedGigs { get; set; }
         public ICollection<Order> Orders { get; set; }
 
@@ -59,7 +61,7 @@ namespace Fiveplus.Data.Models
     {
         public int Id { get; set; }
         public string Description { get; set; }
-        public Decimal Price { get; set; }
+        public Double Price { get; set; }
         public DateTime? Created { get; set; }
         [Timestamp]
         public byte[] RowVersion { get; set; }

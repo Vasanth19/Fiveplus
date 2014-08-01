@@ -47,3 +47,17 @@ C:\Projects\Web Apps\fiveplus\Fiveplus.Data\bin\Debug\Microsoft.AspNet.Identity.
 C:\Projects\Web Apps\fiveplus\Fiveplus.Data\obj\Debug\Fiveplus.Data.csprojResolveAssemblyReference.cache
 C:\Projects\Web Apps\fiveplus\Fiveplus.Data\obj\Debug\Fiveplus.Data.dll
 C:\Projects\Web Apps\fiveplus\Fiveplus.Data\obj\Debug\Fiveplus.Data.pdb
+C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus.Data\bin\Debug\Fiveplus.Data.dll.config
+C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus.Data\bin\Debug\Fiveplus.Data.dll
+C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus.Data\bin\Debug\Fiveplus.Data.pdb
+C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus.Data\bin\Debug\EntityFramework.dll
+C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus.Data\bin\Debug\EntityFramework.xml
+C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus.Data\obj\Debug\Fiveplus.Data.csprojResolveAssemblyReference.cache
+C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus.Data\obj\Debug\Fiveplus.Data.dll
+C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus.Data\obj\Debug\Fiveplus.Data.pdb

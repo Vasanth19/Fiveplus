@@ -15,6 +15,7 @@ namespace Fiveplus.Data.DbContexts
 {
     public class ExplorerContext : IdentityDbContext<ApplicationUser>
     {
+        //Access All the items including Sales tables
         public ExplorerContext()
             : base("DefaultConnection")
         {
@@ -23,11 +24,11 @@ namespace Fiveplus.Data.DbContexts
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-
+            
             modelBuilder.Configurations.Add(new IdentityUserConfiguration());
             modelBuilder.Configurations.Add(new UserInboxConfiguration());
             modelBuilder.Configurations.Add(new UserCollectedGigConfiguration());
-            
+ 
             modelBuilder.Configurations.Add(new OrderConfiguration());
             modelBuilder.Entity<Category>();
 
@@ -35,6 +36,11 @@ namespace Fiveplus.Data.DbContexts
         }
       
         public DbSet<Gig> Gigs { get; set; }
+
+        //Going to impemente no tracking in repository as the intention is readonly
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<LineItem> LineItems { get; set; }
+        public DbSet<UserDetail> UserDetails { get; set; }
     }
 
    }

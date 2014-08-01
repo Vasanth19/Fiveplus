@@ -72,7 +72,7 @@ namespace Fiveplus.Portal.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<ExplorerContext>().To<ExplorerContext>().InRequestScope();
-            kernel.Bind<UowExplorer>().To<UowExplorer>().InRequestScope();
+            kernel.Bind<ExplorerUow>().To<ExplorerUow>().InRequestScope();
             kernel.Bind<IGigRepository>().To<GigRepository>().InRequestScope();
 
             kernel.Bind<FiveplusContext>().To<FiveplusContext>().InRequestScope();

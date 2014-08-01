@@ -16,11 +16,13 @@ namespace Fiveplus.Data.Repo
     public class GigRepository : IGigRepository
     {
         private ExplorerContext context;
-        public GigRepository(UowExplorer uow)
+
+        public GigRepository(ExplorerUow explorerUow)
         {
-            context = uow.Context;
+            context = explorerUow.Context;
         }
 
+        // Used for automated testing
         public GigRepository()
         {
             context = new ExplorerContext();
