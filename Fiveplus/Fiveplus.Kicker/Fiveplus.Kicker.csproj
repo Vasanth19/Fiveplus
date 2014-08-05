@@ -238,6 +238,9 @@
     <Content Include="Content\less\navigation.css">
       <DependentUpon>navigation.less</DependentUpon>
     </Content>
+    <Content Include="Content\less\navigation.min.css">
+      <DependentUpon>navigation.css</DependentUpon>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
@@ -356,7 +359,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>59643</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:59901/</IISUrl>
+          <IISUrl>http://localhost:59902/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -78,7 +78,6 @@
     <Compile Include="Interfaces\IEntityRepository.cs" />
     <Compile Include="Interfaces\IFiveplusRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repo\FiveplusRepository.cs" />
     <Compile Include="Uow\SalesUow.cs" />
     <Compile Include="Uow\ExplorerUow.cs" />
   </ItemGroup>

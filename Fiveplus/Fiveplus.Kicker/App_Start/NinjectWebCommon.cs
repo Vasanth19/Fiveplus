@@ -76,7 +76,7 @@ namespace Fiveplus.Portal.App_Start
             kernel.Bind<IGigRepository>().To<GigRepository>().InRequestScope();
 
             kernel.Bind<FiveplusContext>().To<FiveplusContext>().InRequestScope();
-            kernel.Bind<IFiveplusRepository>().To<FiveplusRepository>().InRequestScope();
+            
         }        
     }
 }

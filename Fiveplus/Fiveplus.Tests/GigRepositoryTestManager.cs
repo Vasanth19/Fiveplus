@@ -14,6 +14,7 @@ namespace Fiveplus.Tests.EF
     {
         public GigRepositoryTestManager()
         {
+            AppDomain.CurrentDomain.SetData("DataDirectory", @"C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\App_Data\");
             ReCreateCompleteDBForTesting();
         }
 
@@ -35,7 +36,7 @@ namespace Fiveplus.Tests.EF
             using (var repo = new GigRepository(new ExplorerUow()))
             {
 
-                bool addonStatus = repo.AllIncluding(g => g.AddonServices).Any(g => g.AddonServices.Count == 2); //Expect 2 records in Addon Services
+                bool addonStatus = repo.AllIncluding(g => g.AddonServices).Any(g => g.AddonServices.Count == 2); //Expect 2 records in Addon Services after seed
                   
                 Assert.IsTrue(addonStatus  );
             }
