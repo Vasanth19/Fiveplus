@@ -8,8 +8,7 @@ using System.Web.Routing;
 
 namespace Fiveplus.Web.api
 {
-    [RoutePrefix("mApi")]
-    public class TestController : ApiController
+   public class TestController : ApiController
     {
         // GET api/gigs
         [Route("myapi/test")]

@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
+using Fiveplus.Data.DatabaseInitialization;
 using Fiveplus.Data.Models;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Fiveplus.Data.DbContexts
@@ -13,7 +16,9 @@ namespace Fiveplus.Data.DbContexts
         public IdentityContext()
             : base("DefaultConnection")
         {
-            Database.SetInitializer<IdentityContext>(new DropCreateDatabaseIfModelChanges<IdentityContext>());
+            //No Seeding necessary as the DB is created using FiveplusContext
+            Database.SetInitializer<IdentityContext>(null);
+            
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -25,5 +30,11 @@ namespace Fiveplus.Data.DbContexts
             modelBuilder.Ignore<UserInboxMessage>();
             base.OnModelCreating(modelBuilder);
         }
+        public static IdentityContext Create()
+        {
+            return new IdentityContext();
+        }
     }
+
+
 }

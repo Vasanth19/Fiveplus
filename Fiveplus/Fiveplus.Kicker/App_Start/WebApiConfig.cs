@@ -5,7 +5,7 @@ using System.Linq;
 using System.Net.Http.Formatting;
 using System.Web.Http;
 
-namespace Fiveplus.Portal
+namespace Fiveplus.Kicker
 {
     public static class WebApiConfig
     {

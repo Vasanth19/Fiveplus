@@ -71,7 +71,5 @@ namespace Fiveplus.Data.DbContexts
             SqlServerMigrationHelper.SeedAppData(context);
             
         }
-
-        
     }
    }

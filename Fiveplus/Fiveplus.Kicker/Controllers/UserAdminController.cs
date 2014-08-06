@@ -10,6 +10,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Fiveplus.Data.Models;
 
 namespace IdentitySample.Controllers
 {
