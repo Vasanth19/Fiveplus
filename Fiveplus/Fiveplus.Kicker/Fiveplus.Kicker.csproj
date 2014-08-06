@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Fiveplus.Portal</RootNamespace>
-    <AssemblyName>Fiveplus.Portal</AssemblyName>
+    <RootNamespace>Fiveplus.Kicker</RootNamespace>
+    <AssemblyName>Fiveplus.Kicker</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -238,9 +238,12 @@
     <Content Include="Content\font-awesome\font-awesome.css" />
     <Content Include="Content\font-awesome\font-awesome.min.css" />
     <Content Include="Content\global-style.css" />
+    <Content Include="Content\images\banner-img-4.jpg" />
     <Content Include="Content\images\carousel-img-3.png" />
     <Content Include="Content\images\carousel-img-5.png" />
     <Content Include="Content\images\carousel-img-7.png" />
+    <Content Include="Content\images\carousel-kickstarter.jpg" />
+    <Content Include="Content\images\carousel-mural.jpg" />
     <Content Include="Content\kicker.css">
       <DependentUpon>kicker.less</DependentUpon>
     </Content>
@@ -324,7 +327,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout_2.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index_2.cshtml" />

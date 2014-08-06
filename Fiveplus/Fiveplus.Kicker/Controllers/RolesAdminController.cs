@@ -1,4 +1,4 @@
-﻿using IdentitySample.Models;
+﻿using Fiveplus.Kicker.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -10,9 +10,9 @@ using System.Web.Mvc;
 using System.Collections.Generic;
 using Fiveplus.Data.Models;
 
-namespace IdentitySample.Controllers
+namespace Fiveplus.Kicker.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Administrator")]
     public class RolesAdminController : Controller
     {
         public RolesAdminController()

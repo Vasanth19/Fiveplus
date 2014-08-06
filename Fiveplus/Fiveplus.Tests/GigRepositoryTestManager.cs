@@ -14,7 +14,8 @@ namespace Fiveplus.Tests.EF
     {
         public GigRepositoryTestManager()
         {
-            AppDomain.CurrentDomain.SetData("DataDirectory", @"C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\App_Data\");
+            //AppDomain.CurrentDomain.SetData("DataDirectory", @"C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\App_Data\");
+            AppDomain.CurrentDomain.SetData("DataDirectory", @"C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus.Kicker\App_Data\");
             ReCreateCompleteDBForTesting();
         }
 
@@ -24,7 +25,6 @@ namespace Fiveplus.Tests.EF
             using (var context = new FiveplusContext())
             {
                 context.Database.Initialize(true);
-                
             }
 
         }

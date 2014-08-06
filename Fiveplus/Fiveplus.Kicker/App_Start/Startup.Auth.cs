@@ -2,13 +2,13 @@
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
-using IdentitySample.Models;
+using Fiveplus.Kicker.Models;
 using Owin;
 using System;
 using Fiveplus.Data.DbContexts;
 using Fiveplus.Data.Models;
 
-namespace IdentitySample
+namespace Fiveplus.Kicker
 {
     public partial class Startup
     {

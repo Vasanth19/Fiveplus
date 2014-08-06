@@ -2,7 +2,7 @@
 using Owin;
 using System.Data.Entity;
 
-namespace IdentitySample
+namespace Fiveplus.Kicker
 {
     public partial class Startup
     {

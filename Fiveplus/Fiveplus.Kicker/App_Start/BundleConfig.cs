@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace IdentitySample
+namespace Fiveplus.Kicker
 {
     public class BundleConfig
     {

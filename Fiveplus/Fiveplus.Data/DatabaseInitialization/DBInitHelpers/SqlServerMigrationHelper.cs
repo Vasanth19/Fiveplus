@@ -29,8 +29,6 @@ namespace Fiveplus.Data.DatabaseInitialization
             CreateUserdetails(context, user);
             CreateGigs(context, user);
 
-
-
             try
             {
                 context.SaveChanges();
@@ -45,7 +43,9 @@ namespace Fiveplus.Data.DatabaseInitialization
 
         private static ApplicationUser CreateRoleandUser(FiveplusContext context)
         {
+            #region  Initial Code
 
+            /*
             string roleName = "Administrator";
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
             if (!roleManager.RoleExists(roleName))
@@ -57,17 +57,47 @@ namespace Fiveplus.Data.DatabaseInitialization
 
             UserManager<ApplicationUser> userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
 
-            string userName = "Iamexplorer";
-            string password = "pass@word1";
+            const string name = "admin@example.com";
+            const string password = "Pass@word1";
 
-            var user = new ApplicationUser() {UserName = userName};
+            var user = new ApplicationUser { UserName = name, Email = name };
             var result = userManager.Create(user,password);
 
             if (result.Succeeded)
                 userManager.AddToRole(user.Id, roleName);
 
-            return user;
+           return user;
+             */
+            #endregion
 
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            UserManager<ApplicationUser> userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+
+            const string name = "admin@fiveplus.com";
+            const string password = "Pass@word1";
+            const string roleName = "Administrator";
+
+            //Create Role Admin if it does not exist
+            var role = roleManager.FindByName(roleName);
+            if (role == null) {
+                role = new IdentityRole(roleName);
+                var roleresult = roleManager.Create(role);
+            }
+
+            var user = userManager.FindByName(name);
+            if (user == null) {
+                user = new ApplicationUser { UserName = name, Email = name };
+                var result = userManager.Create(user, password);
+                result = userManager.SetLockoutEnabled(user.Id, false);
+            }
+
+            // Add user admin to Role Admin if not already added
+            var rolesForUser = userManager.GetRoles(user.Id);
+            if (!rolesForUser.Contains(role.Name)) {
+                var result = userManager.AddToRole(user.Id, role.Name);
+            }
+
+            return user;
         }
 
         private static void CreateUserdetails(FiveplusContext context, ApplicationUser user)

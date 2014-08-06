@@ -13,7 +13,7 @@ using Fiveplus.Data.DbContexts;
 using Fiveplus.Data.Models;
 using Microsoft.AspNet.Identity;
 
-namespace Fiveplus.Portal.Api
+namespace Fiveplus.Kicker.Api
 {
  
     public class Gig2Controller : ApiController

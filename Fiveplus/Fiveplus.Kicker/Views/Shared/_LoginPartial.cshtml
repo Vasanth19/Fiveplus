@@ -8,8 +8,12 @@
     <li class="dropdown animate-hover" data-animate="animated fadeInUp">
         @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
         <ul class="sub-menu animate-wr animated fadeInUp">
-            <li><span class="language language-active">Profile</span></li>
             <li><a href="#"><span class="language">Settings</span></a></li>
+            <li><a href="#"><span class="language">Profile</span></a></li>
+                @if (Request.IsAuthenticated && User.IsInRole("Administrator")) {
+            <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
+            <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
+                    }
          </ul>
     </li>
     <li><a  href="javascript:document.getElementById('logoutForm').submit()"><span class="fa fa-sign-in">  </span>  Log off</a></li>

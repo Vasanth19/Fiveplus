@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace IdentitySample.Controllers
+namespace Fiveplus.Kicker.Controllers
 {
     public class HomeController : Controller
     {

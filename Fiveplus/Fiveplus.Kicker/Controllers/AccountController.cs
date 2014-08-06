@@ -1,5 +1,5 @@
 ﻿using System.Globalization;
-using IdentitySample.Models;
+using Fiveplus.Kicker.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -11,7 +11,7 @@ using System.Web;
 using System.Web.Mvc;
 using Fiveplus.Data.Models;
 
-namespace IdentitySample.Controllers
+namespace Fiveplus.Kicker.Controllers
 {
     [Authorize]
     public class AccountController : Controller

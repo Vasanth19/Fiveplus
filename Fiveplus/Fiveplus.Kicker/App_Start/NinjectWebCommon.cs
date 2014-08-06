@@ -5,10 +5,10 @@ using Fiveplus.Data.Repo;
 using Fiveplus.Data.Uow;
 using WebApiContrib.IoC.Ninject;
 
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Fiveplus.Portal.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Fiveplus.Portal.App_Start.NinjectWebCommon), "Stop")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Fiveplus.Kicker.App_Start.NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Fiveplus.Kicker.App_Start.NinjectWebCommon), "Stop")]
 
-namespace Fiveplus.Portal.App_Start
+namespace Fiveplus.Kicker.App_Start
 {
     using System;
     using System.Web;

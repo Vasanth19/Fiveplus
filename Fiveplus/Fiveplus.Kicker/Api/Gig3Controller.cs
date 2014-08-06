@@ -8,7 +8,7 @@ using Fiveplus.Data;
 using Fiveplus.Data.Models;
 using Fiveplus.Data.Repo;
 
-namespace Fiveplus.Portal.Api
+namespace Fiveplus.Kicker.Api
 {
     [RoutePrefix("api")]
     public class Gig3Controller : ApiController

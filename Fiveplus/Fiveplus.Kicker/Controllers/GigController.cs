@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Fiveplus.Portal.Controllers
+namespace Fiveplus.Kicker.Controllers
 {
     public class GigController : Controller
     {

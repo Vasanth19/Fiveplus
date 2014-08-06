@@ -1,12 +1,12 @@
 ﻿using Fiveplus.Kicker;
-using IdentitySample.Models;
+using Fiveplus.Kicker.Models;
 using System.Data.Entity;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace IdentitySample
+namespace Fiveplus.Kicker
 {
     // Note: For instructions on enabling IIS7 classic mode, 
     // visit http://go.microsoft.com/?LinkId=301868
