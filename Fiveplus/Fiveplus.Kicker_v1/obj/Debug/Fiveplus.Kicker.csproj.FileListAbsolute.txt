@@ -1,0 +1,346 @@
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Fiveplus.Portal.dll.config
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Fiveplus.Portal.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Fiveplus.Portal.pdb
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Antlr3.Runtime.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\EntityFramework.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\EntityFramework.SqlServer.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Fiveplus.Data.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.Core.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Cookies.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Facebook.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Google.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.OAuth.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Web.Infrastructure.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Newtonsoft.Json.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Ninject.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Ninject.Web.Common.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Ninject.Web.Mvc.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Owin.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Net.Http.Formatting.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Helpers.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Http.WebHost.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Mvc.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Optimization.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Razor.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.Deployment.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.Razor.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\WebActivatorEx.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\WebApiContrib.IoC.Ninject.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\WebGrease.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Fiveplus.Data.pdb
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Antlr3.Runtime.pdb
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\EntityFramework.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\EntityFramework.SqlServer.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.Core.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Cookies.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Facebook.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Google.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.OAuth.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Newtonsoft.Json.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Ninject.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Ninject.Web.Common.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Ninject.Web.Mvc.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Net.Http.Formatting.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Helpers.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Http.WebHost.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Mvc.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Optimization.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Razor.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.Deployment.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.Razor.xml
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Portal.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Portal.pdb
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Kicker.csprojResolveAssemblyReference.cache
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Kicker.csprojResolveAssemblyReference.cache
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Portal.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Fiveplus.Portal.dll.config
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Fiveplus.Portal.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Fiveplus.Portal.pdb
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Antlr3.Runtime.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\EntityFramework.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\EntityFramework.SqlServer.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Fiveplus.Data.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.Core.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Cookies.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Facebook.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Google.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.OAuth.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Web.Infrastructure.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Newtonsoft.Json.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Ninject.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Ninject.Web.Common.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Ninject.Web.Mvc.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Owin.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Net.Http.Formatting.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Helpers.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Http.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Http.WebHost.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Mvc.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Optimization.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Razor.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.Deployment.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.Razor.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\WebActivatorEx.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\WebApiContrib.IoC.Ninject.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\WebGrease.dll
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Fiveplus.Data.pdb
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Antlr3.Runtime.pdb
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\EntityFramework.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\EntityFramework.SqlServer.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.Core.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Cookies.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Facebook.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Google.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.OAuth.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Newtonsoft.Json.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Ninject.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Ninject.Web.Common.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Ninject.Web.Mvc.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Net.Http.Formatting.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Helpers.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Http.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Http.WebHost.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Mvc.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Optimization.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Razor.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.Deployment.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.Razor.xml
+C:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Portal.pdb
+C:\BeOrganized\Projects\Self\Fiveplus\Fiveplus.Kicker\bin\Owin.Security.Providers.dll
+D:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Owin.Security.Providers.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Fiveplus.Portal.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Fiveplus.Portal.pdb
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Antlr3.Runtime.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\EntityFramework.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\EntityFramework.SqlServer.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Fiveplus.Data.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.Core.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.Owin.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Host.SystemWeb.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Cookies.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Facebook.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Google.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.OAuth.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Web.Infrastructure.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Newtonsoft.Json.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Ninject.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Ninject.Web.Common.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Ninject.Web.Mvc.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Owin.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Owin.Security.Providers.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Net.Http.Formatting.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Helpers.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Http.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Http.WebHost.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Mvc.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Optimization.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Razor.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.Deployment.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.Razor.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\WebActivatorEx.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\WebApiContrib.IoC.Ninject.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\WebGrease.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Fiveplus.Data.pdb
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Antlr3.Runtime.pdb
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\EntityFramework.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\EntityFramework.SqlServer.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.Core.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.Owin.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Host.SystemWeb.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Cookies.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Facebook.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Google.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.OAuth.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Newtonsoft.Json.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Ninject.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Ninject.Web.Common.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\Ninject.Web.Mvc.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Net.Http.Formatting.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Helpers.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Http.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Http.WebHost.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Mvc.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Optimization.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.Razor.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.Deployment.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.Razor.xml
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Kicker.csprojResolveAssemblyReference.cache
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Portal.dll
+Y:\BeOrganized\Projects\Self\fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Portal.pdb
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Fiveplus.Portal.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Fiveplus.Portal.pdb
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Antlr3.Runtime.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\EntityFramework.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\EntityFramework.SqlServer.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Fiveplus.Data.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Google.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Microsoft.Web.Infrastructure.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Newtonsoft.Json.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Ninject.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Ninject.Web.Common.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Ninject.Web.Mvc.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Owin.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Owin.Security.Providers.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\System.Net.Http.Formatting.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\System.Web.Helpers.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\System.Web.Http.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\System.Web.Http.WebHost.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\System.Web.Mvc.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\System.Web.Optimization.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\System.Web.Razor.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.Deployment.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.Razor.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\WebActivatorEx.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\WebApiContrib.IoC.Ninject.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\WebGrease.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Fiveplus.Data.pdb
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Antlr3.Runtime.pdb
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\EntityFramework.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\EntityFramework.SqlServer.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Google.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Newtonsoft.Json.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Ninject.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Ninject.Web.Common.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\Ninject.Web.Mvc.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\System.Net.Http.Formatting.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\System.Web.Helpers.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\System.Web.Http.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\System.Web.Http.WebHost.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\System.Web.Mvc.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\System.Web.Optimization.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\System.Web.Razor.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.Deployment.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.Razor.xml
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Kicker.csprojResolveAssemblyReference.cache
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Portal.dll
+C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Portal.pdb
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Kicker.csprojResolveAssemblyReference.cache
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Portal.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Fiveplus.Portal.dll.config
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Fiveplus.Portal.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Fiveplus.Portal.pdb
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Antlr3.Runtime.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\EntityFramework.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\EntityFramework.SqlServer.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Fiveplus.Data.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.Core.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Cookies.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Facebook.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Google.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.OAuth.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.Web.Infrastructure.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Newtonsoft.Json.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Ninject.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Ninject.Web.Common.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Ninject.Web.Mvc.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Owin.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Owin.Security.Providers.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Net.Http.Formatting.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.Helpers.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.Http.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.Http.WebHost.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.Mvc.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.Optimization.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.Razor.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.Deployment.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.Razor.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\WebActivatorEx.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\WebApiContrib.IoC.Ninject.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\WebGrease.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Fiveplus.Data.pdb
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Antlr3.Runtime.pdb
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\EntityFramework.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\EntityFramework.SqlServer.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.Core.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Cookies.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Facebook.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Google.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.OAuth.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Newtonsoft.Json.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Ninject.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Ninject.Web.Common.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Ninject.Web.Mvc.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Net.Http.Formatting.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.Helpers.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.Http.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.Http.WebHost.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.Mvc.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.Optimization.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.Razor.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.Deployment.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.Razor.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Portal.pdb

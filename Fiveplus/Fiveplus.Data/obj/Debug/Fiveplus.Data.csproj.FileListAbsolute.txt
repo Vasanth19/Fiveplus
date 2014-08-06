@@ -72,6 +72,5 @@ C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Data\bin\Debug\EntityF
 C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Data\bin\Debug\EntityFramework.SqlServer.xml
 C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Data\obj\Debug\Fiveplus.Data.csprojResolveAssemblyReference.cache
 C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Data\obj\Debug\Fiveplus.Data.dll
 C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Data\obj\Debug\Fiveplus.Data.pdb

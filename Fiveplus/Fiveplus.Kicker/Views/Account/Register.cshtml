@@ -1,142 +1,41 @@
-﻿@model Fiveplus.Portal.Models.RegisterViewModel
+﻿@model IdentitySample.Models.RegisterViewModel
 @{
     ViewBag.Title = "Register";
 }
 
-<div class="pg-opt pin">
-    <div class="container">
-        <div class="row margin-top-60">
-            <div class="col-md-6">
-                <h2>Sign up</h2>
-            </div>
-            <div class="col-md-6">
-                <ol class="breadcrumb">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Pages</a></li>
-                    <li class="active">Sign up</li>
-                </ol>
-            </div>
+<h2>@ViewBag.Title.</h2>
 
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Create a new account.</h4>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
         </div>
     </div>
-</div>
-<div class="container margin-t-15">
-    
-    
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-sm-6 col-sm-offset-3">
-            <div class="w-section inverse">
-                <div class="w-box sign-in-wr bg-5">
-
-                    <div class="form-header">
-                        <h2>Create your own account</h2>
-                    </div>
-                    <div class="form-body">
-                        <p>
-                            Don't Worry, Your credentials are Safe with us!
-                        </p>
-                        <form class="form-light padding-15">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="firstName">First name</label>
-                                        <input type="text" class="form-control" id="firstName" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="lastName">Last name</label>
-                                        <input type="text" class="form-control" id="lastName" placeholder="">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" class="form-control" id="txtEmail" placeholder="">
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="pass">Password</label>
-                                        <input type="password" class="form-control" id="pass" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="pass2">Confirm password</label>
-                                        <input type="password" class="form-control" id="pass2" placeholder="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="country">Country</label>
-                                        <input type="text" class="form-control" id="country" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="city">City</label>
-                                        <input type="text" class="form-control" id="city" placeholder="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label class="checkbox persistent"><input type="checkbox"> I accept the <a href="terms.html">terms and conditions of this website.</a></label>
-                                </div>
-                                <div class="col-md-6">
-                                    <button class="btn btn-two pull-right" type="submit">Sign Up</button>
-                                </div>
-                            </div>
-                        </form>
-
-                    </div>
-                    <div class="form-footer">
-                        <p>Already have an account? <a href="/Account/Login">Click here to sign in.</a></p>
-                    </div>
-                </div>
-            </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
         </div>
     </div>
-    <div class="row margin-top-60">
-
-        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-        {
-            @Html.AntiForgeryToken()
-            <h4>Create a new account.</h4>
-            <hr />
-            @Html.ValidationSummary()
-            <div class="form-group">
-                @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" class="btn btn-default" value="Register" />
-                </div>
-            </div>
-        }
-
+    <div class="form-group">
+        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+        </div>
     </div>
-</div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Register" />
+        </div>
+    </div>
+}
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

@@ -13,7 +13,7 @@ namespace Fiveplus.Data.DbContexts
         public IdentityContext()
             : base("DefaultConnection")
         {
-            Database.SetInitializer<IdentityContext>(null);
+            Database.SetInitializer<IdentityContext>(new DropCreateDatabaseIfModelChanges<IdentityContext>());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

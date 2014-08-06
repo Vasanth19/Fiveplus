@@ -69,6 +69,9 @@ namespace Fiveplus.Data.DbContexts
         protected override void Seed(FiveplusContext context)
         {
             SqlServerMigrationHelper.SeedAppData(context);
+            
         }
+
+        
     }
    }

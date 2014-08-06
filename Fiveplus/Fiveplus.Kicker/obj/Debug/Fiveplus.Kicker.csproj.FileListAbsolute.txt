@@ -344,3 +344,5 @@ C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.
 C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.Deployment.xml
 C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.Razor.xml
 C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Portal.pdb
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Twitter.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Twitter.xml

@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
-namespace Fiveplus.Portal
+namespace IdentitySample
 {
     public class BundleConfig
     {
