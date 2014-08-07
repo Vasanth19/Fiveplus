@@ -275,10 +275,6 @@ C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Kicker.csprojRe
 C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Portal.dll
 C:\Projects\Web Apps\fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Portal.pdb
 C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Kicker.csprojResolveAssemblyReference.cache
-C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Portal.dll
-C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Fiveplus.Portal.dll.config
-C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Fiveplus.Portal.dll
-C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Fiveplus.Portal.pdb
 C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Antlr3.Runtime.dll
 C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\EntityFramework.dll
 C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\EntityFramework.SqlServer.dll
@@ -343,7 +339,6 @@ C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.
 C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.xml
 C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.Deployment.xml
 C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\System.Web.WebPages.Razor.xml
-C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Portal.pdb
 C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Twitter.dll
 C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Antlr3.Runtime.dll
@@ -417,3 +412,8 @@ C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Fiveplus.Kicker.dll
 C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Fiveplus.Kicker.pdb
 C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Kicker.dll
 C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Kicker.pdb
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Fiveplus.Kicker.dll.config
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Fiveplus.Kicker.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\bin\Fiveplus.Kicker.pdb
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Kicker.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Kicker\obj\Debug\Fiveplus.Kicker.pdb

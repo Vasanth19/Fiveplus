@@ -9885,7 +9885,9 @@ h1.font-lg {
 
 .bg-banner-1 {
     padding: 54px 0 !important;
-    background: url(images/banner-img-4.jpg) fixed no-repeat !important;
+   /* background: url(images/banner-img-4.jpg) fixed no-repeat !important;*/
+   background: url(http://d2nt7j7ljjsiah.cloudfront.net/assets/v2_backgrounds/bg-homepage-welcome-video-2cafbc46fcac2bbb8ffa5180b6b3f169.jpg) 50% 0 repeat fixed !important;
+    background-size: 100%;
     color: #fff;
 }
 
