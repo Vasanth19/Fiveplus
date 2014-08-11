@@ -205,6 +205,7 @@
     <Compile Include="Api\Gig3Controller.cs" />
     <Compile Include="Api\GigController.cs" />
     <Compile Include="Api\TestController.cs" />
+    <Compile Include="Api\UploadController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -235,6 +236,7 @@
     <Content Include="Content\bootstrap\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap\bootstrap.css" />
     <Content Include="Content\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\chosen\chosen.css" />
     <Content Include="Content\font-awesome\font-awesome.css" />
     <Content Include="Content\font-awesome\font-awesome.min.css" />
     <Content Include="Content\global-style.css" />
@@ -278,23 +280,45 @@
     <Content Include="Content\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="ng-App\directives\chosen.js" />
+    <Content Include="ng-App\directives\uiField\uiField.js" />
+    <Content Include="ng-App\directives\uiField\_html\input.html" />
+    <Content Include="ng-App\directives\uiField\_html\select.html" />
+    <Content Include="ng-App\directives\uiField\_html\textarea.html" />
+    <Content Include="ng-App\modules\gig\subPages\_createGig\step1.html" />
+    <Content Include="ng-App\plugins\mgo-angular-wizard\angular-wizard.less" />
+    <Content Include="ng-App\plugins\mgo-angular-wizard\angular-wizard.min.js.map">
+      <DependentUpon>angular-wizard.min.js</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\fiveplus - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\fiveplus - Web Deploy.pubxml" />
-    <Content Include="ng-App\js\gig-index.js" />
+    <Content Include="ng-App\js_delete\gig-index.js" />
+    <Content Include="ng-App\modules\gig\gigModule.js" />
+    <Content Include="ng-App\modules\gig\subPages\createGig.html" />
+    <Content Include="ng-App\modules\gig\subPages\indexView.html" />
+    <Content Include="ng-App\plugins\mgo-angular-wizard\angular-wizard.css" />
+    <Content Include="ng-App\plugins\mgo-angular-wizard\angular-wizard.js" />
+    <Content Include="ng-App\plugins\mgo-angular-wizard\angular-wizard.min.css" />
+    <Content Include="ng-App\plugins\mgo-angular-wizard\angular-wizard.min.js" />
+    <Content Include="ng-App\plugins\ng-flow-file-upload\flow.js" />
+    <Content Include="ng-App\plugins\ng-flow-file-upload\ng-flow-standalone.js" />
+    <Content Include="ng-App\plugins\ng-flow-file-upload\ng-flow-standalone.min.js" />
+    <Content Include="ng-App\plugins\ng-flow-file-upload\ng-flow.js" />
+    <Content Include="ng-App\plugins\ng-flow-file-upload\ng-flow.min.js" />
     <Content Include="Scripts\custom\fiveplus.custom.js" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="ng-App\data\dataServices.js" />
     <Content Include="ng-App\data\Gigs.js" />
-    <Content Include="ng-App\js\directives.js" />
-    <Content Include="ng-App\js\filters.js" />
-    <Content Include="ng-App\js\home-index.js" />
-    <Content Include="ng-App\js\user-Index.js" />
-    <Content Include="ng-App\templates\newGigView.html" />
-    <Content Include="ng-App\templates\singleTopicView.html" />
-    <Content Include="ng-App\templates\indexView.html" />
-    <Content Include="ng-App\_partials\hmCategorySearch.html" />
-    <Content Include="ng-App\_partials\hmGigItem.html" />
-    <Content Include="ng-App\_partials\hmGigItem_old.html" />
+    <Content Include="ng-App\directives\directives.js" />
+    <Content Include="ng-App\filters\filters.js" />
+    <Content Include="ng-App\modules\home\homeModule.js" />
+    <Content Include="ng-App\js_delete\user-Index.js" />
+    <Content Include="ng-App\modules\gig\subPages\newGigView.html" />
+    <Content Include="ng-App\modules\home\subPages\singleTopicView.html" />
+    <Content Include="ng-App\modules\home\subPages\indexView.html" />
+    <Content Include="ng-App\directives\_html\hmCategorySearch.html" />
+    <Content Include="ng-App\directives\_html\hmGigItem.html" />
+    <Content Include="ng-App\directives\_html\hmGigItem_old.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
@@ -307,9 +331,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.7.2.js" />
-    <Content Include="Scripts\plugins\jquery.ui.totop.js" />
-    <Content Include="Scripts\plugins\ng-infinite-scroll.js" />
-    <Content Include="Scripts\plugins\x-angular-limitTo.js" />
+    <Content Include="Scripts\jquery.ui.totop.js" />
+    <Content Include="ng-App\plugins\ng-infinite-scroll.js" />
+    <Content Include="ng-App\plugins\x-angular-limitTo.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
@@ -371,9 +395,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Index_3.cshtml" />
+    <Content Include="Views\Gig\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ng-App\modules\gig\js\" />
+    <Folder Include="ng-App\modules\home\js\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

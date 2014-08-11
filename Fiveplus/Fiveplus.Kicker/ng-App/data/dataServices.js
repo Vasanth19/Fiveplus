@@ -134,7 +134,7 @@ dataServiceModule.factory("dataService", function ($http, $q) {
 
         var deferred = $q.defer();
 
-        $http.get("/api/gig")
+        $http.get("/api/gig2")
             .then(function (result) {
                 //Success
                 angular.copy(result.data, _gigs);
@@ -153,7 +153,7 @@ dataServiceModule.factory("dataService", function ($http, $q) {
 
         var deferred = $q.defer();
 
-        $http.post("api/gig", newGig)
+        $http.post("api/gig2", newGig)
             .then(function (result) {
                 var newlyCreatedGig = result.data;
                 deferred.resolve(newlyCreatedGig);

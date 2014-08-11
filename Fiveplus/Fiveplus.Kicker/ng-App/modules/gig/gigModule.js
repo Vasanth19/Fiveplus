@@ -1,93 +1,27 @@
 ﻿/// <reference path="../data/Gigs.js" />
 //1. Make controllers a object instrad of function for minimizing to work. Refer Shawn wildermuth Course 8.11 minification.
 
-var homeIndexModule = angular.module("homeIndex", ["ngRoute", , "myDataService", "myDirectives","myFilters"]);
+var gigModule = angular.module("gigModule", ["ngRoute", "myDataService", "myDirectives", "myFilters", "mgo-angular-wizard",
+                                             "field-directive", "localytics.directives", "textAngular", "flow"]);
 
 
-homeIndexModule.config(function($routeProvider) {
-    //  $routeProvider.when("/", { controller: "topicsController", templateUrl: "/templates/topicsView.html" });
-    $routeProvider.when("/newmessage", { controller: "newTopicController", templateUrl: "/templates/newTopicView.html" });
+gigModule.config(function($routeProvider) {
+    $routeProvider.when("/", { controller: "gigIndexController", templateUrl: "/ng-App/modules/gig/subPages/indexView.html" });
+    $routeProvider.when("/create", { controller: "gigCreateController", templateUrl: "/ng-App/modules/gig/subPages/createGig.html" });
     $routeProvider.when("/message/:id", { controller: "singleTopicController", templateUrl: "/templates/singleTopicView.html" });
 
     $routeProvider.otherwise({ redirectTo: "/" });
 });
 
 
-function topicsController($scope, $http, dataService) {
-
-    $scope.isBusy = true;
-    $scope.data = dataService;
-
-
-    if (dataService.isReady() == false) {
-        dataService.getTopics()
-            .then(function() {
-                    //Success
-                }, function() {
-                    //Error
-                    console.log("Could not load topics");
-                }
-            )
-            .then(function() {
-                isBusy = false;
-            });
-    }
-}
-
-function newTopicController($scope, $http, $location, dataService) {
-    $scope.newTopic = {};
-
-    $scope.save = function() {
-        dataService.addTopic($scope.newTopic).then(function() {
-            //Success
-            $location.path("#/");
-        }, function() {
-            //Error
-            console.log("Error Occured while daving topic");
-        });
-
-
-    };
-
-}
-
-function singleTopicController($scope, dataService, $routeParams, $location) {
-
-    $scope.topic = null;
-    $scope.newReply = {};
-
-    console.log($routeParams.id);
-
-    dataService.getTopicById($routeParams.id)
-        .then(function(topic) {
-            //Success
-            $scope.topic = topic;
-        }, function() { //Error
-            $location.path("#/");
-        });
-
-    $scope.addReply = function() {
-
-        dataService.addReply($scope.topic, $scope.newReply).then(function() {
-            //Success
-            $scope.newReply.body = "";
-        }, function() { //error
-
-        });
-
-
-    };
-
-}
-
-function indexController($scope, $http, dataService) {
+function gigIndexController($scope, $http, dataService) {
     //http://jsoneditoronline.org/
 
     
     $scope.filterSubcategory = "";
     $scope.isBusy = true;
     $scope.i = 0;
-    $scope.data = "I am Awesome";
+    $scope.data = "I am GIG Awesome";
     $scope.someHtml = '<img src="http://angularjs.org/img/AngularJS-large.png" />';
     $scope.gigs = [];
 
@@ -202,4 +136,20 @@ function indexController($scope, $http, dataService) {
         //Get new results based on subcategory
     };
 
+}
+
+function gigCreateController($scope, $http, dataService, WizardHandler) {
+    $scope.finished = function() {
+        alert("Wizard finished :)");
+    };
+
+    $scope.logStep = function() {
+        console.log("Step continued");
+    };
+
+    $scope.goBack = function() {
+        WizardHandler.wizard().goTo(0);
+    };
+
+    $scope.applications = ["Hi", "Hello"];
 }

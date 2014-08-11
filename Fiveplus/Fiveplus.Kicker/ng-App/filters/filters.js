@@ -13,14 +13,14 @@ myFilters.filter('to_trusted', [
 ]);
 
 myFilters.filter('shortRating', function () {
-    return function (input) {
+    return function(input) {
 
         if (String(input).length > 3) {
             return String(input).substring(0, 1) + "K+";
         } else {
             return input;
         }
-    }
+    };
 });
 
 

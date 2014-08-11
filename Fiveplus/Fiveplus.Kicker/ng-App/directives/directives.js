@@ -10,7 +10,7 @@ myDirectives.directive('hmGigItem', function() {
         scope: {
             gig: '='
         },
-        templateUrl: "/ng-App/_partials/hmGigItem.html",
+        templateUrl: "/ng-App/directives/_html/hmGigItem.html",
         controller: function($scope) {
             //Variables
             $scope.displayProps = [];
@@ -41,7 +41,7 @@ myDirectives.directive('hmCategorySearch', function () {
             categories: '=',
             selected: '&'
         },
-        templateUrl: "/ng-App/_partials/hmCategorySearch.html",
+        templateUrl: "/ng-App/directives/_html/hmCategorySearch.html",
         controller: function ($scope) {
             //Variables
 

@@ -12,7 +12,7 @@
     @RenderSection("styles", required: false)
 
 </head>
-<body class="wp-theme-1 wp-theme-4">
+<body class="wp-theme-1 wp-theme-4" flow-prevent-drop>
     <div class="wrapper lw">
         <div class="top-header">
             <div class="container">
@@ -157,17 +157,25 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    
+
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-hover-dropdown/2.0.10/bootstrap-hover-dropdown.min.js"></script>
 
     <script type="text/javascript" src="https://code.angularjs.org/1.2.9/angular.js"></script>
     <script type="text/javascript" src="https://code.angularjs.org/1.2.9/angular-route.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-sanitize.js"></script>
 
-    <script src="~/Scripts/plugins/jquery.ui.totop.js"></script>
+    @RenderSection("scripts", required: false)
+
+    <script src="~/Scripts/jquery.ui.totop.js"></script>
     <script src="~/Scripts/jquery.sticky.js"></script>
     <script src="~/Scripts/custom/fiveplus.custom.js"></script>
 
-    @RenderSection("scripts", required: false)
+    @* Angular Scripts *@
+    <script src="~/ng-App/directives/directives.js"></script>
+    <script src="~/ng-App/data/dataServices.js"></script>
+    <script src="~/ng-App/filters/filters.js"></script>
+
+    @RenderSection("myNgScripts", required: false)
 
     <a href="#" id="toTop" style="display: inline;"><span id="toTopHover" style="opacity: 0;"></span>To Top</a>
 </body>
