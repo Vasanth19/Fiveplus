@@ -48,7 +48,7 @@ angular.module('field-directive', [])
 
             // Load up the template for this kind of field
             var template = attrs.template || 'input';   // Default to the simple input if none given
-            var getFieldElement = $http.get('ng-App/directives/uiField/_html/' + template + '.html', { cache: $templateCache }).then(function (response) {
+            var getFieldElement = $http.get('/ng-App/directives/uiField/_html/' + template + '.html', { cache: $templateCache }).then(function (response) {
                 var newElement = angular.element(response.data);
                 var inputElement = findInputElement(newElement);
 
