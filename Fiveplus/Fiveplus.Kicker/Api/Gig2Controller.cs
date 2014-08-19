@@ -23,7 +23,7 @@ namespace Fiveplus.Kicker.Api
         // GET: api/Gig2Controller
         public IQueryable<Gig> GetGigs()
         {
-            return db.Gigs;
+            return db.Gigs.Include(c => c.AddonServices);
         }
 
         // GET: api/Gig2Controller/5

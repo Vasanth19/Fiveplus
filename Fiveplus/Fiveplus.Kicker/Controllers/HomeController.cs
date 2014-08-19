@@ -16,6 +16,13 @@ namespace Fiveplus.Kicker.Controllers
 
             return View();
         }
+        
+        public ActionResult Gig()
+        {
+            ViewBag.Message = "Your app description page.";
+
+            return View();
+        }
 
         public ActionResult Contact()
         {

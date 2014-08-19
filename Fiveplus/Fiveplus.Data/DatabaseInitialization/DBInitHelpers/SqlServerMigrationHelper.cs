@@ -141,8 +141,8 @@ namespace Fiveplus.Data.DatabaseInitialization
              new Gig
              {
 
-                 Title = "I can write you a awesome Resume",
-                 Description = "I can write an awesome Resume to you in ay way i want",
+                 Title = "I can write you a awesome Resume I can write you a awesome Resume",
+                 Description = "I can write an awesome Resume to you in ay way i want I can write you a awesome ResumeI can write you a awesome ResumeI can write you a awesome ResumeI can write you a awesome ResumeI can write you a awesome ResumeI can write you a awesome Resume",
                  Price = 4.50,
                  UserId = user.Id,
                  RowStatus = RowStatus.Enabled,
@@ -151,6 +151,12 @@ namespace Fiveplus.Data.DatabaseInitialization
                  {
                      new Addon() { Description = "Add a Formating Service", Price = 3.99},
                      new Addon() { Description = "Add a Double Formating Service", Price = 3.99}
+                 },
+                 MediaUrls = new Collection<Media>()
+                 {
+                     new Media(){Url = @"http://localhost:59903/assets/img/job/high-rated-job-1.1.jpg",Type = MediaType.Image},
+                     new Media(){Url = @"http://localhost:59903/assets/img/job/high-rated-job-1.2.jpg",Type = MediaType.Image},
+                     new Media(){Url = @"http://localhost:59903/assets/img/job/high-rated-job-1.3.jpg",Type = MediaType.Image}
                  }
              }
              );

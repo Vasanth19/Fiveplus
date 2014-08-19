@@ -232,6 +232,23 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\app.css" />
+    <Content Include="assets\css\custom.css" />
+    <Content Include="assets\css\ie8.css" />
+    <Content Include="assets\css\pages\page_job.css" />
+    <Content Include="assets\css\plugins.css" />
+    <Content Include="assets\css\plugins\animate.css" />
+    <Content Include="assets\css\plugins\box-shadows.css" />
+    <Content Include="assets\css\plugins\custom-sky-forms.css" />
+    <Content Include="assets\css\plugins\sky-forms.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\themes\dark-blue.css" />
+    <Content Include="assets\css\themes\default.css" />
+    <Content Include="assets\css\themes\light.css" />
+    <Content Include="assets\js\app.js" />
+    <Content Include="assets\plugins\image-hover\css\img-hover.css" />
+    <Content Include="assets\plugins\line-icons\fonts\Simple-Line-Icons.svg" />
+    <Content Include="assets\plugins\line-icons\line-icons.css" />
     <Content Include="Content\bootstrap\bootstrap-theme.css" />
     <Content Include="Content\bootstrap\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap\bootstrap.css" />
@@ -290,6 +307,9 @@
     <Content Include="ng-App\plugins\mgo-angular-wizard\angular-wizard.min.js.map">
       <DependentUpon>angular-wizard.min.js</DependentUpon>
     </Content>
+    <Content Include="assets\plugins\line-icons\fonts\Simple-Line-Icons.eot" />
+    <Content Include="assets\plugins\line-icons\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="assets\plugins\line-icons\fonts\Simple-Line-Icons.woff" />
     <None Include="Properties\PublishProfiles\fiveplus - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\fiveplus - Web Deploy.pubxml" />
     <Content Include="ng-App\js_delete\gig-index.js" />
@@ -317,7 +337,7 @@
     <Content Include="ng-App\modules\home\subPages\singleTopicView.html" />
     <Content Include="ng-App\modules\home\subPages\indexView.html" />
     <Content Include="ng-App\directives\_html\hmCategorySearch.html" />
-    <Content Include="ng-App\directives\_html\hmGigItem.html" />
+    <Content Include="ng-App\directives\_html\easyblock.html" />
     <Content Include="ng-App\directives\_html\hmGigItem_old.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -396,9 +416,12 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Index_3.cshtml" />
     <Content Include="Views\Gig\Create.cshtml" />
+    <Content Include="Views\Shared\_Layout_boomerang.cshtml" />
+    <Content Include="Views\Home\Index_4.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="assets\plugins\bootstrap\" />
     <Folder Include="ng-App\modules\gig\js\" />
     <Folder Include="ng-App\modules\home\js\" />
   </ItemGroup>

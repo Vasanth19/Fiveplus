@@ -3,14 +3,14 @@
 /// <reference path="../_partials/hmGigItem.html" />
 var myDirectives = angular.module("myDirectives", []);
 
-myDirectives.directive('hmGigItem', function() {
+myDirectives.directive('easyBlock', function() {
     return {
         restrict: "E",
         replace: true,
         scope: {
             gig: '='
         },
-        templateUrl: "/ng-App/directives/_html/hmGigItem.html",
+        templateUrl: "/ng-App/directives/_html/easyBlock.html",
         controller: function($scope) {
             //Variables
             $scope.displayProps = [];
@@ -27,7 +27,10 @@ myDirectives.directive('hmGigItem', function() {
             });
 
             //Methods
-           
+
+        },
+        link:function(scope,element) {
+           $("#gig1media1").addClass("active");
         }
     };
 });

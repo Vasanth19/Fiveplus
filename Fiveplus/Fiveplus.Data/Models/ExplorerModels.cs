@@ -85,7 +85,7 @@ namespace Fiveplus.Data.Models
     {
         public int Id { get; set; }
         public string Url { get; set; }
-        public string Type { get; set; }
+        public MediaType Type { get; set; }
         public DateTime? Created { get; set; }
         [Timestamp]
         public byte[] RowVersion { get; set; }

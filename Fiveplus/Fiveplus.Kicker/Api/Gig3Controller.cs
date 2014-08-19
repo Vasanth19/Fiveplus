@@ -25,8 +25,8 @@ namespace Fiveplus.Kicker.Api
             IQueryable<Gig> results;
             if (completeGraph)
             {
-                
-                results = _repo.AllIncluding(c => c.Category, c=>c.Orders);
+
+                results = _repo.AllIncluding(c => c.Category, c => c.Orders, c => c.AddonServices, c => c.MediaUrls, c=>c.User);
             }
             else
             {

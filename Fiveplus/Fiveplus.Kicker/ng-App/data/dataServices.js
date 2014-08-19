@@ -134,7 +134,7 @@ dataServiceModule.factory("dataService", function ($http, $q) {
 
         var deferred = $q.defer();
 
-        $http.get("/api/gig2")
+        $http.get("/api/gig3?completeGraph=true")
             .then(function (result) {
                 //Success
                 angular.copy(result.data, _gigs);
