@@ -151,5 +151,7 @@ function gigCreateController($scope, $http, dataService, WizardHandler) {
         WizardHandler.wizard().goTo(0);
     };
 
-    $scope.applications = ["Hi", "Hello"];
+    $scope.categories = ['Alexandra', 'Alice', 'Anastasia', 'Avelina'];
+
+
 }

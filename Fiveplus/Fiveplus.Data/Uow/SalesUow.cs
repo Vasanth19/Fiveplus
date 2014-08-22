@@ -29,6 +29,11 @@ namespace Fiveplus.Data.Uow
             return _context.SaveChanges();
         }
 
+        public async Task SaveAsync()
+        {
+            await _context.SaveChangesAsync();
+        }
+
         public SalesContext Context
         {
             get { return _context; }

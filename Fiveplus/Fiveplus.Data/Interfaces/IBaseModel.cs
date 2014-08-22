@@ -17,8 +17,8 @@ namespace Fiveplus.Data.Repo
 
     public enum State
     {
+        Unchanged = 0,
         Added,
-        Unchanged,
         Modified,
         Deleted
     }

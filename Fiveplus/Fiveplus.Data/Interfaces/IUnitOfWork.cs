@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Fiveplus.Data.Interfaces
 {
-    public interface IUnitOfWork<TContext>:IDisposable where TContext :DbContext
+    public interface IUnitOfWork<TContext>: IDisposable where TContext :DbContext
     {
         int Save();
+        Task SaveAsync();
         TContext Context { get; }
     }
 }

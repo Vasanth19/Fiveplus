@@ -34,13 +34,22 @@ namespace Fiveplus.Data.DbContexts
 
             base.OnModelCreating(modelBuilder);
         }
-      
-        public DbSet<Gig> Gigs { get; set; }
 
-        //Going to impemente no tracking in repository as the intention is readonly
+
+        // User Tables, //Going to impemente no tracking in repository as the intention is readonly
+        public DbSet<UserDetail> UserDetails { get; set; }
+        public DbSet<UserCollectedGig> UserCollectedGigs { get; set; }
+        public DbSet<UserInboxMessage> UserInboxMessages { get; set; }
+
+        //Gig Related Tables
+        public DbSet<Gig> Gigs { get; set; }
+        public DbSet<Addon> Addons { get; set; }
+        public DbSet<Media> MediaUrls { get; set; }
+        public DbSet<Category> Categories { get; set; }
+
+        //Sales Related Tables , //Going to impemente no tracking in repository as the intention is readonly
         public DbSet<Order> Orders { get; set; }
         public DbSet<LineItem> LineItems { get; set; }
-        public DbSet<UserDetail> UserDetails { get; set; }
     }
 
    }

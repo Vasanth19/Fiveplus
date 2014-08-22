@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Fiveplus.Data.Repo;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -23,7 +24,7 @@ namespace Fiveplus.Data.Models
 
     }
 
-    public class UserDetail
+    public class UserDetail : IBaseModel
     {
         [Key,Column("UserId")]
         public string Id { get; set; }
@@ -49,6 +50,11 @@ namespace Fiveplus.Data.Models
 
         public ICollection<Order> Orders { get; set; }
 
+        public DateTime? Created { get; set; }
+
+        [NotMapped]
+        public State State { get; set; }
+
 
     }
 
@@ -58,7 +64,7 @@ namespace Fiveplus.Data.Models
         TwiceWeekly,
         Infrequent
     }
-    public class UserCollectedGig
+    public class UserCollectedGig : IBaseModel
     {
         public int Id { get; set; }
 
@@ -68,18 +74,28 @@ namespace Fiveplus.Data.Models
 
         public int GigId { get; set; }
         [ForeignKey("GigId")]
-        public Gig Gig { get;  set; } 
+        public Gig Gig { get;  set; }
 
+
+        public DateTime? Created { get; set; }
+
+        [NotMapped]
+        public State State { get; set; }
     }
 
-    public class UserInboxMessage
+    public class UserInboxMessage : IBaseModel
     {
         public int Id { get; set; }
         public UserDetail User { get; set; }
 
         public string Sender { get; set; }
         public string Message { get; set; }
-        public DateTime Created { get; set; }
+
+
+        public DateTime? Created { get; set; }
+
+        [NotMapped]
+        public State State { get; set; }
 
 
     }

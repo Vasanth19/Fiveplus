@@ -73,7 +73,11 @@ namespace Fiveplus.Kicker.App_Start
         {
             kernel.Bind<ExplorerContext>().To<ExplorerContext>().InRequestScope();
             kernel.Bind<ExplorerUow>().To<ExplorerUow>().InRequestScope();
+
             kernel.Bind<IGigRepository>().To<GigRepository>().InRequestScope();
+            kernel.Bind<IGigRepositoryAsync>().To<GigRepositoryAsync>().InRequestScope();
+            kernel.Bind<IMediaRepositoryAsync>().To<MediaRepositoryAsync>().InRequestScope();
+            kernel.Bind<ICategoryRepositoryAsync>().To<CategoryRepositoryAsync>().InRequestScope();
 
             kernel.Bind<FiveplusContext>().To<FiveplusContext>().InRequestScope();
             

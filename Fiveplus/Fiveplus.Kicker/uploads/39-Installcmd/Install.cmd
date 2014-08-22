@@ -1,0 +1,1 @@
+cscript "C:\SETUP\Scripts\00 - All.vbs"

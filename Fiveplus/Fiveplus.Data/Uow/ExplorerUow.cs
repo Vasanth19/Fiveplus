@@ -12,12 +12,16 @@ namespace Fiveplus.Data.Uow
     public class ExplorerUow: IUnitOfWork<ExplorerContext>
     {
         private readonly ExplorerContext _context;
+        public ExplorerContext Context
+        {
+            get { return _context; }
+        }
 
         public ExplorerUow()
         {
             _context = new ExplorerContext();
         }
-
+      
         //For Automated testing;
         public ExplorerUow(ExplorerContext context)
         {
@@ -29,10 +33,11 @@ namespace Fiveplus.Data.Uow
             return _context.SaveChanges();
         }
 
-        public ExplorerContext Context
+        public async Task SaveAsync()
         {
-            get { return _context; }
+            await _context.SaveChangesAsync();
         }
+
         public void Dispose()
         {
             _context.Dispose();

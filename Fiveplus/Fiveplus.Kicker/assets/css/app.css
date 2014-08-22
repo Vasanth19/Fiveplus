@@ -2549,6 +2549,10 @@ img.img-circle {
 .margin-left-5 { margin-left: 5px;}
 .margin-right-5 { margin-right: 5px;}
 
+.margin-5 { margin: 5px;}
+.margin-10 { margin: 10px;}
+.margin-15 { margin: 15px;}
+
 .no-top-space {
   margin-top: 0;
   padding-top: 0;

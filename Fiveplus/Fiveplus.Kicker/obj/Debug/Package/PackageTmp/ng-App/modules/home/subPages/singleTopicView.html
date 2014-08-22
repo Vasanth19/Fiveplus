@@ -1,0 +1,39 @@
+﻿<a href="#/" class="btn">Go back</a>
+
+<div class="message row">
+    <div class="title col-md-10">
+        {{topic.title}}
+    </div>
+    <div class="date col-md-2">{{i.created | date:"medium"}}</div>
+    <div class="contents col-md-12">
+        {{topic.body}}
+    </div>
+    <div class="replies col-md-12">
+        <!--@*(.reply>(.created.pull-right>{Feb 28, 2015})+.content>lorem)*5*@-->
+        <div class="reply" ng-repeat="r in topic.replies">
+            <div class="created pull-right">{{r.created | date:"medium"}}</div>
+            <div class="content">
+                {{r.body}}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<h3>Add Reply</h3>
+
+<div class="widget">
+    
+    <form name="newReplyForm" novalidate="" ng-submit="addReply()">
+        <fieldset>
+            <div>
+                <label for="body">Body</label>
+                <textarea name="body" rows="5" cols="30" ng-model="newReply.body" required />
+                <span class="error" ng-show="newReplyForm.body.$error.required">*</span>
+            </div>
+            <div>
+                <input type="submit" class="btn btn-primary" value="Save" ng-disabled="newReplyForm.$invalid" />
+            </div>
+        </fieldset>
+    </form>
+</div>

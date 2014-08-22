@@ -1,192 +1,170 @@
 ﻿<!-- http://ngmodules.org/modules/textAngular -->
 
-<form class="form-horizontal" id="rp-form" name="rpForm" method="get" novalidate="novalidate">
-    <!--<cnginput ng-model="newReceivePort.name" form="rpForm" elname="rpName"></cnginput>-->
-    <!--<pre>{{applications}} {{newReceivePort}} {{rpForm.$invalid}} {{newReceiveLocation}}</pre>-->
-    <!--  <div class="alert alert-warning">
-        <p> <strong>Important Info!</strong> Receive Port Name : <strong>{{newReceivePort.name}}</strong> |    Receive Location Name : <strong>{{newReceiveLocation.name}}</strong></p>
-
-     </div>-->
-
-
-
-    <div class="alert alert-danger" ng-show="errorMessage">
-        <button type="button" class="close" data-dismiss="alert">
-            <i class="ace-icon fa fa-times"></i>
-        </button>
-        <strong>
-            <i class="ace-icon fa fa-times"></i>
-            Oh snap!
-        </strong> <br />
-        {{errorMessage}}
-        <br>
-    </div>
-
-
-    <field ng-model="newReceivePort.source" template="select" type="text" name="rpSource" label="Select Source" ng-options="x for x in ['SFTP','SAP']" required>
-        <validator key="required">Source is Required</validator>
-    </field>
-
-    <div class="space-2"></div>
-
-    <field ng-model="newReceivePort.interfaceName" type="text" name="rpName" label="{{'Interface' + ' Name'}}" required>
-        <validator key="required">Interface Name is Required</validator>
-    </field>
+ <div class="row">
+        <!-- Begin Content -->
+     <div class="col-md-9 col-md-offset-1">
+         
+         <!-- Display Error Messages occured while Submitting -->
+         <div class="alert alert-danger fade in" ng-show="errorMessage">
+             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+             <h4>Oh snap! You got an error!</h4>
+             <p>  {{errorMessage}}</p>
+             <p>
+                 <a class="btn-u btn-u-red" href="#">Take this action</a> 
+                 <a class="btn-u btn-u-sea" href="#">Or do this</a>
+             </p>
+         </div>
+         
+         <div class="margin-bottom-30"></div>
+         <!-- General Unify Forms -->
+         <form action="" class="sky-form " name="basicGigForm" novalidate="novalidate">
+             <header>Enter the Basic Information About Your Gig</header>
+                
+                
+             <fieldset>
+                 <section data-toggle="popover" class="popover-dismiss" title="Popover Testing" data-content="Hey, Whats Up? <br> Why dont you enter your title" >
+                     <label class="label">Title</label>
+                     <label class="input" ng-class= "{ 'state-error' : basicGigForm.newGigTitle.$invalid && !basicGigForm.newGigTitle.$pristine, 
+                                                        'state-success' : basicGigForm.newGigTitle.$valid && !basicGigForm.newGigTitle.$pristine }">
+                         <input type="text" ng-model="newGig.title"  name="newGigTitle" required ng-minlength=10 ng-maxlength=80 />
+                     </label>
+                     <span class="note" ng-show="basicGigForm.newGigTitle.$pristine || basicGigForm.newGigTitle.$error.required">Title is Required  |  </span>
+                     <span class="note" ng-show="basicGigForm.newGigTitle.$pristine || basicGigForm.newGigTitle.$error.minlength">Enter at-least 10 characters |  </span>
+                     <span class="note" ng-show="basicGigForm.newGigTitle.$pristine || basicGigForm.newGigTitle.$error.maxlength">Do Not Exceed More Than 80 characters </span>
+                 </section>
+                    
+            </fieldset>
+             <fieldset>                   
     
-    
+                 <section>
+                     <label class="label">Select Category</label>
+                     <label class="select" >
+                         <select ng-model="newGig.category"  ng-options="c for c in categories">
+                              <option value=""></option>
+                             <!--                             <option value="0">Choose name</option>
+                                 <option value="1">Alexandra</option>
+                                 <option value="2">Alice</option>
+                                 <option value="3">Anastasia</option>
+                                 <option value="4">Avelina</option>-->
+                         </select>
+                     <!--    <select data-placeholder="Choose a Category..."
+                             ng-model="newGig.category" ng-options="c for c in categories"
+                             chosen allow-single-deselect="true" required>
+                             <option value=""></option>
+                         </select>-->
+                         <i></i>
+                     </label>
+                 </section>
+                
+                 <!--<section>
+                     <label class="label">Select Sub Category</label>
+                     <label class="input">
+                         <input type="text" list="list" ng-model="newGig.subCategory">
+                         <datalist id="list">
+                             <option value="Alexandra"></option>
+                             <option value="Alice"></option>
+                             <option value="Anastasia"></option>
+                             <option value="Avelina"></option>
+                             <option value="Basilia"></option>
+                             <option value="Beatrice"></option>
+                             <option value="Cassandra"></option>
+                             <option value="Cecil"></option>
+                             <option value="Clemencia"></option>
+                             <option value="Desiderata"></option>
+                             <option value="Dionisia"></option>
+                             <option value="Edith"></option>
+                             <option value="Eleanora"></option>
+                             <option value="Elizabeth"></option>
+                             <option value="Emma"></option>
+                             <option value="Felicia"></option>
+                             <option value="Florence"></option>
+                             <option value="Galiana"></option>
+                             <option value="Grecia"></option>
+                             <option value="Helen"></option>
+                             <option value="Helewisa"></option>
+                             <option value="Idonea"></option>
+                             <option value="Isabel"></option>
+                             <option value="Joan"></option>
+                             <option value="Juliana"></option>
+                             <option value="Karla"></option>
+                             <option value="Karyn"></option>
+                             <option value="Kate"></option>
+                             <option value="Lakisha"></option>
+                             <option value="Lana"></option>
+                             <option value="Laura"></option>
+                             <option value="Leona"></option>
+                             <option value="Mandy"></option>
+                             <option value="Margaret"></option>
+                             <option value="Maria"></option>
+                             <option value="Nanacy"></option>
+                             <option value="Nicole"></option>
+                             <option value="Olga"></option>
+                             <option value="Pamela"></option>
+                             <option value="Patricia"></option>
+                             <option value="Qiana"></option>
+                             <option value="Rachel"></option>
+                             <option value="Ramona"></option>
+                             <option value="Samantha"></option>
+                             <option value="Sandra"></option>
+                             <option value="Tanya"></option>
+                             <option value="Teresa"></option>
+                             <option value="Ursula"></option>
+                             <option value="Valerie"></option>
+                             <option value="Veronica"></option>
+                             <option value="Wilma"></option>
+                             <option value="Yasmin"></option>
+                             <option value="Zelma"></option>
+                         </datalist>
+                     </label>
+                     <div class="note"><strong>Note:</strong> Select Sub Category is mandatory</div>
+                 </section>-->
+
+             </fieldset>
+       
+             <fieldset>                  
+                 <section>
+                     <label class="label" >Enter Your Description<span style="display: inline-block;color: #fff" class="pull-right  rounded " ng-class= "{ 'badge badge-red' : basicGigForm.newGigDescription.$invalid}">*</span>
+                        </label> 
+
+                     <div  name="newGigDescription" text-angular text-angular-name="Your Service Description" ng-model="newGig.description" required></div>
+                     <div class="note"><strong>Note:</strong> Feel Free to Add HTML Tags</div>
+                     <span class="note" ng-show="basicGigForm.newGigDescription.$pristine || basicGigForm.newGigDescription.$error.required">Description is Required </span>
+                 </section>
+
+             </fieldset>
      
-    
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="form-field-select-3">Enter Your Description</label>
-        <div class="col-xs-12 col-sm-9">
-            <div class="clearfix">
-                <div flow-init="{target: '/api/upload'}"
-                     flow-files-submitted="$flow.upload()"
-                     flow-file-success="$file.msg = $message">
+             <footer>
+                 <button type="submit" class="btn-u">Submit</button>
+                 <button type="button" class="btn-u btn-u-default" onclick="window.history.back();">Back</button>
+             </footer>
+         </form>
+         <!-- General Unify Forms -->
 
-                    <input type="file" flow-btn />
-                    Input OR Other element as upload button
-                    <span class="btn" flow-btn>Upload File</span>\
-                    <div class="alert" flow-drop flow-drag-enter="style={border:'4px solid green'}" flow-drag-leave="style={}"
-                         ng-style="style">
-                        Drag And Drop your file here
-                    </div>
+         <div class="margin-bottom-60"></div>
 
-                    <div ng-repeat="file in $flow.files">
-                        <img flow-img="file" width="200px" />
-                    </div>
-
-                </div>
-            </div>
+     </div>
+        <!-- End Content -->
+        
+        <!-- Begin Sidebar Menu -->
+        <div class="col-md-2">
+                
         </div>
-    </div>
-    
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="form-field-select-3">Enter Your Description</label>
-        <div class="col-xs-12 col-sm-9">
-            <div flow-init="" flow-files-submitted="$flow.upload()" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" >
-                <div class="drop" flow-drop="" ng-class="dropClass">
-                    <span class="btn btn-default" flow-btn="">Upload Image<input type="file" multiple="multiple" style="visibility: hidden; position: absolute;"></span>
-                    <span class="btn btn-default" flow-btn="" flow-directory="" ng-show="$flow.supportDirectory">Upload Folder of Images<input type="file" multiple="multiple" webkitdirectory="webkitdirectory" style="visibility: hidden; position: absolute;"></span>
-                    <b>OR</b>
-                    Drag And Drop your images here
-                </div>
-
-                <br>
-
-                <div>
-                    <!-- ngRepeat: file in $flow.files -->
-                    
-                    <div class="clear"></div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="space-2"></div>
-    
-    
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="form-field-select-3">Enter Your Description</label>
-        <div class="col-xs-12 col-sm-9">
-            <div class="clearfix">
-                <div text-angular text-angular-name="Your Service Description" ng-model="newReceivePort.description"></div>
-            </div>
-        </div>
-    </div>
-    
-
-    <field ng-model="newReceivePort.description" type="text" name="rpDesc" label="{{'ReceivePort' + ' Description'}}" placeholder="What ever you wish to write.." optional="true"></field>
-
-    <div class="space-2"></div>
-
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="form-field-select-3">Application</label>
-        <div class="col-xs-12 col-sm-9">
-            <div class="clearfix">
-                <select class="col-xs-12 col-sm-6" id="rpAppSelect" data-placeholder="Choose a Application..."
-                        ng-model="newReceivePort.applicationName" ng-options="a for a in applications"
-                        chosen allow-single-deselect="true" required>
-                    <option value=""></option>
-                </select>
-            </div>
-        </div>
-    </div>
-
-    <!-- Receive Location Details -->
-    <div class="hr hr-dotted"></div>
-
-    <div class="space-2"></div>
-
-    <field ng-model="newReceiveLocation.address" type="text" name="rlAddress" label="Address URI" required>
-        <validator key="required">Address is Required</validator>
-    </field>
+     <!-- End Sidebar Menu -->
+     
+      <script type="text/javascript">
+          jQuery(document).ready(function () {
+              $('.popover-dismiss').popover({
+                  trigger: 'focus', // use 'hover' to dismiss as you hover
+                  placement: 'right',
+                  html: true,
+                  viewport: '#viewport',
+                  template: '<div class="popover" style="width:300px" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content" width="300px"></div></div>'
+              });
+          });
+        </script>
+ </div>
 
 
 
-    <!--     Code used for debugging Chosen                   <pre>{{newReceivePort.applicationName}}</pre>
-                                        <div class="hr hr-dotted"></div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="form-field-select-3">Application</label>
-                                            <div class="col-xs-12 col-sm-9">
-                                                <div class="clearfix">
-                                                    <select class="col-xs-12 col-sm-6" id="form-field-select-3" data-placeholder="Choose a Application..."
-                                                            ng-model="newReceivePort.applicationName" ng-options ="person.name as person.name for person in people"
-                                                            chosen allow-single-deselect="true">
-                                                        <option value=""></option>
-                                                    </select>
-
-                                                </div>
-
-                                            </div>
-                                        </div>-->
 
 
-    <div class="space-2"></div>
-
-
-    <div class="form-group">
-        <div class="col-xs-12 col-sm-4 col-sm-offset-3">
-            <label>
-                <input name="start" id="start" type="checkbox" class="ace" ng-model="newReceiveLocation.status">
-                <span class="lbl">Start Receive Location On Create</span>
-            </label>
-        </div>
-    </div>
-
-    <div class="hr hr-dotted"></div>
-    <div class="form-group ">
-
-    </div>
-    <div class="row">
-        <div class="col-sm-6 col-sm-offset-2">
-            <div class="well" for="">
-                <p>
-                    <strong class="align-center">Important  - Confirm!</strong>  <br />
-                    Receive Port Name : <strong>{{newReceivePort.interfaceName}}</strong><br />
-                    
-                </p>
-            </div>
-            <button class="btn btn-primary pull-right" ng-click="saveRP()" ng-disabled="rpForm.$invalid || isUnchanged(newReceivePort) || sucessMessage ">Create</button>
-        </div>
-    </div>
-    <div class="alert alert-success col-sm-12" ng-show="successMessage">
-        <button type="button" class="close" data-dismiss="alert">
-            <i class="ace-icon fa fa-times"></i>
-        </button>
-
-        <strong>
-            <i class="ace-icon fa fa-check"></i>
-            Well done!
-        </strong>
-        You successfully created a Receive Port with Location -  <strong>{{newReceiveLocation.name}} </strong>
-        <br />
-    </div>
-
-
-    <br />
-
-</form>

@@ -64,7 +64,7 @@ namespace Fiveplus.Data.DbContexts
     /// Used in the startup.cs in Test Projects to DropCreateDatabaseAlways
     /// Does not use configuration.cs
     /// </summary>
-    public class DatabaseSeedingInitializer : DropCreateDatabaseAlways<FiveplusContext>
+    public class DatabaseSeedingInitializer : DropCreateDatabaseIfModelChanges<FiveplusContext>
     {
         protected override void Seed(FiveplusContext context)
         {

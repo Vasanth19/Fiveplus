@@ -1,0 +1,14 @@
+﻿
+<section class="slice animate-hover-slide bg-5" data-ng-controller="indexController">
+    <div class="w-section inverse">
+        <div class="container">
+            <h3 class="section-title">Most Popular</h3>
+            <span class="see-all pull-right inline"><a href="/discover/popular?ref=popular">See all</a></span>
+            <div class="row">
+                <div class="col-md-3" ng-repeat="gigItem in gigs">
+                    <hm-gig-item gig="gigItem"></hm-gig-item>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

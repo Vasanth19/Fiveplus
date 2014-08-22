@@ -201,10 +201,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Api\Gig2Controller.cs" />
-    <Compile Include="Api\Gig3Controller.cs" />
+    <Compile Include="Api\AddonController.cs" />
+    <Compile Include="Api\UserDetailController.cs" />
+    <Compile Include="Api\UserColGigController.cs" />
+    <Compile Include="Api\UserInboxMsgController.cs" />
+    <Compile Include="Api\InitializerController.cs" />
+    <Compile Include="Api\MediaController.cs" />
+    <Compile Include="Api\Ref\Media1Controller.cs" />
+    <Compile Include="Api\Ref\Gig2Controller.cs" />
+    <Compile Include="Api\Ref\Gig3Controller.cs" />
     <Compile Include="Api\GigController.cs" />
-    <Compile Include="Api\TestController.cs" />
+    <Compile Include="Api\Ref\TestController.cs" />
     <Compile Include="Api\UploadController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -256,7 +263,6 @@
     <Content Include="Content\chosen\chosen.css" />
     <Content Include="Content\font-awesome\font-awesome.css" />
     <Content Include="Content\font-awesome\font-awesome.min.css" />
-    <Content Include="Content\global-style.css" />
     <Content Include="Content\images\banner-img-4.jpg" />
     <Content Include="Content\images\carousel-img-3.png" />
     <Content Include="Content\images\carousel-img-5.png" />
@@ -302,6 +308,7 @@
     <Content Include="ng-App\directives\uiField\_html\input.html" />
     <Content Include="ng-App\directives\uiField\_html\select.html" />
     <Content Include="ng-App\directives\uiField\_html\textarea.html" />
+    <Content Include="ng-App\modules\gig\subPages\_createGig\step2.html" />
     <Content Include="ng-App\modules\gig\subPages\_createGig\step1.html" />
     <Content Include="ng-App\plugins\mgo-angular-wizard\angular-wizard.less" />
     <Content Include="ng-App\plugins\mgo-angular-wizard\angular-wizard.min.js.map">
