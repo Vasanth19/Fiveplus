@@ -18,7 +18,7 @@ using Microsoft.AspNet.Identity;
 
 namespace Fiveplus.Kicker.Api
 {
-    [RoutePrefix("api/gigs")]
+    [RoutePrefix("api/gig")]
     public class GigController : ApiController
     {
 
@@ -100,7 +100,7 @@ namespace Fiveplus.Kicker.Api
         [ResponseType(typeof(Gig))]
          public async Task<IHttpActionResult> PostGig(Gig gig, [FromUri] bool graph = true)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid && gig.Id == default(int))
             {
                 return BadRequest(ModelState);
             }

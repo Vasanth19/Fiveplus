@@ -15,6 +15,7 @@ namespace Fiveplus.Data.DBMappings
         {
 
             HasRequired(t => t.User);
+            Property(g => g.Created).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
 
         }
     }
@@ -25,6 +26,7 @@ namespace Fiveplus.Data.DBMappings
         {
 
             ToTable("UserInbox");
+            Property(g => g.Created).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
 
         }
     }
@@ -35,7 +37,8 @@ namespace Fiveplus.Data.DBMappings
         {
 
             HasRequired(c => c.User).WithMany(u => u.CollectedGigs).HasForeignKey(c => c.UserId);
-            HasRequired(c => c.Gig).WithMany(g => g.CollectedGigs).HasForeignKey(c => c.GigId);
+            HasRequired(c => c.Gig).WithMany(g => g.CollectedGigs).HasForeignKey(c => c.GigId); 
+            Property(g => g.Created).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
         }
     }
 

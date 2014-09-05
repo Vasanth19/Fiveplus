@@ -18,7 +18,7 @@
                             </div>     
                             <ul class="list-unstyled">
                                 <li><span class="color-green">Seller:</span> {{gig.user.fullName}} <span class="pull-right color-green">{{gig.user.location}}</span></li>
-                                <li style="white-space: normal;overflow: hidden;text-overflow: ellipsis;height: 60px;">{{gig.description}}</li>
+                                <li style="white-space: normal;overflow: hidden;text-overflow: ellipsis;height: 60px;" ng-bind-html="gig.description"></li>
                             </ul>    
                             <a class="btn-u btn-u-sm pull-left" href="#">View More</a>
                              <div class="star-vote pull-right">

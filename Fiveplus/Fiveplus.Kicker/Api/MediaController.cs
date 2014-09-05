@@ -83,7 +83,7 @@ namespace Fiveplus.Kicker.Api
                 }
                 else
                 {
-                    BadRequest(e.Message + e.ToString());
+                    return BadRequest(e.Message + e.ToString());
                 }
             }
 

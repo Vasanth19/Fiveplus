@@ -41,7 +41,7 @@ namespace Fiveplus.Data.DatabaseInitialization
         {
             if (column.Name == "CreatedUtc" || column.Name == "Created" || column.Name == "LastModified")
             {
-                column.DefaultValueSql = "GETUTCDATE()";
+                column.DefaultValueSql = "GETDATE()";
             }
         }
     }

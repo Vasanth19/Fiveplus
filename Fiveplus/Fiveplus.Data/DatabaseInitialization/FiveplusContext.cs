@@ -46,6 +46,7 @@ namespace Fiveplus.Data.DbContexts
 
             modelBuilder.Configurations.Add(new CategoryConfiguration());
             modelBuilder.Configurations.Add(new GigConfiguration());
+            modelBuilder.Configurations.Add(new MediaConfiguration());
 
             modelBuilder.Configurations.Add(new IdentityUserConfiguration());
             modelBuilder.Configurations.Add(new UserInboxConfiguration());
@@ -64,7 +65,7 @@ namespace Fiveplus.Data.DbContexts
     /// Used in the startup.cs in Test Projects to DropCreateDatabaseAlways
     /// Does not use configuration.cs
     /// </summary>
-    public class DatabaseSeedingInitializer : DropCreateDatabaseIfModelChanges<FiveplusContext>
+    public class DatabaseSeedingInitializer :  DropCreateDatabaseIfModelChanges<FiveplusContext>
     {
         protected override void Seed(FiveplusContext context)
         {

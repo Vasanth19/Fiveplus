@@ -17,11 +17,11 @@ namespace Fiveplus.Kicker.Controllers
             return View();
         }
         
-        public ActionResult Gig()
+        public ActionResult Landing()
         {
-            ViewBag.Message = "Your app description page.";
+            ViewBag.Message = "Your Landing.";
 
-            return View();
+            return View("Landing","_Layout_Landing");
         }
 
         public ActionResult Contact()

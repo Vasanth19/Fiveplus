@@ -1,168 +1,106 @@
 ﻿<!-- http://ngmodules.org/modules/textAngular -->
 
- <div class="row">
-        <!-- Begin Content -->
-     <div class="col-md-9 col-md-offset-1">
+<div class="row">
+   
+    <!-- Begin Content -->
+    <div class="col-md-9 col-md-offset-1">
+          <pre >{{newGig}}</pre>
+        <!-- Display Error Messages occured while Submitting -->
+        <div class="alert alert-danger fade in" ng-show="errorMessage">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h4>Oh snap! You got an error!</h4>
+            <p>  {{errorMessage}}</p>
+            <p>
+                <a class="btn-u btn-u-red" href="#">Take this action</a> 
+                <a class="btn-u btn-u-sea" href="#">Or do this</a>
+            </p>
+        </div>
          
-         <!-- Display Error Messages occured while Submitting -->
-         <div class="alert alert-danger fade in" ng-show="errorMessage">
-             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-             <h4>Oh snap! You got an error!</h4>
-             <p>  {{errorMessage}}</p>
-             <p>
-                 <a class="btn-u btn-u-red" href="#">Take this action</a> 
-                 <a class="btn-u btn-u-sea" href="#">Or do this</a>
-             </p>
-         </div>
-         
-         <div class="margin-bottom-30"></div>
-         <!-- General Unify Forms -->
-         <form action="" class="sky-form " name="basicGigForm" novalidate="novalidate">
-             <header>Enter the Basic Information About Your Gig</header>
+        <div class="margin-bottom-30"></div>
+        <!-- General Unify Forms -->
+        <form action="" class="sky-form " name="basicGigForm" novalidate="novalidate">
+            <header>Enter the Basic Information About Your Gig</header>
                 
                 
-             <fieldset>
-                 <section data-toggle="popover" class="popover-dismiss" title="Popover Testing" data-content="Hey, Whats Up? <br> Why dont you enter your title" >
-                     <label class="label">Title</label>
-                     <label class="input" ng-class= "{ 'state-error' : basicGigForm.newGigTitle.$invalid && !basicGigForm.newGigTitle.$pristine, 
+            <fieldset>
+                <section data-toggle="popover" class="popover-dismiss" title="Clean & Neat Title" data-content="Hey, Whats Up? <br> Title is like a face to your Gig" >
+                    <label class="label">Title</label>
+                    <label class="input" ng-class= "{ 'state-error' : basicGigForm.newGigTitle.$invalid && !basicGigForm.newGigTitle.$pristine, 
                                                         'state-success' : basicGigForm.newGigTitle.$valid && !basicGigForm.newGigTitle.$pristine }">
-                         <input type="text" ng-model="newGig.title"  name="newGigTitle" required ng-minlength=10 ng-maxlength=80 />
-                     </label>
-                     <span class="note" ng-show="basicGigForm.newGigTitle.$pristine || basicGigForm.newGigTitle.$error.required">Title is Required  |  </span>
-                     <span class="note" ng-show="basicGigForm.newGigTitle.$pristine || basicGigForm.newGigTitle.$error.minlength">Enter at-least 10 characters |  </span>
-                     <span class="note" ng-show="basicGigForm.newGigTitle.$pristine || basicGigForm.newGigTitle.$error.maxlength">Do Not Exceed More Than 80 characters </span>
-                 </section>
+                        <input type="text" ng-model="newGig.title"  name="newGigTitle" required ng-minlength=10 ng-maxlength=80 />
+                    </label>
+                    <span class="note" ng-show="basicGigForm.newGigTitle.$pristine || basicGigForm.newGigTitle.$error.required">Title is Required  |  </span>
+                    <span class="note" ng-show="basicGigForm.newGigTitle.$pristine || basicGigForm.newGigTitle.$error.minlength">Enter at-least 10 characters |  </span>
+                    <span class="note" ng-show="basicGigForm.newGigTitle.$pristine || basicGigForm.newGigTitle.$error.maxlength">Do Not Exceed More Than 80 characters </span>
+                </section>
                     
             </fieldset>
-             <fieldset>                   
+            <fieldset>                   
     
-                 <section>
-                     <label class="label">Select Category</label>
-                     <label class="select" >
-                         <select ng-model="newGig.category"  ng-options="c for c in categories">
-                              <option value=""></option>
-                             <!--                             <option value="0">Choose name</option>
-                                 <option value="1">Alexandra</option>
-                                 <option value="2">Alice</option>
-                                 <option value="3">Anastasia</option>
-                                 <option value="4">Avelina</option>-->
-                         </select>
-                     <!--    <select data-placeholder="Choose a Category..."
-                             ng-model="newGig.category" ng-options="c for c in categories"
-                             chosen allow-single-deselect="true" required>
-                             <option value=""></option>
-                         </select>-->
-                         <i></i>
-                     </label>
-                 </section>
+                <section data-toggle="popover" class="popover-dismiss" title="Categorize Well!" data-content="Category Matters! <br> Where do you want to see this?">
+                    <label class="label">Select Category</label>
+                    <label class="select" >
+                        <select ng-model="newGig.category"  ng-options="c.categoryName for c in categories">
+                            <option value=""></option>
+                        </select>
+                        <!--    <select data-placeholder="Choose a Category..."
+                                        ng-model="newGig.category" ng-options="c for c in categories"
+                                        chosen allow-single-deselect="true" required>
+                                    <option value=""></option>
+                                </select>-->
+                        <i></i>
+                    </label>
+                </section>
                 
-                 <!--<section>
-                     <label class="label">Select Sub Category</label>
-                     <label class="input">
-                         <input type="text" list="list" ng-model="newGig.subCategory">
-                         <datalist id="list">
-                             <option value="Alexandra"></option>
-                             <option value="Alice"></option>
-                             <option value="Anastasia"></option>
-                             <option value="Avelina"></option>
-                             <option value="Basilia"></option>
-                             <option value="Beatrice"></option>
-                             <option value="Cassandra"></option>
-                             <option value="Cecil"></option>
-                             <option value="Clemencia"></option>
-                             <option value="Desiderata"></option>
-                             <option value="Dionisia"></option>
-                             <option value="Edith"></option>
-                             <option value="Eleanora"></option>
-                             <option value="Elizabeth"></option>
-                             <option value="Emma"></option>
-                             <option value="Felicia"></option>
-                             <option value="Florence"></option>
-                             <option value="Galiana"></option>
-                             <option value="Grecia"></option>
-                             <option value="Helen"></option>
-                             <option value="Helewisa"></option>
-                             <option value="Idonea"></option>
-                             <option value="Isabel"></option>
-                             <option value="Joan"></option>
-                             <option value="Juliana"></option>
-                             <option value="Karla"></option>
-                             <option value="Karyn"></option>
-                             <option value="Kate"></option>
-                             <option value="Lakisha"></option>
-                             <option value="Lana"></option>
-                             <option value="Laura"></option>
-                             <option value="Leona"></option>
-                             <option value="Mandy"></option>
-                             <option value="Margaret"></option>
-                             <option value="Maria"></option>
-                             <option value="Nanacy"></option>
-                             <option value="Nicole"></option>
-                             <option value="Olga"></option>
-                             <option value="Pamela"></option>
-                             <option value="Patricia"></option>
-                             <option value="Qiana"></option>
-                             <option value="Rachel"></option>
-                             <option value="Ramona"></option>
-                             <option value="Samantha"></option>
-                             <option value="Sandra"></option>
-                             <option value="Tanya"></option>
-                             <option value="Teresa"></option>
-                             <option value="Ursula"></option>
-                             <option value="Valerie"></option>
-                             <option value="Veronica"></option>
-                             <option value="Wilma"></option>
-                             <option value="Yasmin"></option>
-                             <option value="Zelma"></option>
-                         </datalist>
-                     </label>
-                     <div class="note"><strong>Note:</strong> Select Sub Category is mandatory</div>
-                 </section>-->
 
-             </fieldset>
+            </fieldset>
        
-             <fieldset>                  
-                 <section>
-                     <label class="label" >Enter Your Description<span style="display: inline-block;color: #fff" class="pull-right  rounded " ng-class= "{ 'badge badge-red' : basicGigForm.newGigDescription.$invalid}">*</span>
-                        </label> 
+            <fieldset>                  
+                <section data-toggle="popover" class="popover-dismiss" title="Be Bold & Descriptive!" data-content="Tell what you can offer <br> Feel free to add whatever you want to write.?">
+                    <label class="label" >Enter Your Description<span style="display: inline-block;color: #fff" class="pull-right  rounded " ng-class= "{ 'badge badge-red' : basicGigForm.newGigDescription.$invalid}">*</span>
+                    </label> 
 
-                     <div  name="newGigDescription" text-angular text-angular-name="Your Service Description" ng-model="newGig.description" required></div>
-                     <div class="note"><strong>Note:</strong> Feel Free to Add HTML Tags</div>
-                     <span class="note" ng-show="basicGigForm.newGigDescription.$pristine || basicGigForm.newGigDescription.$error.required">Description is Required </span>
-                 </section>
+                    <div  name="newGigDescription" text-angular text-angular-name="Your Service Description" ng-model="newGig.description" required ng-minlength=100></div>
+                    <div class="note"><strong>Note:</strong> Feel Free to Add HTML Tags</div>
+                    <span class="note" ng-show="basicGigForm.newGigDescription.$pristine || basicGigForm.newGigDescription.$error.required">Description is Required </span>
+                    <span class="note" ng-show="basicGigForm.newGigDescription.$pristine || basicGigForm.newGigDescription.$error.minlength">Enter at-least 100 characters |  </span>
+                </section>
 
-             </fieldset>
+            </fieldset>
      
-             <footer>
-                 <button type="submit" class="btn-u">Submit</button>
-                 <button type="button" class="btn-u btn-u-default" onclick="window.history.back();">Back</button>
-             </footer>
-         </form>
-         <!-- General Unify Forms -->
+            <footer>
+                <input type="button" class="btn btn-default pull-left"  value="Reset" ng-click="reset()"/>
+                <input type="button" class="btn btn-default pull-left"  value="Gig Set" ng-click="setGigIdToTestUpload()"/>
+                <input type="button" class="btn btn-default pull-left"  value="Next"  wz-next/>
+                <input type="submit" class="btn btn-primary pull-right" value="Save & Continue"  ng-disabled="basicGigForm.$invalid" ng-click="saveGigInfo()"/>
 
-         <div class="margin-bottom-60"></div>
+            </footer>
+        </form>
+        <!-- General Unify Forms -->
 
-     </div>
-        <!-- End Content -->
+        <div class="margin-bottom-60"></div>
+
+    </div>
+    <!-- End Content -->
         
-        <!-- Begin Sidebar Menu -->
-        <div class="col-md-2">
+    <!-- Begin Sidebar Menu -->
+    <div class="col-md-2">
                 
-        </div>
-     <!-- End Sidebar Menu -->
+    </div>
+    <!-- End Sidebar Menu -->
      
-      <script type="text/javascript">
-          jQuery(document).ready(function () {
-              $('.popover-dismiss').popover({
-                  trigger: 'focus', // use 'hover' to dismiss as you hover
-                  placement: 'right',
-                  html: true,
-                  viewport: '#viewport',
-                  template: '<div class="popover" style="width:300px" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content" width="300px"></div></div>'
-              });
-          });
-        </script>
- </div>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            $('.popover-dismiss').popover({
+                trigger: 'focus', // use 'hover' to dismiss as you hover
+                placement: 'right',
+                html: true,
+                viewport: '#viewport',
+                template: '<div class="popover" style="width:300px" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content" width="300px"></div></div>'
+            });
+        });
+    </script>
+</div>
 
 
 

@@ -18,7 +18,7 @@ using Microsoft.AspNet.Identity;
 
 namespace Fiveplus.Kicker.Api
 {
-    [System.Web.Http.RoutePrefix("api/Initializer")]
+    [System.Web.Http.RoutePrefix("api/Init")]
     public class InitializerController : ApiController
     {
 

@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiveplus.Kicker", "Fiveplus
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiveplus.Tests", "Fiveplus.Tests\Fiveplus.Tests.csproj", "{089D6C22-AC6C-43BD-BDCA-6A1AE13C8476}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiveplus.Storage", "Fiveplus.Storage\Fiveplus.Storage.csproj", "{3B23426C-D59C-45DD-9F30-FF378B751AE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiveplus.Workbench", "Fiveplus.Workbench\Fiveplus.Workbench.csproj", "{4AAA486C-5C3C-40AC-880D-C315774246A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,14 @@ Global
 		{089D6C22-AC6C-43BD-BDCA-6A1AE13C8476}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{089D6C22-AC6C-43BD-BDCA-6A1AE13C8476}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{089D6C22-AC6C-43BD-BDCA-6A1AE13C8476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B23426C-D59C-45DD-9F30-FF378B751AE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B23426C-D59C-45DD-9F30-FF378B751AE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B23426C-D59C-45DD-9F30-FF378B751AE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B23426C-D59C-45DD-9F30-FF378B751AE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AAA486C-5C3C-40AC-880D-C315774246A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AAA486C-5C3C-40AC-880D-C315774246A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AAA486C-5C3C-40AC-880D-C315774246A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AAA486C-5C3C-40AC-880D-C315774246A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

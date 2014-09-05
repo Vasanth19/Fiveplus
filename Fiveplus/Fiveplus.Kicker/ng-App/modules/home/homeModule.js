@@ -1,7 +1,7 @@
 ﻿/// <reference path="../data/Gigs.js" />
 //1. Make controllers a object instrad of function for minimizing to work. Refer Shawn wildermuth Course 8.11 minification.
 
-var homeIndexModule = angular.module("homeModule", ["ngRoute", "myDataService", "myDirectives","myFilters"]);
+var homeIndexModule = angular.module("homeModule", ["ngRoute", "ngSanitize", "myDataService", "myDirectives", "myFilters"]);
 
 
 homeIndexModule.config(function($routeProvider) {

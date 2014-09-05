@@ -10,7 +10,7 @@ namespace Fiveplus.Data.Interfaces
     public interface IUnitOfWork<TContext>: IDisposable where TContext :DbContext
     {
         int Save();
-        Task SaveAsync();
+        Task<int> SaveAsync();
         TContext Context { get; }
     }
 }

@@ -24,6 +24,10 @@ namespace Fiveplus.Data.DbContexts
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+
+            modelBuilder.Configurations.Add(new CategoryConfiguration());
+            modelBuilder.Configurations.Add(new GigConfiguration());
+            modelBuilder.Configurations.Add(new MediaConfiguration());
             
             modelBuilder.Configurations.Add(new IdentityUserConfiguration());
             modelBuilder.Configurations.Add(new UserInboxConfiguration());

@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model Fiveplus.Kicker.Models.LoginViewModel
+<!DOCTYPE html>
 <html ng-app="@ViewBag.InitModule">
 <head>
     <meta charset="utf-8" />
@@ -14,242 +15,303 @@
 
     <link href="~/Content/kicker.css" rel="stylesheet" />
     <link href="~/Content/less/navigation.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/assets/css/page_log_reg_v2.css">
+
+
+        <!-- Google Fonts -->
+        <link href="http://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,400,700" rel="stylesheet" type="text/css">
 
     @RenderSection("styles", required: false)
 
 </head>
-<body>
-    <div class="wrapper">
-        <!-- Topbar -->
-        <div class="top-header">
+    <body>
+      
+        <div class="navbar navbar-fixed-top navbar-light">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h3 style="float: left;color: #fff" class="margin-t-15">fiveplus</h3>
-                        <nav class="top-header-menu padding-y-10" style="height: 41px!important">
-                            <ul class="menu">
-                                <li> @Html.Partial("_LoginPartial")</li>
-                                <li class="shopping-cart dropdown animate-hover" data-animate="animated fadeInUp">
-                                    <a href="shop-cart.html" title="View your shopping cart" style="padding-right:0;"><i class="fa fa-shopping-cart"></i><span class="amount">£0</span></a>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                        <span class="sr-only">Menu</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="/" class="navbar-brand">
+                        <img src="/assets/landing/img/loop-logo.png" alt="Loop Logo">
+                        <h1 class="hide">FivePlus</h1>
+                    </a>
+                </div>
+                <nav class="navbar-collapse collapse" id="main-nav" role="navigation">
+                    <ul class="nav navbar-nav navbar-right menu">
+                        <li class="active"><a href="#top">HOME</a></li>
+                        <li class=""><a href="#about">ABOUT US</a></li>
+                        <li class=""><a href="#services">SERVICES</a></li>
+                        <li> @Html.Partial("_LoginPartial")</li>
+                        @if (Request.IsAuthenticated)
+                        {
+                            <li class="shopping-cart dropdown animate-hover" data-animate="animated fadeInDown">
+                                <a href="shop-cart.html" title="View your shopping cart" style="padding-right: 0;"><i class="fa fa-cogs"></i><span class="amount"> Manage</span></a>
 
-                                    <ul class="sub-menu animate-wr animated fadeInUp">
-                                        <li>
-                                            <div class="dropdown-cart">
-                                                <span class="cart-items">You have <strong>3</strong> items in your cart</span>
-                                                <table class="table table-cart">
-                                                    <tbody>
-                                                        <tr>
-                                                            <th colspan="2">Product</th>
-                                                            <th class="text-center">Qty</th>
-                                                            <th>Total</th>
-                                                        </tr>
+                                <ul class="sub-menu animate-wr animated fadeInDown">
+                                    <li><a href="/gig/#/create"><span class="language">Create a Gig</span></a></li>
+                                    <li><a href="#"><span class="language">My Collections</span></a></li>
+                                    <li><a href="#"><span class="language">My Sales</span></a></li>   
+                                </ul>
+                            </li>
+                        }
+                    </ul>
+                </nav>
+            </div>
+        </div>
 
-                                                        <tr>
-                                                            <td><img src="images/prv/product-3.png" class="img-center" alt=""></td>
-                                                            <td><a href="">Asus Ultra Notebook</a></td>
-                                                            <td class="text-center">2</td>
-                                                            <td>$600.99</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><img src="images/prv/product-2.png" class="img-center" alt=""></td>
-                                                            <td><a href="">Mouse Microsoft</a></td>
-                                                            <td class="text-center">3</td>
-                                                            <td>$600.99</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td><img src="images/prv/product-4.png" class="img-center" alt=""></td>
-                                                            <td><a href="">Samsung Galaxy S4</a></td>
-                                                            <td class="text-center">1</td>
-                                                            <td>$600.99</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <a href="shop-cart.html" class="btn btn-xs btn-three">Edit cart</a>
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = "/Gig/#/create" }, FormMethod.Post, new { @class = "form-horizontal", role = "form" })) {
+                        <div class="modal-header" style="text-align: center;">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Login to your account</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form id="loginForm" class="reg-page">
 
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <a href="#" class="btn btn-xs btn-two pull-right">Proceed to checkout</a>
-                                                        <span class="clearfix"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </nav>
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                <div class="input-group margin-bottom-20">
+                                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder="Email", @type="text"})
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    
+                                </div>
+                                <div class="input-group margin-bottom-20">
+                                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control",@placeholder="Password" })
+                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                   
+                                </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                             <label class="checkbox md-margin-bottom-10">
+                                    @Html.CheckBoxFor(m => m.RememberMe)
+                                    <p>Always stay signed in</p>
+                                </label>                        
+                        </div>
+                        <div class="col-md-6">
+                              <button type="submit" class="btn btn-primary pull-right">Log In</button>     
+                            <button type="button" class="btn btn-default pull-right margin-right-5" data-dismiss="modal">Close</button>
+                                       
+                        </div>
                     </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                             <h4 class="pull-left">
+                                    New user? <a href data-toggle="modal" data-target="#loginModal" class="btn btn-success">Sign Up</a>
+                              </h4>
+                            <h4>Forgot your Password ?</h4>
+                            <p>no worries, <a class="color-green" href="#">click here</a> to reset your password.</p>
+                        </div>
+                        
+                    }
                 </div>
             </div>
         </div>
 
-        <!-- End Topbar -->
-        @* Body Starts here *@
-        @RenderBody()
-        <!--=== Footer Version 3 ===-->
-        <div class="footer-v3">
-            <div class="footer">
+
+        <div class="wrapper">
+            <!-- Topbar -->
+            <div class="top-header" style="display: none">
                 <div class="container">
                     <div class="row">
-                        <!-- About -->
-                        <div class="col-md-3 md-margin-bottom-40">
-                            <a href="index.html"><img class="footer-logo" src="assets/img/logo2-default.png" alt=""></a>
-                            <p>Sell for Five, Buy for Five..Give an High Five!</p>
-                            <a href="#" class="btn btn-two">Try it now!</a>
-                        </div><!--/col-md-3-->
-                        <!-- End About -->
+                        <div class="col-sm-12">
+                            <h3 style="float: left;color: #fff" class="margin-t-15">fiveplus</h3>
+                            <nav class="top-header-menu padding-y-10" style="height: 41px!important">
+                                <ul class="menu">
+                                    @if (Request.IsAuthenticated)
+                                    {
+                                        <li class="shopping-cart dropdown animate-hover" data-animate="animated fadeInDown">
+                                            <a href="shop-cart.html" title="View your shopping cart" style="padding-right: 0;"><i class="fa fa-cogs"></i><span class="amount"> Manage</span></a>
 
-                        <div class="col-md-3 md-margin-bottom-40">
-                            <div class="thumb-headline"><h2>About Unify</h2></div>
-                            <ul class="list-unstyled simple-list margin-bottom-20">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Forum</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">Community</a></li>
-                                <li><a href="#">Stories</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                            </ul>
-
-                            <div class="thumb-headline"><h2>Help &amp; Information Center</h2></div>
-                            <ul class="list-unstyled simple-list">
-                                <li><a href="#">Help</a></li>
-                                <li><a href="#">Customer Service</a></li>
-                                <li><a href="#">New on Unify</a></li>
-                                <li><a href="#">Tour the New Journey</a></li>
-                                <li><a href="#">Registration Requirements</a></li>
-                            </ul>
-                        </div><!--/col-md-3-->
-
-                        <div class="col-md-3">
-                            <div class="thumb-headline"><h2>Topics</h2></div>
-                            <ul class="list-unstyled simple-list margin-bottom-20">
-                                <li><a href="#">Bootstrap</a></li>
-                                <li><a href="#">Font Awesome</a></li>
-                                <li><a href="#">WordPress</a></li>
-                                <li><a href="#">Favicon</a></li>
-                                <li><a href="#">Javascript</a></li>
-                                <li><a href="#">iOS</a></li>
-                            </ul>
-
-                            <div class="thumb-headline"><h2>Tools &amp; Formats</h2></div>
-                            <ul class="list-unstyled simple-list">
-                                <li><a href="#">Today's Paper</a></li>
-                                <li><a href="#">Journal Community</a></li>
-                                <li><a href="#">Video Canter</a></li>
-                            </ul>
-
-                            <div class="thumb-headline"><h2>Archives</h2></div>
-                            <ul class="list-unstyled simple-list">
-                                <li><a href="#">February 2014</a></li>
-                                <li><a href="#">August 2013</a></li>
-                                <li><a href="#">December 2013r</a></li>
-                            </ul>
-                        </div><!--/col-md-3-->
-
-                        <div class="col-md-3">
-                            <div class="thumb-headline"><h2>Developers</h2></div>
-                            <ul class="list-unstyled simple-list margin-bottom-20">
-                                <li><a href="#">Web Development</a></li>
-                                <li><a href="#">Web Design</a></li>
-                                <li><a href="#">Android Development</a></li>
-                                <li><a href="#">PHP Development</a></li>
-                                <li><a href="#">Programmer</a></li>
-                                <li><a href="#">Start-up</a></li>
-                            </ul>
-
-                            <div class="thumb-headline"><h2>Digital Network</h2></div>
-                            <ul class="list-unstyled simple-list">
-                                <li><a href="#">Wrapbootstrap.com</a></li>
-                                <li><a href="#">Bootstrap.com</a></li>
-                                <li><a href="#">Fortawesome.com</a></li>
-                                <li><a href="#">Jquery.com</a></li>
-                                <li><a href="#">Wordpress.com</a></li>
-                                <li><a href="#">Unslpash.com</a></li>
-                                <li><a href="#">Github.com</a></li>
-                            </ul>
-                        </div><!--/col-md-3-->
+                                            <ul class="sub-menu animate-wr animated fadeInDown">
+                                                <li><a href="/gig/#/create"><span class="language">Create a Gig</span></a></li>
+                                                <li><a href="#"><span class="language">My Collections</span></a></li>
+                                                <li><a href="#"><span class="language">My Sales</span></a></li>   
+                                            </ul>
+                                        </li>
+                                    }
+                                    <li> @Html.Partial("_LoginPartial")</li>
+                               
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
-            </div><!--/footer-->
+            </div>
 
-            <div class="copyright">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p>
-                                2014 © Hyphen Labs LLC. All rights reserverd.
-                                <a target="_blank" href="https://twitter.com/hyphenlabs">HyphenLabs</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-                            </p>
+            <!-- End Topbar -->
+            @* Body Starts here *@
+            @RenderBody()
+            <!--=== Footer Version 3 ===-->
+            <div class="footer-v3">
+                <div class="footer">
+                    <div class="container">
+                        <div class="row">
+                            <!-- About -->
+                            <div class="col-md-3 md-margin-bottom-40">
+                                <a href="index.html"><img class="footer-logo" src="assets/img/logo2-default.png" alt=""></a>
+                                <p>Sell for Five, Buy for Five..Give an High Five!</p>
+                                <a href="#" class="btn btn-two">Try it now!</a>
+                            </div><!--/col-md-3-->
+                            <!-- End About -->
+
+                            <div class="col-md-3 md-margin-bottom-40">
+                                <div class="thumb-headline"><h2>About Unify</h2></div>
+                                <ul class="list-unstyled simple-list margin-bottom-20">
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Forum</a></li>
+                                    <li><a href="#">Careers</a></li>
+                                    <li><a href="#">Community</a></li>
+                                    <li><a href="#">Stories</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                </ul>
+
+                                <div class="thumb-headline"><h2>Help &amp; Information Center</h2></div>
+                                <ul class="list-unstyled simple-list">
+                                    <li><a href="#">Help</a></li>
+                                    <li><a href="#">Customer Service</a></li>
+                                    <li><a href="#">New on Unify</a></li>
+                                    <li><a href="#">Tour the New Journey</a></li>
+                                    <li><a href="#">Registration Requirements</a></li>
+                                </ul>
+                            </div><!--/col-md-3-->
+
+                            <div class="col-md-3">
+                                <div class="thumb-headline"><h2>Topics</h2></div>
+                                <ul class="list-unstyled simple-list margin-bottom-20">
+                                    <li><a href="#">Bootstrap</a></li>
+                                    <li><a href="#">Font Awesome</a></li>
+                                    <li><a href="#">WordPress</a></li>
+                                    <li><a href="#">Favicon</a></li>
+                                    <li><a href="#">Javascript</a></li>
+                                    <li><a href="#">iOS</a></li>
+                                </ul>
+
+                                <div class="thumb-headline"><h2>Tools &amp; Formats</h2></div>
+                                <ul class="list-unstyled simple-list">
+                                    <li><a href="#">Today's Paper</a></li>
+                                    <li><a href="#">Journal Community</a></li>
+                                    <li><a href="#">Video Canter</a></li>
+                                </ul>
+
+                                <div class="thumb-headline"><h2>Archives</h2></div>
+                                <ul class="list-unstyled simple-list">
+                                    <li><a href="#">February 2014</a></li>
+                                    <li><a href="#">August 2013</a></li>
+                                    <li><a href="#">December 2013r</a></li>
+                                </ul>
+                            </div><!--/col-md-3-->
+
+                            <div class="col-md-3">
+                                <div class="thumb-headline"><h2>Developers</h2></div>
+                                <ul class="list-unstyled simple-list margin-bottom-20">
+                                    <li><a href="#">Web Development</a></li>
+                                    <li><a href="#">Web Design</a></li>
+                                    <li><a href="#">Android Development</a></li>
+                                    <li><a href="#">PHP Development</a></li>
+                                    <li><a href="#">Programmer</a></li>
+                                    <li><a href="#">Start-up</a></li>
+                                </ul>
+
+                                <div class="thumb-headline"><h2>Digital Network</h2></div>
+                                <ul class="list-unstyled simple-list">
+                                    <li><a href="#">Wrapbootstrap.com</a></li>
+                                    <li><a href="#">Bootstrap.com</a></li>
+                                    <li><a href="#">Fortawesome.com</a></li>
+                                    <li><a href="#">Jquery.com</a></li>
+                                    <li><a href="#">Wordpress.com</a></li>
+                                    <li><a href="#">Unslpash.com</a></li>
+                                    <li><a href="#">Github.com</a></li>
+                                </ul>
+                            </div><!--/col-md-3-->
                         </div>
-                        <!-- Social Links -->
-                        <div class="col-md-6">
-                            <ul class="social-icons pull-right">
-                                <li><a href="#" data-original-title="Facebook" class="rounded-x social_facebook"></a></li>
-                                <li><a href="#" data-original-title="Twitter" class="rounded-x social_twitter"></a></li>
-                                <li><a href="#" data-original-title="Goole Plus" class="rounded-x social_googleplus"></a></li>
-                                <li><a href="#" data-original-title="Linkedin" class="rounded-x social_linkedin"></a></li>
-                                <li><a href="#" data-original-title="Pinterest" class="rounded-x social_pintrest"></a></li>
-                            </ul>
-                        </div>
-                        <!-- End Social Links -->
                     </div>
-                </div>
-            </div><!--/copyright-->
-            <!--=== End Footer Version 3 ===-->
+                </div><!--/footer-->
+
+                <div class="copyright">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>
+                                    2014 © Hyphen Labs LLC. All rights reserverd.
+                                    <a target="_blank" href="https://twitter.com/hyphenlabs">HyphenLabs</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                                </p>
+                            </div>
+                            <!-- Social Links -->
+                            <div class="col-md-6">
+                                <ul class="social-icons pull-right">
+                                    <li><a href="#" data-original-title="Facebook" class="rounded-x social_facebook"></a></li>
+                                    <li><a href="#" data-original-title="Twitter" class="rounded-x social_twitter"></a></li>
+                                    <li><a href="#" data-original-title="Goole Plus" class="rounded-x social_googleplus"></a></li>
+                                    <li><a href="#" data-original-title="Linkedin" class="rounded-x social_linkedin"></a></li>
+                                    <li><a href="#" data-original-title="Pinterest" class="rounded-x social_pintrest"></a></li>
+                                </ul>
+                            </div>
+                            <!-- End Social Links -->
+                        </div>
+                    </div>
+                </div><!--/copyright-->
+                <!--=== End Footer Version 3 ===-->
+            </div>
+
+            <!--/End Wrapepr-->
+
+
         </div>
 
-        <!--/End Wrapepr-->
 
+        <!-- JS Global Compulsory -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="~/assets/plugins/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="~/assets/plugins/jquery-migrate-1.2.1.min.js"></script>
 
-    </div>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
+        <!-- JS Implementing Plugins -->
+        <script type="text/javascript" src="~/assets/plugins/jquery.parallax.js"></script>
+        <script type="text/javascript" src="~/assets/plugins/image-hover/js/modernizr.js"></script>
+        <script type="text/javascript" src="~/assets/plugins/image-hover/js/touch.js"></script>
 
+        <!-- JS Page Level -->
+        <script type="text/javascript" src="~/assets/js/app.js"></script>
+        <script type="text/javascript">
+            jQuery(document).ready(function () {
+                App.init();
+                App.initParallaxBg();
+            });
+        </script>
+        <!--[if lt IE 9]>
+            <script src="assets/plugins/respond.js"></script>
+        <![endif]-->
+        @RenderSection("scripts", required: false)
 
+        <script src="~/Scripts/jquery.ui.totop.js"></script>
+        <script src="~/Scripts/jquery.sticky.js"></script>
+        <script src="~/Scripts/custom/fiveplus.custom.js"></script>
 
-    <!-- JS Global Compulsory -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="~/assets/plugins/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="~/assets/plugins/jquery-migrate-1.2.1.min.js"></script>
+        @* Angular Scripts *@
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://code.angularjs.org/1.2.9/angular.js"></script>
+        <script type="text/javascript" src="https://code.angularjs.org/1.2.9/angular-route.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-sanitize.js"></script>
 
-    <!-- JS Implementing Plugins -->
-    <script type="text/javascript" src="~/assets/plugins/jquery.parallax.js"></script>
-    <script type="text/javascript" src="~/assets/plugins/image-hover/js/modernizr.js"></script>
-    <script type="text/javascript" src="~/assets/plugins/image-hover/js/touch.js"></script>
+        <script src="~/ng-App/directives/directives.js"></script>
+        <script src="~/ng-App/data/dataServices.js"></script>
+        <script src="~/ng-App/filters/filters.js"></script>
 
-    <!-- JS Page Level -->
-    <script type="text/javascript" src="~/assets/js/app.js"></script>
-    <script type="text/javascript">
-        jQuery(document).ready(function () {
-            App.init();
-            App.initParallaxBg();
-        });
-    </script>
-    <!--[if lt IE 9]>
-        <script src="assets/plugins/respond.js"></script>
-    <![endif]-->
-    @RenderSection("scripts", required: false)
+        @RenderSection("ngscripts", required: false)
 
-    <script src="~/Scripts/jquery.ui.totop.js"></script>
-    <script src="~/Scripts/jquery.sticky.js"></script>
-    <script src="~/Scripts/custom/fiveplus.custom.js"></script>
-
-    @* Angular Scripts *@
-
-    <script type="text/javascript" src="https://code.angularjs.org/1.2.9/angular.js"></script>
-    <script type="text/javascript" src="https://code.angularjs.org/1.2.9/angular-route.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-sanitize.js"></script>
-
-    <script src="~/ng-App/directives/directives.js"></script>
-    <script src="~/ng-App/data/dataServices.js"></script>
-    <script src="~/ng-App/filters/filters.js"></script>
-
-    @RenderSection("ngscripts", required: false)
-
-    <a href="#" id="toTop" style="display: inline;"><span id="toTopHover" style="opacity: 0;"></span>To Top</a>
-</body>
+        <a href="#" id="toTop" style="display: inline;"><span id="toTopHover" style="opacity: 0;"></span>To Top</a>
+    </body>
 
 </html>

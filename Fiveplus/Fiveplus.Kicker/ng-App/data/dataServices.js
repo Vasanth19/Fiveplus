@@ -115,7 +115,7 @@ dataServiceModule.factory("dataService", function ($http, $q) {
 
         var deferred = $q.defer();
 
-        $http.get("http://localhost:12000/data/categories")
+        $http.get("/api/init/categories")
             .then(function (result) {
                 //Success
                 angular.copy(result.data, _categories);
