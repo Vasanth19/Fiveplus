@@ -20,7 +20,10 @@ namespace Fiveplus.Data.Models
             // Add custom user claims here
             return userIdentity;
         }
+
         public UserDetail User { get; set; }
+        public string Country { get; set; }
+        public string State { get; set; }
 
     }
 

@@ -253,10 +253,68 @@
     <Content Include="assets\css\themes\dark-blue.css" />
     <Content Include="assets\css\themes\default.css" />
     <Content Include="assets\css\themes\light.css" />
+    <Content Include="assets\img\bg\7.jpg" />
+    <Content Include="assets\img\clients2\ea-canada.png" />
+    <Content Include="assets\img\icons\social\facebook.png" />
+    <Content Include="assets\img\icons\social\googleplus.png" />
+    <Content Include="assets\img\icons\social\linkedin.png" />
+    <Content Include="assets\img\icons\social\pintrest.png" />
+    <Content Include="assets\img\icons\social\twitter.png" />
+    <Content Include="assets\img\job\1.jpg" />
+    <Content Include="assets\img\job\high-rated-job-1.1.jpg" />
+    <Content Include="assets\img\job\high-rated-job-1.2.jpg" />
+    <Content Include="assets\img\job\high-rated-job-1.3.jpg" />
+    <Content Include="assets\img\job\high-rated-job-2.1.jpg" />
+    <Content Include="assets\img\job\high-rated-job-2.2.jpg" />
+    <Content Include="assets\img\job\high-rated-job-2.3.jpg" />
+    <Content Include="assets\img\job\high-rated-job-3.1.jpg" />
+    <Content Include="assets\img\job\high-rated-job-3.2.jpg" />
+    <Content Include="assets\img\job\high-rated-job-3.3.jpg" />
+    <Content Include="assets\img\job\high-rated-job-4.1.jpg" />
+    <Content Include="assets\img\job\high-rated-job-4.2 -high-rated-job-4.2 - Copy high-rated-job-4.2 - CopyCopy.jpg" />
+    <Content Include="assets\img\job\high-rated-job-4.2.jpg" />
+    <Content Include="assets\img\job\high-rated-job-4.3.jpg" />
+    <Content Include="assets\img\team\1.jpg" />
+    <Content Include="assets\img\team\2.jpg" />
+    <Content Include="assets\img\team\3.jpg" />
+    <Content Include="assets\img\team\4.jpg" />
+    <Content Include="assets\img\team\faces.jpg" />
     <Content Include="assets\js\app.js" />
+    <Content Include="assets\landing\css\bootstrap.css" />
+    <Content Include="assets\landing\css\custom.css">
+      <DependentUpon>custom.less</DependentUpon>
+    </Content>
+    <Content Include="assets\landing\css\custom.min.css">
+      <DependentUpon>custom.css</DependentUpon>
+    </Content>
+    <Content Include="assets\landing\css\main.css" />
+    <Content Include="assets\landing\fonts\brankic.svg" />
+    <Content Include="assets\landing\img\about-img.png" />
+    <Content Include="assets\landing\img\cb_scout2.png" />
+    <Content Include="assets\landing\img\google_white2.png" />
+    <Content Include="assets\landing\img\loop-logo.png" />
+    <Content Include="assets\landing\img\mapcnt3.png" />
+    <Content Include="assets\landing\img\person1.png" />
+    <Content Include="assets\landing\img\person2.png" />
+    <Content Include="assets\landing\img\person3.png" />
+    <Content Include="assets\landing\img\person4.png" />
+    <Content Include="assets\landing\img\sky.jpg" />
+    <Content Include="assets\landing\img\sliders\slider3.png" />
+    <Content Include="assets\landing\img\sliders\slider1.jpg" />
+    <Content Include="assets\landing\img\sliders\slider2.jpg" />
+    <Content Include="assets\landing\img\sliders\slider3.jpg" />
+    <Content Include="assets\landing\img\work1.jpg" />
+    <Content Include="assets\landing\img\work2.jpg" />
+    <Content Include="assets\landing\img\work3.jpg" />
+    <Content Include="assets\landing\img\work4.jpg" />
+    <Content Include="assets\landing\img\work5.jpg" />
+    <Content Include="assets\landing\img\work6.jpg" />
+    <Content Include="assets\landing\img\work7.jpg" />
+    <Content Include="assets\landing\img\work8.jpg" />
     <Content Include="assets\landing\js\bootstrap.min.js" />
     <Content Include="assets\landing\js\google-map.js" />
     <Content Include="assets\landing\js\imagesloaded.pkgd.js" />
+    <Content Include="assets\landing\js\jpreloader.js" />
     <Content Include="assets\landing\js\jpreloader.min.js" />
     <Content Include="assets\landing\js\jquery-2.1.0.min.js" />
     <Content Include="assets\landing\js\jquery.easing.min.js" />
@@ -266,8 +324,11 @@
     <Content Include="assets\landing\js\jquery.magnific-popup.min.js" />
     <Content Include="assets\landing\js\jquery.parallax-1.1.3.js" />
     <Content Include="assets\landing\js\jquery.scrollTo-1.4.3.1-min.js" />
+    <Content Include="assets\landing\js\loop.js" />
     <Content Include="assets\landing\js\loop.min.js" />
     <Content Include="assets\landing\js\main.js" />
+    <Content Include="assets\landing\js\supersized.3.2.7.min.js" />
+    <Content Include="assets\landing\js\supersized.shutter.min.js" />
     <Content Include="assets\landing\js\twitter-fetcher.js" />
     <Content Include="assets\landing\js\wow.js" />
     <Content Include="assets\plugins\image-hover\css\img-hover.css" />
@@ -335,6 +396,11 @@
     <Content Include="assets\plugins\line-icons\fonts\Simple-Line-Icons.eot" />
     <Content Include="assets\plugins\line-icons\fonts\Simple-Line-Icons.ttf" />
     <Content Include="assets\plugins\line-icons\fonts\Simple-Line-Icons.woff" />
+    <Content Include="assets\landing\css\custom.less" />
+    <Content Include="assets\landing\js\loop.min.js.map">
+      <DependentUpon>loop.min.js</DependentUpon>
+    </Content>
+    <Content Include="assets\landing\fonts\brankic.ttf" />
     <None Include="Properties\PublishProfiles\fiveplus - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\fiveplus - Web Deploy.pubxml" />
     <Content Include="ng-App\js_delete\gig-index.js" />
@@ -408,7 +474,6 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial_2.cshtml" />
     <Content Include="Views\Home\Gig.cshtml" />
     <Content Include="Views\Gig\Index.cshtml" />
     <Content Include="Views\UsersAdmin\Index.cshtml" />
@@ -445,6 +510,8 @@
     <Content Include="Views\Home\Index_4.cshtml" />
     <Content Include="Views\Shared\_Layout_Landing.cshtml" />
     <Content Include="Views\Home\Landing.cshtml" />
+    <Content Include="Views\Account\_LoginModal.cshtml" />
+    <Content Include="Views\Account\_RegisterModal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

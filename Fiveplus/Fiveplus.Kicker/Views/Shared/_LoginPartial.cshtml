@@ -7,29 +7,33 @@
     {
     @Html.AntiForgeryToken()
     }
-    <li class="dropdown animate-hover" data-animate="animated fadeInDown">@Html.ActionLink("Hello " + User.Identity.GetUserName() , "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
+    <li class="dropdown animate-hover" data-animate="animated fadeInDown">@Html.ActionLink("Hello " + User.Identity.GetUserName().ToUpper() , "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
         <ul class="sub-menu animate-wr animated fadeInDown">
             <li><a href="#"><span class="language">Settings</span></a></li>
             <li><a href="#"><span class="language">Profile</span></a></li>
             @if (Request.IsAuthenticated && User.IsInRole("Administrator")) {
-            <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
-            <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
-            <li><a href="javascript:document.getElementById('logoutForm').submit()"><span class="fa fa-sign-in"></span>Log Out</a></li>
+                <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
+                <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
+                <li><a id="logOut" href="javascript:document.getElementById('logoutForm').submit();" ><span class="fa fa-sign-in"></span>Log Out</a></li>
             }
         </ul>
     </li>
 
-
+ 
 }
 else
 {
-<li><a href data-toggle="modal" data-target="#loginModal">LOGIN</a></li>
-<li><a href data-toggle="modal" data-target="#loginModal">REGISTER</a></li>
+    <li><a href="/Account/Login">LOGIN</a></li>
+    <li><a href="/Account/Register" >REGISTER</a></li>
+   
 
 @*
 <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
 <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
 *@
 
+
+
+    
 }
 

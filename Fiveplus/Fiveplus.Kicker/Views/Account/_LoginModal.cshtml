@@ -1,0 +1,57 @@
+﻿@using Microsoft.AspNet.Identity
+@model Fiveplus.Kicker.Models.LoginViewModel
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 400px">
+        <div class="modal-content">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = "/Home" }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                <div class="modal-header margin-bottom-20">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+                </div>
+                <div class="modal-body">
+                    <section id="loginForm">
+
+                        @Html.AntiForgeryToken()
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <div class="input-group margin-bottom-20">
+                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Email", @type = "text" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+
+                        </div>
+                        <div class="input-group margin-bottom-20">
+                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        <div class="checkbox">
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                            <p>Always stay signed in</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <button type="submit" class="btn btn-success btn-block">Log In</button>
+                            </div>
+                        </div>
+
+
+                    </section>
+                </div>
+                <div class="modal-footer">
+                    <p>
+                        @Html.ActionLink("Register a new user?", "Register")
+                    </p>
+                    <p>
+                        @Html.ActionLink("Forget your password?", "ForgotPassword")
+                    </p>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -56,7 +56,8 @@ namespace Fiveplus.Kicker.Controllers
         // GET: /Roles/
         public ActionResult Index()
         {
-            return View(RoleManager.Roles);
+            IEnumerable<IdentityRole> listRoles = RoleManager.Roles;
+            return View(listRoles);
         }
 
         //

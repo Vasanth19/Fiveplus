@@ -138,6 +138,7 @@ namespace Fiveplus.Kicker.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            ViewBag.Errors = false;
             return View();
         }
 
@@ -150,7 +151,7 @@ namespace Fiveplus.Kicker.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, Country = model.Country, State = model.State};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -158,11 +159,12 @@ namespace Fiveplus.Kicker.Controllers
                     var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>");
                     ViewBag.Link = callbackUrl;
+                    ViewBag.Errors = false;
                     return View("DisplayEmail");
                 }
                 AddErrors(result);
             }
-
+            ViewBag.Errors = true;
             // If we got this far, something failed, redisplay form
             return View(model);
         }
@@ -386,7 +388,7 @@ namespace Fiveplus.Kicker.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Landing", "Home");
         }
 
         //

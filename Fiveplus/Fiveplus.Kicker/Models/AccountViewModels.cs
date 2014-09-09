@@ -62,6 +62,10 @@ namespace Fiveplus.Kicker.Models
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "UserName")]
+        public string UserName { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -76,6 +80,20 @@ namespace Fiveplus.Kicker.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [DataType(DataType.Text)]
+        [Display(Name = "Country")]
+        [Required]
+        public string Country { get; set; }
+
+        [DataType(DataType.Text)]
+        [Display(Name = "State")]
+        [Required]
+        public string State { get; set; }
+
+        [Display(Name = "Terms & Conditions")]
+        [Required]
+        public bool TermsConditions { get; set; }
     }
 
     public class ResetPasswordViewModel

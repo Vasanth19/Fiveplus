@@ -3,6 +3,7 @@ using Fiveplus.Data;
 using Fiveplus.Data.DbContexts;
 using Fiveplus.Data.Repo;
 using Fiveplus.Data.Uow;
+using Fiveplus.Kicker.Models;
 using WebApiContrib.IoC.Ninject;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Fiveplus.Kicker.App_Start.NinjectWebCommon), "Start")]
@@ -80,7 +81,10 @@ namespace Fiveplus.Kicker.App_Start
             kernel.Bind<ICategoryRepositoryAsync>().To<CategoryRepositoryAsync>().InRequestScope();
 
             kernel.Bind<FiveplusContext>().To<FiveplusContext>().InRequestScope();
-            
+
+             //kernel.Bind<ApplicationUserManager>().To<ApplicationUserManager>().InRequestScope();
+             //kernel.Bind<ApplicationRoleManager>().To<ApplicationRoleManager>().InRequestScope();
+             
         }        
     }
 }
