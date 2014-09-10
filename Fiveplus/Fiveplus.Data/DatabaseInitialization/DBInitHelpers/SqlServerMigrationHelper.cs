@@ -73,7 +73,8 @@ namespace Fiveplus.Data.DatabaseInitialization
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
             UserManager<ApplicationUser> userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
 
-            const string name = "admin@fiveplus.com";
+            const string name = "admin";
+            const string email = "admin@fiveplus.com";
             const string password = "Pass@word1";
             const string roleName = "Administrator";
 
@@ -86,7 +87,7 @@ namespace Fiveplus.Data.DatabaseInitialization
 
             var user = userManager.FindByName(name);
             if (user == null) {
-                user = new ApplicationUser { UserName = name, Email = name };
+                user = new ApplicationUser { UserName = name, Email = email };
                 var result = userManager.Create(user, password);
                 result = userManager.SetLockoutEnabled(user.Id, false);
             }
