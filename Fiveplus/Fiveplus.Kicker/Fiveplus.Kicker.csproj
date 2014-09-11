@@ -247,6 +247,8 @@
     <Content Include="assets\css\plugins.css" />
     <Content Include="assets\css\plugins\animate.css" />
     <Content Include="assets\css\plugins\box-shadows.css" />
+    <Content Include="assets\css\plugins\brand-buttons\brand-buttons-inversed.css" />
+    <Content Include="assets\css\plugins\brand-buttons\brand-buttons.css" />
     <Content Include="assets\css\plugins\custom-sky-forms.css" />
     <Content Include="assets\css\plugins\sky-forms.css" />
     <Content Include="assets\css\style.css" />
