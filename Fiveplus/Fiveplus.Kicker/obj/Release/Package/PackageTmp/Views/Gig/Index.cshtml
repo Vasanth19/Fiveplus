@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Gigs";
+    ViewBag.InitModule = "gigModule";
+}
+
+@section styles
+{
+    <style type="text/css">
+        .fancybox-margin {
+            margin-right: 17px;
+        }
+    </style>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.css" rel="stylesheet" />
+    <link href="~/ng-App/plugins/mgo-angular-wizard/angular-wizard.css" rel="stylesheet" />
+    <link href="~/Content/chosen/chosen.css" rel="stylesheet" />
+    <link href="~/assets/css/plugins/custom-sky-forms.css" rel="stylesheet" />
+}
+
+
+@section scripts
+{
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/chosen/1.1.0/chosen.jquery.min.js"></script>
+    <script src="~/ng-App/plugins/ng-flow-file-upload/flow.js"></script>
+
+   
+
+}
+
+@section ngscripts
+{
+    @* Angular Plugins  *@
+    
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
+    <script type="text/javascript" src="~/ng-App/plugins/mgo-angular-wizard/angular-wizard.js"></script>
+    <script type="text/javascript" src="~/ng-App/plugins/x-angular-limitTo.js"></script>
+
+    <script src="~/ng-App/plugins/ng-flow-file-upload/ng-flow.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.2/textAngular.min.js"></script>
+    <script src="~/ng-App/directives/chosen.js"></script>
+    <script src="~/ng-App/directives/uiField/uiField.js"></script>
+ 
+    <script src="~/ng-App/modules/gig/gigModule.js"></script>
+    <script src="~/ng-App/modules/gig/js/gigDataServices.js"></script>
+}
+
+<div ng-view></div>
+
+

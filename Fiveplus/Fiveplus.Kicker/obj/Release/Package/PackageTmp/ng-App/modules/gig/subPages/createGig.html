@@ -1,0 +1,47 @@
+﻿<!--http://mgonto.github.io/angular-wizard/-->
+<!-- http://plnkr.co/edit/c3fcV5RSUMXGIFpk8AbV?p=preview -->
+
+<div class="pg-opt pin">
+    <div class="container ">
+        <div class="row margin-top-60">
+            <div class="col-md-6">
+                <h2>Create A Gig</h2>
+            </div>
+            <div class="col-md-6">
+                <ol class="breadcrumb pull-right">
+                    <li><a href="/gig">Gig</a></li>
+                    <li class="active">Create</li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <wizard on-finish="finished()">
+            <wz-step title="Basic Information">
+                <h1></h1>
+                <div ng-include="'/ng-App/modules/gig/subpages/_createGig/step1.html'"></div>
+            </wz-step>
+            <wz-step title="Photos & Videos">
+                <div ng-include="'/ng-App/modules/gig/subpages/_createGig/step2.html'"></div>
+                <input type="button" wz-next="logStep()" value="Click here to continue" />
+            </wz-step>
+             <wz-step title="Payment Info">
+                <p>You're now in the second step of this wizard.</p>
+                <p>Magic things can happen here.</p>
+                <input type="button" wz-next="logStep()" value="Click here to continue" />
+            </wz-step>
+            <wz-step title="Publish">
+                <h1>Finish him</h1>
+                <p>Finally this ends!</p>
+                <input type="button" wz-next value="Click here to end" />
+                <input type="button" ng-click="goBack()" value="Click here to start again" />
+            </wz-step>
+        </wizard>
+    </div>
+
+</div>
+

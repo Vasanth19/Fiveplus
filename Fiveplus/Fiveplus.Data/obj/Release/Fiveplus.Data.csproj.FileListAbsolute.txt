@@ -1,0 +1,14 @@
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Data\bin\Release\Fiveplus.Data.dll.config
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Data\bin\Release\Fiveplus.Data.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Data\bin\Release\Fiveplus.Data.pdb
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Data\bin\Release\EntityFramework.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Data\bin\Release\EntityFramework.SqlServer.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Data\bin\Release\Microsoft.AspNet.Identity.Core.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Data\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Data\bin\Release\EntityFramework.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Data\bin\Release\EntityFramework.SqlServer.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Data\bin\Release\Microsoft.AspNet.Identity.Core.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Data\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Data\obj\Release\Fiveplus.Data.csprojResolveAssemblyReference.cache
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Data\obj\Release\Fiveplus.Data.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Data\obj\Release\Fiveplus.Data.pdb

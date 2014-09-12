@@ -1,0 +1,340 @@
+﻿@model Fiveplus.Kicker.Models.LoginViewModel
+<!DOCTYPE html>
+<html ng-app="@ViewBag.InitModule">
+	
+	<head>
+		<style type="text/css">.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px}</style>
+		<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+		
+	   
+		<meta charset="utf-8">
+		<title>FivePlus - A way to make $5 or more</title>	
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="description" content="A way to make $5 or more">
+		<meta name="author" content="Hyphenlabs">
+
+		<!-- Styles -->	
+		
+		<link rel="stylesheet" href="~/assets/css/page_log_reg_v2.css">
+
+		<link href="~/assets/landing/css/bootstrap.css" rel="stylesheet">
+		<link href="~/assets/landing/css/main.css" rel="stylesheet">
+		<link href="~/assets/landing/css/custom.css" rel="stylesheet" />
+
+		<!-- Google Fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700" rel="stylesheet" type="text/css">
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,400,700" rel="stylesheet" type="text/css">
+
+		<!-- IE 9 Fallback-->
+		<!--[if IE 9]>
+			<link href="assets/css/ie.css" rel="stylesheet">
+		<![endif]-->
+
+		<!-- HTML5 shim, for IE6-8 support of HTML5 elements and IE Fallback-->
+		<!--[if lt IE 9]>
+			<script src="~/assets/landing/js/html5shiv.js"></script>
+		<![endif]-->
+
+		<!-- Fav and touch icons -->
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+		<link rel="shortcut icon" href="~/assets/landing/ico/favicon.png">
+
+		@*<script type="text/javascript" src="//cdn.syndication.twimg.com/widgets/timelines/441767385733668865?&amp;lang=en&amp;callback=twitterFetcher.callback&amp;suppress_response_codes=true&amp;rnd=0.22860729740932584"></script>*@<script type="text/javascript" charset="UTF-8" src="https://maps.gstatic.com/cat_js/maps-api-v3/api/js/18/0/%7Bcommon,util,geocoder,map%7D.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.gstatic.com/cat_js/maps-api-v3/api/js/18/0/%7Bonion%7D.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.gstatic.com/cat_js/maps-api-v3/api/js/18/0/%7Bstats%7D.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.gstatic.com/cat_js/maps-api-v3/api/js/18/0/%7Bmarker,controls%7D.js"></script>
+		@RenderSection("styles", required: false)
+	</head>
+<body id="top" style="display: block;">
+
+    <!-- NAVBAR -->
+    <div class="navbar navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                    <span class="sr-only">Menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.html" class="navbar-brand">
+                    <img src="~/assets/landing/img/loop-logo.png" alt="Loop Logo">
+                    <h1 class="hide">Parallax HTML One-Page Template</h1>
+                </a>
+            </div>
+            <nav class="navbar-collapse collapse" id="main-nav" role="navigation">
+                <ul class="nav navbar-nav navbar-right nav-text-light">
+                    <li><a href="#top">HOME</a></li>
+                    <li><a href="#123">3 STEPS</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#services">SERVICES</a></li>
+                    <li><a href data-toggle="modal" data-target="#loginModal">LOGIN</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- END NAVBAR -->
+    <!-- Modal -->
+    @Html.Partial("~/Views/Account/_LoginModal.cshtml")
+
+
+
+    <!-- HERO UNIT -->
+    <div id="hero-unit" class="hero-unit">
+
+        <div class="slideshow">
+            <div class="hero-content text-right">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-4">
+                            <div id="slidecaption" class="slide-caption"><div class="hero-text"><h2 class="hero-heading">PARALLAX</h2><p>Scrolling the page is fun with parallax background</p></div></div>
+                            <div class="hero-buttons">
+                                <a href="#123" id="btn-about" class="btn btn-info btn-lg"><i class="fa fa-arrow-circle-o-down"></i> READ MORE</a>
+                                <a href="/Account/Register" id="btn-contact" class="btn btn-primary btn-lg"><i class="fa fa-sign-in"></i> GET STARTED</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="slide-navigation">
+                <a id="prevslide" class="load-item" style="display: block;"><i class="fa fa-angle-left"></i></a>
+                <a id="nextslide" class="load-item" style="display: block;"><i class="fa fa-angle-right"></i></a>
+
+                <!-- Slide Pagination -->
+                <ul id="slide-list" class="list-inline" style="margin-left: -37.5px;"><li class="slide-link-0"><a></a></li><li class="slide-link-1 current-slide"><a></a></li><li class="slide-link-2"><a></a></li></ul>
+
+                <!-- Control Bar -->
+                <div id="controls-wrapper" class="load-item" style="display: block;">
+                    <div id="controls">
+                        <a id="pauseplay"><i class="fa fa-pause"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- END HERO UNIT -->
+    @RenderBody()
+
+    <!-- MAIN CONTENT -->
+    <div id="main-content" class="main-content">
+
+        <!-- Social Presence -->
+
+        <div id="123" class="section social-proof-section landing-bg no-padding" style="padding-top: 40px">
+            <div class="container">
+                <ul class="list-inline">
+
+                    <li><div class="gray-img tc" style="cursor:auto;"></div></li>
+                    <li><div class="gray-img hp" style="cursor:auto;"></div></li>
+                    <li><div class="gray-img dc" style="cursor:auto;"></div></li>
+                    <li><div class="gray-img fr" style="cursor:auto;"></div></li>
+                    <li><div class="gray-img wsj" style="cursor:auto;"></div></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <!-- END Social Presence -->
+        <!-- How it Works -->
+        <div class="section how-it-works-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="text-center">It's as Easy as 1-2-3</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="section-content">
+                    <div class="row">
+                        <div class="col-sm-4 text-center">
+                            <div alt="book-cleaner" class="img-responsive img-circle">
+                                <strong>1</strong>
+                            </div>
+                            <h4 class="text-center">Create Your Profile</h4>
+                            <p>Snap in one or 2 Awesome pictures of you and your work!</p>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <div alt="book-cleaner" class="img-responsive img-circle">
+                                <strong>2</strong>
+                            </div>
+                            <h4 class="text-center">MARKET & EXPRESS</h4>
+                            <p>Tell the world, Pass the word, Express yourself on what you can offer.</p>
+                            <p><br><a data-toggle="modal" data-target="#CreateAGigVideo-modal">Need Help?</a></p>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <div alt="book-cleaner" class="img-responsive img-circle">
+                                <strong>3</strong>
+                            </div>
+                            <h4 class="text-center">PUBLISH & ENJOY</h4>
+                            <p>Sit back, relax, but get ready to enjoy your work. Let our servers help reach your service to target audience!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END How it works -->
+        <!--SIGN UP BANNER -->
+        <div class="section slice bg-2  most-dark ">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <h1 style="color: white">
+                            Start simple, Create a Gig for just $5 and Add on features for little extra!
+                        </h1>
+                    </div>
+                    <div class="col-md-3">
+                        <a class="btn btn-block btn-lg pull-right" style="font-size: xx-large" title="" href="/Account/Register" target="blank">
+                            <i class="fa fa-sign-in"></i> Get Started
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--END SIGN UP BANNER -->
+        <!-- ABOUT -->
+        <div id="about" class="section about">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>ABOUT US</h2>
+                    <p>A great beginning to know us more</p>
+                    <hr>
+                </div>
+                <div class="section-content">
+                    <div class="row">
+                        <img src="~/assets/landing/img/about-img.png" alt="About Us" class="img-left">
+                        <div class="col-lg-9 col-lg-offset-3">
+                            <h3>Don't Wait Until Tomorrow</h3>
+                            <p>Progressively maintain inexpensive information without intuitive markets. Quickly reconceptualize 2.0 imperatives without next-generation meta-services. Professionally conceptualize plug-and-play metrics without orthogonal information. Appropriately strategize dynamic infrastructures and turnkey channels. Seamlessly synthesize high-quality total linkage without distinctive intellectual capital.</p>
+
+                            <p>Completely reinvent business mindshare with superior strategic theme areas. Dramatically build reliable platforms without real-time e-tailers. Competently predominate covalent scenarios rather than future-proof content. Intrinsicly innovate holistic users whereas cost effective partnerships. Objectively transform collaborative outsourcing before an expanded array of services. Monotonectally provide access to next-generation imperatives rather than mission-critical materials. Seamlessly negotiate excellent services rather than web-enabled sources. Quickly actualize proactive niches rather than user friendly catalysts for change. Efficiently negotiate distributed experiences for alternative best practices. Efficiently.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END ABOUT -->
+
+
+        <div id="services" class="section darker services ">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>SERVICES</h2>
+                    <p>We strive to give the best service to our clients</p>
+                    <hr>
+                </div>
+                <div class="section-content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <span class="icon-checkmark2 service-icon"></span>
+                                <div class="service-text">
+                                    <h3>100% Satisfication</h3>
+                                    <p>Quickly actualize proactive niches rather than user friendly catalysts for change.</p>
+                                    <a href="#" class="read-more"><span>Read more ...</span> <i class="i fa fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <span class="icon-pen service-icon"></span>
+                                <div class="service-text">
+                                    <h3>Seller Focused</h3>
+                                    <p>Quickly actualize proactive niches rather than user friendly catalysts for change.</p>
+                                    <a href="#" class="read-more"><span>Read more ...</span> <i class="i fa fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <span class="icon-lab service-icon"></span>
+                                <div class="service-text">
+                                    <h3>Customer Friendly</h3>
+                                    <p>Quickly actualize proactive niches rather than user friendly catalysts for change.</p>
+                                    <a href="#" class="read-more"><span>Read more ...</span> <i class="i fa fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <span class="icon-phone service-icon"></span>
+                                <div class="service-text">
+                                    <h3>Responsive</h3>
+                                    <p>Quickly actualize proactive niches rather than user friendly catalysts for change.</p>
+                                    <a href="#" class="read-more"><span>Read more ...</span> <i class="i fa fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="social-network" class="section full-width-parallax parallax" style="background-position: 0px 12px;">
+            <div class="container">
+                <h2>Find me elsewhere in the web</h2>
+                <ul class="list-inline social-icon">
+                    <li class="wow rollIn animated" data-wow-delay="0.3s" style="visibility: visible;-webkit-animation-delay: 0.3s; -moz-animation-delay: 0.3s; animation-delay: 0.3s;"><a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li class="wow rollIn animated" data-wow-delay="0.3s" style="visibility: visible;-webkit-animation-delay: 0.3s; -moz-animation-delay: 0.3s; animation-delay: 0.3s;"><a href="#" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li class="wow rollIn animated" data-wow-delay="0.3s" style="visibility: visible;-webkit-animation-delay: 0.3s; -moz-animation-delay: 0.3s; animation-delay: 0.3s;"><a href="#" data-toggle="tooltip" data-placement="bottom" title="Dribbble"><i class="fa fa-dribbble"></i></a></li>
+                    <li class="wow rollIn animated" data-wow-delay="0.3s" style="visibility: visible;-webkit-animation-delay: 0.3s; -moz-animation-delay: 0.3s; animation-delay: 0.3s;"><a href="#" data-toggle="tooltip" data-placement="bottom" title="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- END MAIN CONTENT -->
+    <!-- FOOTER -->
+    <footer id="footer" class="section">
+        <div class="container">
+            <p class="copyright pull-left">© 2014. Hyphen Labs LLC. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+
+    <div class="back-to-top" style="display: block;">
+        <a href="#top"><i class="fa fa-chevron-up"></i></a>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="~/assets/landing/js/jquery-2.1.0.min.js"></script>
+    <script src="~/assets/landing/js/bootstrap.min.js"></script>
+    <script src="~/assets/landing/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+    <script src="~/assets/landing/js/jquery.localscroll-1.2.7-min.js"></script>
+    <script src="~/assets/landing/js/jquery.easing.min.js"></script>
+    <script src="~/assets/landing/js/supersized.3.2.7.min.js"></script>
+    <script src="~/assets/landing/js/supersized.shutter.min.js"></script>
+    <script src="~/assets/landing/js/jquery.parallax-1.1.3.js"></script>
+    @*<script src="~/assets/landing/js/google-map.js"></script>*@
+    @*<script src="~/assets/landing/js/twitter-fetcher.js"></script>*@
+    <script src="~/assets/landing/js/imagesloaded.pkgd.js"></script>
+    <script src="~/assets/landing/js/jquery.isotope.js"></script>
+    <script src="~/assets/landing/js/wow.js"></script>
+    <script src="~/assets/landing/js/jquery.flexslider-min.js"></script>
+    <script src="~/assets/landing/js/jpreloader.min.js"></script>
+    <script src="~/assets/landing/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/assets/landing/js/loop.js"></script>
+
+
+    @*<script type="text/javascript">
+        jQuery(document).ready(function () {
+            App.init();
+            App.initParallaxBg();
+        });
+    </script>*@
+    <!--[if lt IE 9]>
+        <script src="assets/plugins/respond.js"></script>
+    <![endif]-->
+    @RenderSection("scripts", required: false)
+
+    @RenderSection("ngscripts", required: false)
+
+
+    @*<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbJ16uUP1tqA_-qsojvMCBV12V71rukHA&amp;sensor=true&amp;callback=initialize"></script>*@
+    @*<script src="https://maps.gstatic.com/maps-api-v3/api/js/18/0/main.js"></script>*@
+</body>
+
+</html>

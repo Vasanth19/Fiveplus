@@ -1,0 +1,32 @@
+﻿
+    <div class="gig-item">
+        <aside class="coll-heart">
+            <a class="icn-heart" href="#"></a>
+        </aside>
+        <a ng-hide="gig.video_thumb" href="/kymmypops/record-you-personalised-dj-drops?autoplay=true" class="vid-play" rel="nofollow">Play</a>
+        <a class="gig-link-main" href="/pinkkoala/record-a-spanish-or-english-testimonial-for-your-product">
+            <aside class="featured-badge" ng-hide="gig.is_featured">Featured!</aside>
+            <span class="toprated-badge" >Top-Rated Seller!</span>
+            <span class="gig-pict-214" ng-bind-html="gig.img_medium | to_trusted"></span>
+            <h5 class="ellipsis">
+                {{gig.title | limitTo:100}}
+                <span class="gig-price">
+                    <em class="order">ORDER</em>
+                    <em>{{gig.price}}</em>
+                </span>
+            </h5>
+        </a>
+        <div class="gig-sub">
+            <div class="user-pict-32">
+                <img src="http://cdn0.fiverrcdn.com/photos/229321/thumb/ffff.jpg?1388033027" data-reload="inprogress">
+            </div><div class="seller-name">
+                      <a rel="nofollow" ng-href="{{gig.seller_url}}">{{gig.seller_name}}</a>
+            </div><div class="seller-stats">
+                <span class="ratings-count">{{gig.rating_count | shortRating}}</span>
+                      <span class="rating-tiny rate-{{gig.rating}}"></span>
+                <span class="seller-country">{{gig.seller_country_name}}</span>
+            </div>
+        </div>
+    </div>
+
+    

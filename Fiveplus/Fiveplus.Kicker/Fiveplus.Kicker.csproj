@@ -294,6 +294,7 @@
     <Content Include="assets\landing\img\about-img.png" />
     <Content Include="assets\landing\img\cb_scout2.png" />
     <Content Include="assets\landing\img\google_white2.png" />
+    <Content Include="assets\landing\img\loop-logo-white.png" />
     <Content Include="assets\landing\img\loop-logo.png" />
     <Content Include="assets\landing\img\mapcnt3.png" />
     <Content Include="assets\landing\img\person1.png" />
@@ -333,7 +334,14 @@
     <Content Include="assets\landing\js\supersized.shutter.min.js" />
     <Content Include="assets\landing\js\twitter-fetcher.js" />
     <Content Include="assets\landing\js\wow.js" />
+    <Content Include="assets\plugins\back-to-top.js" />
+    <Content Include="assets\plugins\bootstrap\bootstrap.min.js" />
     <Content Include="assets\plugins\image-hover\css\img-hover.css" />
+    <Content Include="assets\plugins\image-hover\js\modernizr.js" />
+    <Content Include="assets\plugins\image-hover\js\touch.js" />
+    <Content Include="assets\plugins\jquery-1.10.2.min.js" />
+    <Content Include="assets\plugins\jquery-migrate-1.2.1.min.js" />
+    <Content Include="assets\plugins\jquery.parallax.js" />
     <Content Include="assets\plugins\line-icons\fonts\Simple-Line-Icons.svg" />
     <Content Include="assets\plugins\line-icons\line-icons.css" />
     <Content Include="Content\bootstrap\bootstrap-theme.css" />
@@ -419,6 +427,7 @@
     <Content Include="ng-App\plugins\ng-flow-file-upload\ng-flow.js" />
     <Content Include="ng-App\plugins\ng-flow-file-upload\ng-flow.min.js" />
     <Content Include="Scripts\custom\fiveplus.custom.js" />
+    <None Include="Properties\PublishProfiles\fiveplus.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="ng-App\data\dataServices.js" />
     <Content Include="ng-App\data\Gigs.js" />
@@ -517,7 +526,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="assets\plugins\bootstrap\" />
     <Folder Include="ng-App\modules\home\js\" />
   </ItemGroup>
   <ItemGroup>

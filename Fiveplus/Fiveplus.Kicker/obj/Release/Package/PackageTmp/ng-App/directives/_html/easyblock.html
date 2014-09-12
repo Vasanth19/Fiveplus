@@ -1,0 +1,36 @@
+﻿             <div class="col-md-3 col-sm-6 md-margin-bottom-40">
+                        <div class="easy-block-v1">
+                            <div class="easy-block-v1-badge rgba-default">Marketing</div>                
+                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li class="rounded-x" data-target="#carousel-example-generic" data-slide-to="0"></li>
+                                    <li class="rounded-x" data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                    <li class="rounded-x active" data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                </ol>
+                                <div class="carousel-inner" >
+                                    <div ng-class="{item:true, active:$first}" id="gig{{gig.id}}media{{media.id}}" ng-repeat="media in gig.mediaUrls">
+                                        <img alt="" src="{{media.url}}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="overflow-h" style="margin-bottom: 5px;">
+                                <h3 class="truncateTitle">{{gig.title }}</h3>
+                            </div>     
+                            <ul class="list-unstyled">
+                                <li><span class="color-green">Seller:</span> {{gig.user.fullName}} <span class="pull-right color-green">{{gig.user.location}}</span></li>
+                                <li style="white-space: normal;overflow: hidden;text-overflow: ellipsis;height: 60px;" ng-bind-html="gig.description"></li>
+                            </ul>    
+                            <a class="btn-u btn-u-sm pull-left" href="#">View More</a>
+                             <div class="star-vote pull-right">
+                                    <ul class="list-inline">
+                                        <li><i class="color-green fa fa-star"></i></li>
+                                        <li><i class="color-green fa fa-star"></i></li>
+                                        <li><i class="color-green fa fa-star"></i></li>
+                                        <li><i class="color-green fa fa-star-half-o"></i></li>
+                                        <li><i class="color-green fa fa-star-o"></i></li>
+                                    </ul>
+                                </div>
+                        </div>  
+             </div>
+
+            
