@@ -148,7 +148,7 @@ var App = function () {
             handleToggle();
             handleSwitcher();
             handleBoxed();
-            handleHeader();
+            //handleHeader();
         },
 
         initSliders: function () {

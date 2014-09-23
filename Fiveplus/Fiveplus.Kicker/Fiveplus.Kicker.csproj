@@ -16,7 +16,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44300</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -294,6 +294,8 @@
     <Content Include="assets\landing\img\about-img.png" />
     <Content Include="assets\landing\img\cb_scout2.png" />
     <Content Include="assets\landing\img\google_white2.png" />
+    <Content Include="assets\landing\img\Hifive-logo-white.png" />
+    <Content Include="assets\landing\img\Hifive-logo.png" />
     <Content Include="assets\landing\img\loop-logo-white.png" />
     <Content Include="assets\landing\img\loop-logo.png" />
     <Content Include="assets\landing\img\mapcnt3.png" />
@@ -560,7 +562,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>59643</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:59903/</IISUrl>
+          <IISUrl>https://localhost:44300/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

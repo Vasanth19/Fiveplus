@@ -7,7 +7,10 @@ using Owin;
 using System;
 using Fiveplus.Data.DbContexts;
 using Fiveplus.Data.Models;
+using Owin.Security.Providers.GooglePlus;
 
+
+//Awesome Referecnce http://www.beabigrockstar.com/guides/aspnet-oauth
 namespace Fiveplus.Kicker
 {
     public partial class Startup
@@ -56,13 +59,13 @@ namespace Fiveplus.Kicker
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "492627",
+               appSecret: "492627");
 
-            //app.UseGoogleAuthentication(
-            //    clientId: "",
-            //    clientSecret: "");
+            app.UseGooglePlusAuthentication(
+                clientId: "492627460843-9jfu4bmib3v1691bra2g5rc8i2phfj4m.apps.googleusercontent.com",
+                clientSecret: "U6tcHVfxnTb_LEWT04RhV8dO");
         }
     }
 }

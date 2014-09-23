@@ -1,4 +1,4 @@
-header input {
+﻿header input {
   width: auto;
   height: 100%;
   background-color: transparent;
@@ -452,7 +452,6 @@ header .navbar-brand {
 }
 /*Footer stay on bottom tweak*/
 .footer-v3 {
-  position: absolute;
   width: 100%;
   bottom: 0;
 }

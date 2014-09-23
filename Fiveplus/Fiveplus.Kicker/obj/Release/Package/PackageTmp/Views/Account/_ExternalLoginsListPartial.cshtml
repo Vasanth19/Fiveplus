@@ -1,8 +1,9 @@
 ﻿@model Fiveplus.Kicker.Models.ExternalLoginListViewModel
 @using Microsoft.Owin.Security
 
-<h4>Use another service to log in.</h4>
-<hr />
+@*<h4>Use another service to log in.</h4>
+<hr />*@
+
 @{
     var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
     if (loginProviders.Count() == 0) {
@@ -14,15 +15,30 @@
         </div>
     }
     else {
-        using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl })) {
+        using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl },FormMethod.Post, new {@class = "reg-page", role = "form"})) {
             @Html.AntiForgeryToken()
-            <div id="socialLoginList">
-                <p>
-                    @foreach (AuthenticationDescription p in loginProviders) {
-                        <button type="submit" class="btn btn-default" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">@p.AuthenticationType</button>
-                    }
-                </p>
-            </div>
+    <div class="row">
+        
+            @foreach (AuthenticationDescription p in loginProviders)
+            {
+                if (p.AuthenticationType.ToLower() == "facebook")
+                {
+
+                    <button type="submit" class=" col-xs-offset-1 col-xs-5 btn btn-facebook-inversed" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">
+                        <i class="fa fa-facebook"></i>@p.AuthenticationType
+                    </button>
+
+                }
+                else
+                {
+                    <button type="submit" class="col-xs-offset-1 col-xs-5 btn btn-googleplus-inversed  " id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">
+                        <i class="fa fa-google-plus"></i> @p.AuthenticationType
+                    </button>
+                   
+                }
+            }
+
+    </div>
         }
     }
 }

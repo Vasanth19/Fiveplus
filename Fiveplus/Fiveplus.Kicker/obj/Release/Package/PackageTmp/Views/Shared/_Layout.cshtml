@@ -41,9 +41,7 @@
             </div>
             <nav class="navbar-collapse collapse" id="main-nav" role="navigation">
                 <ul class="nav navbar-nav navbar-right menu">
-                    <li class=""><a href="#top">HOME</a></li>
-                    <li class=""><a href="#about">ABOUT US</a></li>
-                    <li class=""><a href="#services">SERVICES</a></li>
+                    <li class=""><a href="/Home">HOME</a></li>
                     <li> @Html.Partial("_LoginPartial")</li>
                     @if (Request.IsAuthenticated)
                     {
@@ -56,10 +54,6 @@
                                 <li><a href="#"><span class="language">My Sales</span></a></li>
                             </ul>
                         </li>
-                    }
-                    else
-                    {
-                        
                     }
                 </ul>
             </nav>
@@ -223,7 +217,7 @@
 
     <script type="text/javascript" src="https://code.angularjs.org/1.2.9/angular.js"></script>
     <script type="text/javascript" src="https://code.angularjs.org/1.2.9/angular-route.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-sanitize.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-sanitize.js"></script>
 
     <script src="~/ng-App/directives/directives.js"></script>
     <script src="~/ng-App/data/dataServices.js"></script>

@@ -6,8 +6,22 @@ namespace Fiveplus.Kicker.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
+        [Display(Name = "UserName")]
+        public string UserName { get; set; }
+
+        [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+        [DataType(DataType.Text)]
+        [Display(Name = "Country")]
+        [Required]
+        public string Country { get; set; }
+
+        [DataType(DataType.Text)]
+        [Display(Name = "State")]
+        [Required]
+        public string State { get; set; }
     }
 
     public class ExternalLoginListViewModel

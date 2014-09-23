@@ -14,8 +14,8 @@
             @if (Request.IsAuthenticated && User.IsInRole("Administrator")) {
                 <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
                 <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
-                <li><a id="logOut" href="javascript:document.getElementById('logoutForm').submit();" ><span class="fa fa-sign-in"></span>Log Out</a></li>
             }
+            <li><a id="logOut" href="javascript:document.getElementById('logoutForm').submit();"><span class="fa fa-sign-in"></span>Log Out</a></li>
         </ul>
     </li>
 
