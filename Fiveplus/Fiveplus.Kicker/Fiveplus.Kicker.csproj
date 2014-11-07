@@ -148,6 +148,7 @@
     <Reference Include="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.1.2\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -224,6 +225,7 @@
       <SubType>
       </SubType>
     </Compile>
+    <Compile Include="Controllers\DiscoverController.cs" />
     <Compile Include="Controllers\GigController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -401,6 +403,9 @@
     <Content Include="ng-App\modules\gig\js\gigDataServices.js" />
     <Content Include="ng-App\modules\gig\subPages\_createGig\step2.html" />
     <Content Include="ng-App\modules\gig\subPages\_createGig\step1.html" />
+    <Content Include="ng-App\modules\home\subPages\categorySearch.html" />
+    <Content Include="ng-App\modules\home\subPages\popularGigs.html" />
+    <Content Include="ng-App\modules\home\subPages\staffPick.html" />
     <Content Include="ng-App\plugins\mgo-angular-wizard\angular-wizard.less" />
     <Content Include="ng-App\plugins\mgo-angular-wizard\angular-wizard.min.js.map">
       <DependentUpon>angular-wizard.min.js</DependentUpon>
@@ -438,8 +443,6 @@
     <Content Include="ng-App\modules\home\homeModule.js" />
     <Content Include="ng-App\js_delete\user-Index.js" />
     <Content Include="ng-App\modules\gig\subPages\newGigView.html" />
-    <Content Include="ng-App\modules\home\subPages\singleTopicView.html" />
-    <Content Include="ng-App\modules\home\subPages\indexView.html" />
     <Content Include="ng-App\directives\_html\hmCategorySearch.html" />
     <Content Include="ng-App\directives\_html\easyblock.html" />
     <Content Include="ng-App\directives\_html\hmGigItem_old.html" />
@@ -519,12 +522,14 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Index_3.cshtml" />
     <Content Include="Views\Gig\Create.cshtml" />
-    <Content Include="Views\Shared\_Layout_boomerang.cshtml" />
     <Content Include="Views\Home\Index_4.cshtml" />
     <Content Include="Views\Shared\_Layout_Landing.cshtml" />
     <Content Include="Views\Home\Landing.cshtml" />
     <Content Include="Views\Account\_LoginModal.cshtml" />
     <Content Include="Views\Account\_RegisterModal.cshtml" />
+    <Content Include="Views\Shared\_NavbarPartial.cshtml" />
+    <Content Include="Views\Shared\_FooterPartial.cshtml" />
+    <Content Include="Views\Discover\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

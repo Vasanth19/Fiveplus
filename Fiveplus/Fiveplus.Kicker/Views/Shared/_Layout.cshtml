@@ -1,24 +1,23 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html ng-app="@ViewBag.InitModule">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Only Five.</title>
+    <title>Hi-Five</title>
 
     
     <link rel="stylesheet" href="~/assets/css/style.css">
     <link rel="stylesheet" href="~/assets/plugins/line-icons/line-icons.css">
     <link rel="stylesheet" href="~/assets/plugins/image-hover/css/img-hover.css">
     <link rel="stylesheet" href="~/assets/css/pages/page_job.css">
-    <link rel="stylesheet" href="~/assets/css/themes/default.css" id="style_color">
+    <link rel="stylesheet" href="~/assets/css/themes/light.css" id="style_color">
 
     <link href="~/Content/kicker.css" rel="stylesheet" />
  @*   <link href="~/Content/less/navigation.css" rel="stylesheet" />*@
     
 <!-- Google Fonts -->
-        <link href="http://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700" rel="stylesheet" type="text/css">
-        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,400,700" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,300,400,700" rel="stylesheet" type="text/css">
 
     @RenderSection("styles", required: false)
 
@@ -26,405 +25,21 @@
 <body flow-prevent-drop>
 
 
-    <div class="navbar navbar-fixed-top navbar-light" style="display: none">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
-                    <span class="sr-only">Menu</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="/" class="navbar-brand">
-                    <img src="/assets/landing/img/Hifive-logo.png" alt="Loop Logo">
-                    <h1 class="hide">FivePlus</h1>
-                </a>
-            </div>
-            <nav class="navbar-collapse navbar-responsive-collapse collapse" id="main-nav" role="navigation">
-                <ul class="nav navbar-nav navbar-right menu">
-                    <li class=""><a href="/Home">HOME</a></li>
-                    <li> @Html.Partial("_LoginPartial")</li>
-                    @if (Request.IsAuthenticated)
-                    {
-                        <li class="shopping-cart dropdown animate-hover" data-animate="animated fadeInDown">
-                            <a href="#" title="MANAGE YOUR ACCOUNT" style="padding-right: 0;"><i class="fa fa-cogs"></i><span class="amount"> MANAGE</span></a>
-
-                            <ul class="sub-menu animate-wr animated fadeInDown">
-                                <li><a href="/gig/#/create"><span class="language">Create a Gig</span></a></li>
-                                <li><a href="#"><span class="language">My Collections</span></a></li>
-                                <li><a href="#"><span class="language">My Sales</span></a></li>
-                            </ul>
-                        </li>
-                    }
-                </ul>
-            </nav>
-        </div>
-    </div>
-    
-
-    <div class="wrapper header-fixed">
-        <!-- Topbar -->
-        <div class="top-header" style="display: none">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h3 style="float: left;color: #fff" class="margin-t-15">fiveplus</h3>
-                        <nav class="top-header-menu padding-y-10" style="height: 41px!important">
-                            <ul class="menu">
-                                @if (Request.IsAuthenticated)
-                                {
-                                    <li class="shopping-cart dropdown animate-hover" data-animate="animated fadeInDown">
-                                        <a href="shop-cart.html" title="View your shopping cart" style="padding-right: 0;"><i class="fa fa-cogs"></i><span class="amount"> Manage</span></a>
-
-                                        <ul class="sub-menu animate-wr animated fadeInDown">
-                                            <li><a href="/gig/#/create"><span class="language">Create a Gig</span></a></li>
-                                            <li><a href="#"><span class="language">My Collections</span></a></li>
-                                            <li><a href="#"><span class="language">My Sales</span></a></li>
-                                        </ul>
-                                    </li>
-                                }
-                                <li> @Html.Partial("_LoginPartial")</li>
-
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- End Topbar -->
-        
+ <div class="wrapper header-fixed">
+      
         <div class="header header-fixed-shrink">
-     <!-- Navbar -->
-            <div class="navbar navbar-default" role="navigation">
-                <div class="container">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="fa fa-bars"></span>
-                        </button>
-                        <a class="navbar-brand" href="index.html" >
-                            <img src="/assets/landing/img/Hifive-logo.png" alt="Logo">
-                            <div class="clearfix"></div>
-                        </a>
-                    </div>
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse navbar-responsive-collapse">
-                        <ul class="nav navbar-nav">
-                            
-                           
-                            
-                        @if (Request.IsAuthenticated)
-                        {
-                              <!-- Search Block -->
-                            <li>
-                                <i class="search fa fa-search search-btn"></i>
-                                <div class="search-open">
-                                    <div class="input-group animated fadeInDown">
-                                        <input type="text" class="form-control" placeholder="Search">
-                                        <span class="input-group-btn">
-                                            <button class="btn-u" type="button">Go</button>
-                                        </span>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- End Search Block -->
-                            <!-- Home -->
-                            <li class="dropdown ">
-                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                    Home
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li> </li>
-                                    <li><a href="index.html">Option 1: Default Page</a></li>
-                                    <li><a target="_blank" href="One-Page/index.html">Option 2: One Page Template</a></li>
-                                    <li><a href="page_home1.html">Option 3: Layer Slider</a></li>
-                                   
-                                </ul>
-                            </li>
-                            <!-- End Home -->
-                            <!-- Pages -->
-                            <li class="dropdown">
-                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                    Manage
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <!-- About Pages -->
-                                    <li class="dropdown-submenu">
-                                        <a href="javascript:void(0);">About Pages</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="page_about1.html">About Us</a></li>
-                                            <li><a href="page_about.html">About Basic</a></li>
-                                            <li><a href="page_about_me.html">About Me</a></li>
-                                            <li><a href="page_about_our_team.html">About Our Team</a></li>
-                                        </ul>
-                                    </li>
-                                    <!-- End About Pages -->
-                                    <!-- Profile Pages -->
-                                    <li class="dropdown-submenu">
-                                        <a href="javascript:void(0);">Profile Dashboard Pages</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="profile.html">Profile Main Page</a></li>
-                                            <li><a href="profile_me.html">Profile Overview</a></li>
-                                            <li><a href="profile_users.html">Profile Users</a></li>
-                                            <li><a href="profile_projects.html">Profile Projects</a></li>
-                                            <li><a href="profile_comments.html">Profile Comments</a></li>
-                                            <li><a href="profile_history.html">Profile History</a></li>
-                                            <li><a href="profile_settings.html">Profile Settings</a></li>
-                                        </ul>
-                                    </li>
-                                    <!-- End Profile Pages -->
-                                    <!-- Job Pages -->
-                                    <li class="dropdown-submenu">
-                                        <a href="javascript:void(0);">Job Pages</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="page_jobs.html">Jobs Main Page</a></li>
-                                            <li><a href="page_jobs_inner.html">Jobs Description Default</a></li>
-                                            <li><a href="page_jobs_inner1.html">Jobs Description Basic</a></li>
-                                            <li><a href="page_jobs_inner2.html">Jobs Description Min</a></li>
-                                        </ul>
-                                    </li>
-                                    <!-- End Job Pages -->
-                                    <!-- Email Tempaltes -->
-                                    <li class="dropdown-submenu">
-                                        <a href="javascript:void(0);">Email Templates</a>
-                                        <ul class="dropdown-menu">
-                                            <li class="dropdown-submenu">
-                                                <a href="javascript:void(0);">Email Corporate</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a target="_blank" href="email-templates/corporate/email_corporate_aqua.html">Corporate Aqua Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/corporate/email_corporate_blue.html">Corporate Blue Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/corporate/email_corporate_brown.html">Corporate Brown Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/corporate/email_corporate_dark_blue.html">Corporate Dark Blue Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/corporate/email_corporate_green.html">Corporate Green Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/corporate/email_corporate_light_green.html">Corporate Light Green Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/corporate/email_corporate_grey.html">Corporate Grey Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/corporate/email_corporate_orange.html">Corporate Orange Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/corporate/email_corporate_purple.html">Corporate Purple Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/corporate/email_corporate_red.html">Corporate Red Color</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown-submenu">
-                                                <a href="javascript:void(0);">Email Flat</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a target="_blank" href="email-templates/flat/email_flat_aqua.html">Flat Aqua Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/flat/email_flat_blue.html">Flat Blue Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/flat/email_flat_brown.html">Flat Brown Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/flat/email_flat_dark_blue.html">Flat Dark Blue Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/flat/email_flat_green.html">Flat Green Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/flat/email_flat_light_green.html">Flat Light Green Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/flat/email_flat_grey.html">Flat Grey Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/flat/email_flat_orange.html">Flat Orange Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/flat/email_flat_purple.html">Flat Purple Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/flat/email_flat_red.html">Flat Red Color</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown-submenu">
-                                                <a href="javascript:void(0);">Email Modern</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a target="_blank" href="email-templates/modern/email_modern_aqua.html">Modern Aqua Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/modern/email_modern_blue.html">Modern Blue Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/modern/email_modern_brown.html">Modern Brown Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/modern/email_modern_dark_blue.html">Modern Dark Blue Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/modern/email_modern_green.html">Modern Green Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/modern/email_modern_light_green.html">Modern Light Green Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/modern/email_modern_grey.html">Modern Grey Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/modern/email_modern_orange.html">Modern Orange Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/modern/email_modern_purple.html">Modern Purple Color</a></li>
-                                                    <li><a target="_blank" href="email-templates/modern/email_modern_red.html">Modern Red Color</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-
-                                    <li class="dropdown-submenu">
-                                        <a href="javascript:void(0);">Service Pages</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="page_services.html">Our Services</a></li>
-                                            <li><a href="page_services1.html">Our Services Basic</a></li>
-                                        </ul>
-                                    </li>
-                                    <!-- End Email Tempaltes -->
-                                    <!-- Funny Boxes -->
-                                    <li><a href="page_funny_boxes.html">Funny Boxes</a></li>
-                                    <!-- End Funny Boxes -->
-                                    <!-- Pricing Tables -->
-                                    <li class="dropdown-submenu">
-                                        <a href="javascript:void(0);">Pricing Tables</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="page_pricing_flat.html">Flat Pricing Tables</a></li>
-                                            <li><a href="page_pricing_light.html">Light Pricing Tables</a></li>
-                                            <li><a href="page_pricing_mega.html">Mega Pricing Tables</a></li>
-                                            <li><a href="page_pricing.html">Default Pricing Tables</a></li>
-                                        </ul>
-                                    </li>
-                                    <!-- End Pricing Tables -->
-                                    <!-- Invoice Page -->
-                                    <li><a href="page_invoice.html">Invoice Page</a></li>
-                                    <!-- End Invoice Page -->
-                                    <!-- Search Results -->
-                                    <li class="dropdown-submenu">
-                                        <a href="javascript:void(0);">Search Results</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="page_search_inner.html">Default Search Results</a></li>
-                                            <li><a href="page_search_table.html">Search Result Tables</a></li>
-                                        </ul>
-                                    </li>
-                                    <!-- End Search Results -->
-                                    <!-- Coming Soon -->
-                                    <li><a href="page_coming_soon.html">Coming Soon</a></li>
-                                    <!-- End Coming Soon -->
-                                    <!-- FAQs Pages -->
-                                    <li class="dropdown-submenu">
-                                        <a href="javascript:void(0);">FAQs Pages</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="page_faq1.html">FAQs Page</a></li>
-                                            <li><a href="page_faq.html">FAQs Basic</a></li>
-                                        </ul>
-                                    </li>
-                                    <!-- End FAQs Pages -->
-                                    <!-- Gallery Page -->
-                                    <li><a href="page_gallery.html">Gallery Page</a></li>
-                                    <!-- End Gallery Page -->
-                                    <!-- Login and Registration -->
-                                    <li class="dropdown-submenu">
-                                        <a href="javascript:void(0);">Login and Registration</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="page_registration.html">Registration Page</a></li>
-                                            <li><a href="page_login.html">Login Page</a></li>
-                                            <li><a href="page_registration1.html">Registration Option</a></li>
-                                            <li><a href="page_login1.html">Login Option</a></li>
-                                        </ul>
-                                    </li>
-                                    <!-- End Login and Registration -->
-                                    <!-- Error Pages -->
-                                    <li class="dropdown-submenu">
-                                        <a href="javascript:void(0);">Error Pages</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="page_404_error.html">404 Error Default</a></li>
-                                            <li><a href="page_404_error1.html">404 Error Option 1</a></li>
-                                            <li><a href="page_404_error2.html">404 Error Option 2</a></li>
-                                            <li><a href="page_404_error3.html">404 Error Option 3</a></li>
-                                        </ul>
-                                    </li>
-                                    <!-- End Error Pages -->
-                                    <!-- Clients Page -->
-                                    <li><a href="page_clients.html">Clients Page</a></li>
-                                    <!-- End Clients Page -->
-                                    <!-- Column Pages -->
-                                    <li class="dropdown-submenu">
-                                        <a href="javascript:void(0);">Column Pages</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="page_2_columns_left.html">2 Columns Page Left</a></li>
-                                            <li><a href="page_2_columns_right.html">2 Columns Page Right</a></li>
-                                            <li><a href="page_3_columns.html">3 Columns Page</a></li>
-                                        </ul>
-                                    </li>
-                                    <!-- End Column Pages -->
-                                    <!-- Privacy Policy -->
-                                    <li><a href="page_privacy.html">Privacy Policy</a></li>
-                                    <!-- End Privacy Policy -->
-                                    <!-- Terms Of Service -->
-                                    <li><a href="page_terms.html">Terms Of Service</a></li>
-                                    <!-- End Terms Of Service -->
-                                </ul>
-                            </li>
-                            <!-- End Pages -->
-                        }
-                            @Html.Partial("_LoginPartial")
-                        </ul>
-                    </div><!--/navbar-collapse-->
-                </div>
-            </div>
+            <!-- Navbar -->
+         @Html.Partial("_NavbarPartial")
             <!-- End Navbar -->
         </div>
+        
 
         @* Body Starts here *@
         @RenderBody()
         <!--=== Footer Version 3 ===-->
         
+        @Html.Partial("_FooterPartial")
         
-        <div class="footer-v3">
-            <div class="footer">
-                <div class="container">
-                    <div class="row">
-                        <!-- About -->
-                        <div class="col-md-3 md-margin-bottom-40">
-                            <a href="index.html"><img class="footer-logo" src="~/assets/landing/img/loop-logo.png" alt=""></a>
-                            <p>Sell for Five, Buy for Five..Give an High Five!</p>
-                            <a href="#" class="btn btn-two">Try it now!</a>
-                        </div><!--/col-md-3-->
-                        <!-- End About -->
-
-                        <div class="col-md-3 md-margin-bottom-40">
-                            <div class="thumb-headline"><h2>About Unify</h2></div>
-                            <ul class="list-unstyled simple-list margin-bottom-20">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Forum</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">Community</a></li>
-                                <li><a href="#">Stories</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                            </ul>
-
-                        </div><!--/col-md-3-->
-
-                        <div class="col-md-3">
-                            <div class="thumb-headline"><h2>Topics</h2></div>
-                            <ul class="list-unstyled simple-list margin-bottom-20">
-                                <li><a href="#">Bootstrap</a></li>
-                                <li><a href="#">Font Awesome</a></li>
-                                <li><a href="#">WordPress</a></li>
-                                <li><a href="#">Favicon</a></li>
-                                <li><a href="#">Javascript</a></li>
-                                <li><a href="#">iOS</a></li>
-                            </ul>
-
-                        </div><!--/col-md-3-->
-
-                        <div class="col-md-3">
-                            <div class="thumb-headline"><h2>Developers</h2></div>
-                            <ul class="list-unstyled simple-list margin-bottom-20">
-                                <li><a href="#">Web Development</a></li>
-                                <li><a href="#">Web Design</a></li>
-                                <li><a href="#">Android Development</a></li>
-                                <li><a href="#">PHP Development</a></li>
-                                <li><a href="#">Programmer</a></li>
-                                <li><a href="#">Start-up</a></li>
-                            </ul>
-                          
-                        </div><!--/col-md-3-->
-                    </div>
-                </div>
-            </div><!--/footer-->
-
-            <div class="copyright">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p>
-                                2014 © Hyphen Labs LLC. All rights reserverd.
-                                <a target="_blank" href="https://twitter.com/hyphenlabs">HyphenLabs</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-                            </p>
-                        </div>
-                        <!-- Social Links -->
-                        <div class="col-md-6">
-                            <ul class="social-icons pull-right">
-                                <li><a href="#" data-original-title="Facebook" class="rounded-x social_facebook"></a></li>
-                                <li><a href="#" data-original-title="Twitter" class="rounded-x social_twitter"></a></li>
-                                <li><a href="#" data-original-title="Goole Plus" class="rounded-x social_googleplus"></a></li>
-                                <li><a href="#" data-original-title="Linkedin" class="rounded-x social_linkedin"></a></li>
-                                <li><a href="#" data-original-title="Pinterest" class="rounded-x social_pintrest"></a></li>
-                            </ul>
-                        </div>
-                        <!-- End Social Links -->
-                    </div>
-                </div>
-            </div><!--/copyright-->
-            <!--=== End Footer Version 3 ===-->
-        </div>
 
         <!--/End Wrapepr-->
 

@@ -142,3 +142,17 @@
   width: 100%;
   bottom: 0;
 }
+.sidebar {
+  border-left: 1px dotted #e4e9f0;
+  padding-left: 20px;
+}
+.sidebar > ul > li {
+  margin-bottom: 5px;
+}
+.categoryBox {
+  padding: 5px!important;
+}
+.categoryBox :hover {
+  color: #fff;
+  background: #f1c40f;
+}

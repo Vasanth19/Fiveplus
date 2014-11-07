@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    ViewBag.InitModule = "homeModule";
+}
+
+@section styles
+{
+    <style type="text/css">
+        .fancybox-margin {
+            margin-right: 17px;
+        }
+    </style>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.css" rel="stylesheet" />
+    <link href="~/assets/css/plugins/brand-buttons/brand-buttons.css" rel="stylesheet" />
+    <link href="~/assets/css/plugins/brand-buttons/brand-buttons-inversed.css" rel="stylesheet" />
+
+}
+
+@section scripts
+{
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+}
+
+@section ngscripts
+{
+    <script src="~/ng-App/plugins/x-angular-limitTo.js"></script>
+    <script src="~/ng-App/modules/home/homeModule.js"></script>
+
+}
+
+
+<div class=" funny-boxes margin-top-60">
+
+    <div class="title-box-v2">
+        <h2>Explore an <span class="color-green">awesome</span> creative universe!</h2>
+        <h4 class="margin-top-15">15 diverse categories, thousands of Services</h4>
+       
+    </div>
+
+</div>
+
+
+<div class="container" ng-include="'/ng-App/modules/discover/subPages/categories.html'" ng-controller="indexController"></div>
+
+<hr class="no-margin"/>
+
+
+<div class="container content" ng-include="'/ng-App/modules/home/subPages/staffPick.html'"></div>
+
+<!--
+    <div ng-include="'/ng-App/modules/home/subPages/categorySearch.html'"></div>
+    -->
+
+
+<hr class="no-margin" />
+
+<div class="container" ng-include=" '/ng-App/modules/home/subPages/popularGigs.html'" data-ng-controller="indexController"></div>
+
+
+
+
+<!--=== End Content Part ===-->

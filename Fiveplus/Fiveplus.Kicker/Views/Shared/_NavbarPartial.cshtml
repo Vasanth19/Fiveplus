@@ -1,0 +1,70 @@
+﻿<div class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="fa fa-bars"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+                <img src="/assets/landing/img/Hifive-logo.png" alt="Logo">
+                <div class="clearfix"></div>
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav">
+
+
+
+                @if (Request.IsAuthenticated)
+                {
+                   <!-- Search Block -->
+                    <li>
+                        <i class="search fa fa-search search-btn"></i>
+                        <div class="search-open">
+                            <div class="input-group animated fadeInDown">
+                                <input type="text" class="form-control" placeholder="Search">
+                                <span class="input-group-btn">
+                                    <button class="btn-u" type="button">Go</button>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                                <!-- End Search Block -->
+                                <!-- Home -->
+                    <li class="dropdown ">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li> </li>
+                            <li><a href="/gig/#/create"> 1: Create Gig</a></li>
+                            <li><a target="_blank" href="One-Page/index.html">Option 2: One Page Template</a></li>
+                            <li><a href="page_home1.html">Option 3: Layer Slider</a></li>
+                            <!-- Profile Pages -->
+                            <li class="dropdown-submenu">
+                                <a href="javascript:void(0);">Profile Dashboard Pages</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="profile.html">Profile Main Page</a></li>
+                                    <li><a href="profile_me.html">Profile Overview</a></li>
+                                    <li><a href="profile_users.html">Profile Users</a></li>
+                                    <li><a href="profile_projects.html">Profile Projects</a></li>
+                                    <li><a href="profile_comments.html">Profile Comments</a></li>
+                                    <li><a href="profile_history.html">Profile History</a></li>
+                                    <li><a href="profile_settings.html">Profile Settings</a></li>
+                                </ul>
+                            </li>
+                            <!-- End Profile Pages -->
+
+                        </ul>
+                    </li>
+                                <!-- End Home -->
+
+                }
+                @Html.Partial("_LoginPartial")
+            </ul>
+        </div><!--/navbar-collapse-->
+    </div>
+</div>
