@@ -23,19 +23,9 @@
 }
 </style>
 
-<div class="breadcrumbs">
-    <div class="container  margin-top-60">
-        <h1 class="pull-left">Login</h1>
-        <ul class="pull-right breadcrumb">
-            <li><a href="/">Home</a></li>
-            <li class="active">Login</li>
-        </ul>
-    </div><!--/container-->
-</div>
-
 
 <div class="container content">		
-<div class="row">
+<div class="row margin-top-25">
 <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
     @using (Html.BeginForm("Login", "Account", new {ReturnUrl = ViewBag.ReturnUrl}, FormMethod.Post, new {@class = "reg-page", role = "form"}))
     {

@@ -104,14 +104,14 @@ namespace Fiveplus.Data.DatabaseInitialization
         private static void CreateUserdetails(FiveplusContext context, ApplicationUser user)
         {
 
-            context.UserDetails.AddOrUpdate(u => u.Id,
+            context.UserDetails.AddOrUpdate(u => u.UserId,
                 new UserDetail
                 {
                     FullName = "World Explorer",
                     Biography = "Travel the wold withour hesitation",
                     Preference = NotificationPreference.Weekly,
                     Timezone = "Eastern",
-                    ProfileImg = @"http://www.gravatar.com/avatar.php?gravatar_id=97247f5541474a5f62e02cef888b738d&rating=PG&size=110&default=identicon",
+                    ProfileImg = null,//@"http://www.gravatar.com/avatar.php?gravatar_id=97247f5541474a5f62e02cef888b738d&rating=PG&size=110&default=identicon",
                     User = user
                 });
 

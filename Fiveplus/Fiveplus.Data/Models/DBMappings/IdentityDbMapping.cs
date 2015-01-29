@@ -9,23 +9,22 @@ namespace Fiveplus.Data.DBMappings
     /// </summary>
 
 
-    internal class IdentityUserConfiguration : EntityTypeConfiguration<UserDetail>
-    {
-        public IdentityUserConfiguration()
-        {
-
-            HasRequired(t => t.User);
-            Property(g => g.Created).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
-
-        }
-    }
-
-    internal class UserInboxConfiguration : EntityTypeConfiguration<UserInboxMessage>
+   internal class UserInboxConfiguration : EntityTypeConfiguration<UserInboxMessage>
     {
         public UserInboxConfiguration()
         {
 
             ToTable("UserInbox");
+            Property(g => g.Created).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
+
+        }
+    }
+
+    internal class UserDetailConfiguration : EntityTypeConfiguration<UserDetail>
+    {
+        public UserDetailConfiguration()
+        {
+            HasRequired(t => t.User).WithRequiredDependent(u=>u.UserDetail);
             Property(g => g.Created).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
 
         }

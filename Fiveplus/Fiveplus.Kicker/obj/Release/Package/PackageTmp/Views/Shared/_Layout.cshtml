@@ -1,182 +1,45 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html ng-app="@ViewBag.InitModule">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Only Five.</title>
+    <title>Hi-Five</title>
 
     
     <link rel="stylesheet" href="~/assets/css/style.css">
     <link rel="stylesheet" href="~/assets/plugins/line-icons/line-icons.css">
     <link rel="stylesheet" href="~/assets/plugins/image-hover/css/img-hover.css">
     <link rel="stylesheet" href="~/assets/css/pages/page_job.css">
-    <link rel="stylesheet" href="~/assets/css/themes/light.css" id="style_color">
+    <link rel="stylesheet" href="~/assets/css/themes/default.css" id="style_color">
+
 
     <link href="~/Content/kicker.css" rel="stylesheet" />
-    <link href="~/Content/less/navigation.css" rel="stylesheet" />
+ @*   <link href="~/Content/less/navigation.css" rel="stylesheet" />*@
     
 <!-- Google Fonts -->
-        <link href="http://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700" rel="stylesheet" type="text/css">
-        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,400,700" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,300,400,700" rel="stylesheet" type="text/css">
 
     @RenderSection("styles", required: false)
 
 </head>
 <body flow-prevent-drop>
 
-    <div class="navbar navbar-fixed-top navbar-light">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
-                    <span class="sr-only">Menu</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="/" class="navbar-brand">
-                    <img src="/assets/landing/img/loop-logo.png" alt="Loop Logo">
-                    <h1 class="hide">FivePlus</h1>
-                </a>
-            </div>
-            <nav class="navbar-collapse collapse" id="main-nav" role="navigation">
-                <ul class="nav navbar-nav navbar-right menu">
-                    <li class=""><a href="/Home">HOME</a></li>
-                    <li> @Html.Partial("_LoginPartial")</li>
-                    @if (Request.IsAuthenticated)
-                    {
-                        <li class="shopping-cart dropdown animate-hover" data-animate="animated fadeInDown">
-                            <a href="#" title="MANAGE YOUR ACCOUNT" style="padding-right: 0;"><i class="fa fa-cogs"></i><span class="amount"> MANAGE</span></a>
 
-                            <ul class="sub-menu animate-wr animated fadeInDown">
-                                <li><a href="/gig/#/create"><span class="language">Create a Gig</span></a></li>
-                                <li><a href="#"><span class="language">My Collections</span></a></li>
-                                <li><a href="#"><span class="language">My Sales</span></a></li>
-                            </ul>
-                        </li>
-                    }
-                </ul>
-            </nav>
-        </div>
-    </div>
-
-
-
-    <div class="wrapper">
-        <!-- Topbar -->
-        <div class="top-header" style="display: none">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h3 style="float: left;color: #fff" class="margin-t-15">fiveplus</h3>
-                        <nav class="top-header-menu padding-y-10" style="height: 41px!important">
-                            <ul class="menu">
-                                @if (Request.IsAuthenticated)
-                                {
-                                    <li class="shopping-cart dropdown animate-hover" data-animate="animated fadeInDown">
-                                        <a href="shop-cart.html" title="View your shopping cart" style="padding-right: 0;"><i class="fa fa-cogs"></i><span class="amount"> Manage</span></a>
-
-                                        <ul class="sub-menu animate-wr animated fadeInDown">
-                                            <li><a href="/gig/#/create"><span class="language">Create a Gig</span></a></li>
-                                            <li><a href="#"><span class="language">My Collections</span></a></li>
-                                            <li><a href="#"><span class="language">My Sales</span></a></li>
-                                        </ul>
-                                    </li>
-                                }
-                                <li> @Html.Partial("_LoginPartial")</li>
-
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
+ <div class="wrapper header-fixed">
+      
+        <div class="header header-fixed-shrink">
+            <!-- Navbar -->
+         @Html.Partial("_NavbarPartial")
+            <!-- End Navbar -->
         </div>
 
-        <!-- End Topbar -->
         @* Body Starts here *@
         @RenderBody()
         <!--=== Footer Version 3 ===-->
         
+        @Html.Partial("_FooterPartial")
         
-        <div class="footer-v3">
-            <div class="footer">
-                <div class="container">
-                    <div class="row">
-                        <!-- About -->
-                        <div class="col-md-3 md-margin-bottom-40">
-                            <a href="index.html"><img class="footer-logo" src="~/assets/landing/img/loop-logo.png" alt=""></a>
-                            <p>Sell for Five, Buy for Five..Give an High Five!</p>
-                            <a href="#" class="btn btn-two">Try it now!</a>
-                        </div><!--/col-md-3-->
-                        <!-- End About -->
-
-                        <div class="col-md-3 md-margin-bottom-40">
-                            <div class="thumb-headline"><h2>About Unify</h2></div>
-                            <ul class="list-unstyled simple-list margin-bottom-20">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Forum</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">Community</a></li>
-                                <li><a href="#">Stories</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                            </ul>
-
-                        </div><!--/col-md-3-->
-
-                        <div class="col-md-3">
-                            <div class="thumb-headline"><h2>Topics</h2></div>
-                            <ul class="list-unstyled simple-list margin-bottom-20">
-                                <li><a href="#">Bootstrap</a></li>
-                                <li><a href="#">Font Awesome</a></li>
-                                <li><a href="#">WordPress</a></li>
-                                <li><a href="#">Favicon</a></li>
-                                <li><a href="#">Javascript</a></li>
-                                <li><a href="#">iOS</a></li>
-                            </ul>
-
-                        </div><!--/col-md-3-->
-
-                        <div class="col-md-3">
-                            <div class="thumb-headline"><h2>Developers</h2></div>
-                            <ul class="list-unstyled simple-list margin-bottom-20">
-                                <li><a href="#">Web Development</a></li>
-                                <li><a href="#">Web Design</a></li>
-                                <li><a href="#">Android Development</a></li>
-                                <li><a href="#">PHP Development</a></li>
-                                <li><a href="#">Programmer</a></li>
-                                <li><a href="#">Start-up</a></li>
-                            </ul>
-                          
-                        </div><!--/col-md-3-->
-                    </div>
-                </div>
-            </div><!--/footer-->
-
-            <div class="copyright">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p>
-                                2014 © Hyphen Labs LLC. All rights reserverd.
-                                <a target="_blank" href="https://twitter.com/hyphenlabs">HyphenLabs</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-                            </p>
-                        </div>
-                        <!-- Social Links -->
-                        <div class="col-md-6">
-                            <ul class="social-icons pull-right">
-                                <li><a href="#" data-original-title="Facebook" class="rounded-x social_facebook"></a></li>
-                                <li><a href="#" data-original-title="Twitter" class="rounded-x social_twitter"></a></li>
-                                <li><a href="#" data-original-title="Goole Plus" class="rounded-x social_googleplus"></a></li>
-                                <li><a href="#" data-original-title="Linkedin" class="rounded-x social_linkedin"></a></li>
-                                <li><a href="#" data-original-title="Pinterest" class="rounded-x social_pintrest"></a></li>
-                            </ul>
-                        </div>
-                        <!-- End Social Links -->
-                    </div>
-                </div>
-            </div><!--/copyright-->
-            <!--=== End Footer Version 3 ===-->
-        </div>
 
         <!--/End Wrapepr-->
 
@@ -185,11 +48,11 @@
 
 
     <!-- JS Global Compulsory -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="~/assets/plugins/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="~/assets/plugins/jquery-migrate-1.2.1.min.js"></script>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
     <!-- JS Implementing Plugins -->
     <script type="text/javascript" src="~/assets/plugins/jquery.parallax.js"></script>

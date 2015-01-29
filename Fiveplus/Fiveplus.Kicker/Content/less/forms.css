@@ -1,0 +1,38 @@
+﻿.validation-summary-errors {
+  background-color: #f2dede;
+  padding: 10px;
+  border: 1px solid #D8B1B1;
+}
+.registrationForm {
+  border: none;
+}
+.sky-form dt {
+  text-align: inherit;
+}
+.input .icon-success,
+.control-label .icon-success {
+  color: #72C02C;
+  border-left: none;
+  border: none;
+  padding-right: 15px;
+}
+.input .icon-error,
+.control-label .icon-error {
+  color: #e74c3c;
+  border-left: none;
+  font-size: 8px;
+  border: none;
+  padding-right: 15px;
+}
+.control-label .icon-error,
+.control-label .icon-success {
+  top: -3px;
+}
+form p a {
+  color: inherit;
+}
+[ng\:cloak],
+[ng-cloak],
+.ng-cloak {
+  display: none !important;
+}

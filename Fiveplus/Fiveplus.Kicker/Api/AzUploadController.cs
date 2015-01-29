@@ -114,21 +114,20 @@ namespace Fiveplus.Kicker.Api
     }
 
     [RoutePrefix("api/upload")]
-    
-    [Route("user/{userId}")]
-    [Route("gig/{gigId}")]
     [Route("user/{userId}/gig/{gigId}")]
     //[EnableCors("*", "*", "GET, PUT, POST")]
     public class UploadController : ApiController
     {
 
-        private IMediaRepositoryAsync _repo;
+        private IMediaRepositoryAsync _mediaRepo;
+        private IUserDetailRepositoryAsync _userRepo;
         private ExplorerUow _explorerUow;
 
-        public UploadController(ExplorerUow explorerUow, IMediaRepositoryAsync repo)
+        public UploadController(ExplorerUow explorerUow, IMediaRepositoryAsync mediaRepo, IUserDetailRepositoryAsync userRepo)
         {
             _explorerUow = explorerUow;
-            _repo = repo;
+            _mediaRepo = mediaRepo;
+            _userRepo = userRepo;
         }
 
         private class FlowMeta
@@ -167,7 +166,8 @@ namespace Fiveplus.Kicker.Api
             }
         }
 
-
+        [Route("user")]
+        [Route("gig/{id}")]
         public HttpResponseMessage Get()
         {
 
@@ -177,7 +177,10 @@ namespace Fiveplus.Kicker.Api
 
         //http://stackoverflow.com/questions/15842496/is-it-possible-to-override-multipartformdatastreamprovider-so-that-is-doesnt-sa/15843410#15843410
 
-        public async Task<IEnumerable<FileDesc>> Post( string gigId,string userId = "")
+
+        [Route("gig/{id}")]
+        [HttpPost]
+        public async Task<IEnumerable<FileDesc>> PostGigMedia(string id)
         {
             var meta = new FlowMeta(HttpContext.Current.Request.Form);
             if (!Request.Content.IsMimeMultipartContent("form-data"))
@@ -185,14 +188,15 @@ namespace Fiveplus.Kicker.Api
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
             }
 
+            var profilePic = this.ControllerContext.RouteData.Route.RouteTemplate.Contains("user");
 
             if (Request.Content.IsMimeMultipartContent())
             {
                 var filename = string.Format(@"{0}", meta.flowFilename);
 
-                var listFiles = await StoreFileToAzure(gigId, filename);
+                var listFiles = await StoreFileToAzure(id, filename);
 
-                var insertCount = SaveMedia(listFiles[0], gigId);
+                var insertCount = SaveMedia(listFiles[0], id);
 
                 return listFiles;
             }
@@ -202,7 +206,36 @@ namespace Fiveplus.Kicker.Api
             }
         }
 
-        private async Task<List<FileDesc>> StoreFileToAzure(string gigId, string filename)
+
+        [Route("user")]
+        [HttpPost]
+        public async Task<IEnumerable<FileDesc>> PostUserMedia()
+        {
+            var meta = new FlowMeta(HttpContext.Current.Request.Form);
+            if (!Request.Content.IsMimeMultipartContent("form-data"))
+            {
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+            }
+
+           if (Request.Content.IsMimeMultipartContent())
+            {
+                var filename = string.Format(@"{0}", meta.flowFilename);
+
+                var listFiles = await StoreFileToAzure(filename,String.Empty); //No Gig Id For user Pic
+
+                await UpdateUserDetails(listFiles[0]);
+
+                return listFiles;
+            }
+            else
+            {
+                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotAcceptable, "This request is not formatted correctly or understood"));
+            }
+        }
+
+
+        #region Private Methods
+        private async Task<List<FileDesc>> StoreFileToAzure(string filename,string gigId)
         {
             var provider =
                 await
@@ -230,12 +263,11 @@ namespace Fiveplus.Kicker.Api
                 Stream fileStream = await file.ReadAsStreamAsync();
 
                 fileDesc.Path = StorageManager.UploadImage(fileStream, fileDesc);
-                fileDesc.Size = fileStream.Length/1024;
+                fileDesc.Size = fileStream.Length / 1024;
                 listFiles.Add(fileDesc);
             }
             return listFiles;
         }
-
 
         private int SaveMedia(FileDesc fileDesc, string gigId)
         {
@@ -247,10 +279,11 @@ namespace Fiveplus.Kicker.Api
                 Url = fileDesc.Path
             };
 
-            _repo.InsertOrUpdateGraph(media);
+           
 
             try
             {
+                _mediaRepo.InsertOrUpdateGraph(media);
                 int i = _explorerUow.Save();
                 return i;
             }
@@ -261,7 +294,44 @@ namespace Fiveplus.Kicker.Api
 
         }
 
-        private async Task<int> SaveMediaAsync(FileDesc fileDesc,string gigId)
+        private async Task<int> UpdateUserDetails(FileDesc fileDesc)
+        {
+            string userId = User.Identity.GetUserId();
+            UserDetail userDetail = await _userRepo.FindAsync(userId);
+
+            if (userDetail != null)
+            {
+                userDetail.ProfileImg = fileDesc.Path;
+                userDetail.State= State.Modified;
+              
+            }
+            else
+            {
+                userDetail = new UserDetail()
+                {
+                    UserId = userId,
+                    ProfileImg = fileDesc.Path,
+                    State= State.Added,
+
+                };
+
+            }
+           
+            try
+            {
+                _userRepo.InsertOrUpdate(userDetail);
+                int i = _explorerUow.Save();
+                return i;
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+
+        }
+
+
+        private async Task<int> SaveMediaAsync(FileDesc fileDesc, string gigId)
         {
             Media media = new Media()
             {
@@ -271,18 +341,19 @@ namespace Fiveplus.Kicker.Api
                 Url = fileDesc.Path
             };
 
-            _repo.InsertOrUpdateGraph(media);
-          
+            _mediaRepo.InsertOrUpdateGraph(media);
+
             try
             {
-               int i = await _explorerUow.SaveAsync();
+                int i = await _explorerUow.SaveAsync();
                 return i;
             }
             catch (DbUpdateConcurrencyException e)
             {
-               return 0;
+                return 0;
             }
 
-        }
+        } 
+        #endregion
     }
 }

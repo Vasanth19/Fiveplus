@@ -5,10 +5,10 @@
     <div class="container ">
         <div class="row margin-top-60">
             <div class="col-md-6">
-                <h2>Create A Gig</h2>
+                <h3>Create A Gig</h3>
             </div>
             <div class="col-md-6">
-                <ol class="breadcrumb pull-right">
+                <ol class="breadcrumb pull-right margin-right-5">
                     <li><a href="/gig">Gig</a></li>
                     <li class="active">Create</li>
                 </ol>
@@ -18,30 +18,68 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container margin-top-20">
+   
     <div class="row">
-        <wizard on-finish="finished()">
-            <wz-step title="Basic Information">
-                <h1></h1>
-                <div ng-include="'/ng-App/modules/gig/subpages/_createGig/step1.html'"></div>
-            </wz-step>
-            <wz-step title="Photos & Videos">
-                <div ng-include="'/ng-App/modules/gig/subpages/_createGig/step2.html'"></div>
-                <input type="button" wz-next="logStep()" value="Click here to continue" />
-            </wz-step>
-             <wz-step title="Payment Info">
-                <p>You're now in the second step of this wizard.</p>
-                <p>Magic things can happen here.</p>
-                <input type="button" wz-next="logStep()" value="Click here to continue" />
-            </wz-step>
-            <wz-step title="Publish">
-                <h1>Finish him</h1>
-                <p>Finally this ends!</p>
-                <input type="button" wz-next value="Click here to end" />
-                <input type="button" ng-click="goBack()" value="Click here to start again" />
-            </wz-step>
-        </wizard>
+        <div class="col-md-9">
+            <wizard on-finish="finished()">
+                <wz-step title="Basic Information">
+                    <h1></h1>
+                    <div ng-include="'/ng-App/modules/gig/subpages/_createGig/step1.html'"></div>
+                </wz-step>
+                <wz-step title="Photos & Videos">
+                    <div ng-include="'/ng-App/modules/gig/subpages/_createGig/step2.html'"></div>
+                    <input type="button" wz-next="logStep()" value="Click here to continue" />
+                </wz-step>
+                <wz-step title="Payment Info">
+                    <p>You're now in the second step of this wizard.</p>
+                    <p>Magic things can happen here.</p>
+                    <input type="button" wz-next="logStep()" value="Click here to continue" />
+                </wz-step>
+                <wz-step title="Publish">
+                    <h1>Finish him</h1>
+                    <p>Finally this ends!</p>
+                    <input type="button" wz-next value="Click here to end" />
+                    <input type="button" ng-click="goBack()" value="Click here to start again" />
+                </wz-step>
+            </wizard>
+        </div>
+        <div class="col-md-3 clearfix">
+            <div class="md-margin-bottom-40 clearfix" style="margin-top: 20px;position: fixed;max-width: 280px;">
+                <div class="easy-block-v1 clearfix">
+                    <div class="easy-block-v1-badge rgba-blue">{{newGig.category.categoryName}}</div>
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <img class="clearfix" alt="" src="http://localhost:59903/assets/img/job/high-rated-job-1.1.jpg">
+                        </div>
+                    </div>
+                    <div class="overflow-h" style="margin-bottom: 5px;">
+                        <h3 class="truncateTitle" >{{newGig.title}}</h3>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li class=""><span class="color-green">Seller:</span> {{user}} <span class="pull-right color-green"></span></li>
+                        <li style="white-space: normal;overflow: hidden;text-overflow: ellipsis;height: 60px;" ng-bind-html="newGig.description" class=""></li>
+                    </ul>
+                    <a class="btn-u btn-u-sm pull-left" href="#">View More</a>
+                 
+                </div>
+
+            </div>
+        </div>
     </div>
 
 </div>
 
+<script type="text/javascript">
+
+    $(window).scroll(function () {
+
+        if ($(this).scrollTop() > 750) {
+            $('.easy-block-v1').fadeOut();
+        }
+        else {
+            $('.easy-block-v1').fadeIn();
+        }
+    });
+
+</script>

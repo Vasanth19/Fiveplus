@@ -1,4 +1,9 @@
 ﻿var dataServiceModule = angular.module("myDataService", []);
+dataServiceModule.run(['$http', function ($http)
+{
+    $http.defaults.headers.common['RequestVerificationToken'] = angular.element(".tokenHolder").attr('RequestVerificationToken');
+}]);
+
 
 dataServiceModule.factory("dataService", function ($http, $q) {
  

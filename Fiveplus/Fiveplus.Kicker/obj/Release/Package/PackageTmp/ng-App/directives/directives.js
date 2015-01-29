@@ -36,6 +36,7 @@ myDirectives.directive('easyBlock', function() {
 });
 
 
+
 myDirectives.directive('hmCategorySearch', function () {
     return {
         restrict: "E",

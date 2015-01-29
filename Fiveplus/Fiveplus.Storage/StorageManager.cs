@@ -24,7 +24,7 @@ namespace Fiveplus.Storage
             CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
 
             // Retrieve a reference to a container. 
-            CloudBlobContainer container = blobClient.GetContainerReference("images");
+            CloudBlobContainer container = blobClient.GetContainerReference("media");
 
             // Create the container if it doesn't already exist.
             if (container.CreateIfNotExists())

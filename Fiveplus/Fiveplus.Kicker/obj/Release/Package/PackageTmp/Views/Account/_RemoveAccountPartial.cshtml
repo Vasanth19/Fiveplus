@@ -9,8 +9,7 @@
             {
                 <tr>
                     <td>@account.LoginProvider</td>
-                    <td>
-                        @if (ViewBag.ShowRemoveButton)
+                    <td> @if (ViewBag.ShowRemoveButton)
                         {
                             using (Html.BeginForm("Disassociate", "Account"))
                             {

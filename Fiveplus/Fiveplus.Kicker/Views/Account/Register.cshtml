@@ -1,126 +1,294 @@
-﻿@model Fiveplus.Kicker.Models.RegisterViewModel
+﻿@using System.Web.UI.WebControls
+@using Fiveplus.Kicker.Helpers
+@model Fiveplus.Kicker.Models.RegisterViewModel
 @{
     ViewBag.Title = "Register a new account";
-    
+    ViewBag.InitModule = "accountModule";
+
 }
 
-@section styles{
-    <link rel="stylesheet" href="~/assets/css/page_log_reg_v2.css">
-}
 
-<style>
-.validation-summary-errors{
-    background-color: #f2dede;
-    padding: 10px;
-    border: 1px solid #D8B1B1;
-}
-</style>
-
-<div class="breadcrumbs">
-    <div class="container margin-top-60">
-        <h1 class="pull-left">@ViewBag.Title</h1>
-        <ul class="pull-right breadcrumb">
-            <li><a href="/">Account</a></li>
-            <li class="active"><a href="/Account/register">Register</a></li>
-        </ul>
-    </div><!--/container-->
-</div>
-
-<div class="container content">
-    <div class="row">
-<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-    
-    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "reg-page", role = "form" }))
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="reg-header">
-            <h2>Already Signed Up? Click <a href="/Account/Login" class="color-green">Sign In</a> to login your account.</h2>
-        </div>
-        
-       @Html.ValidationSummary("", new {@class = "fade in"})
-
-
-        <label>User Name<span class="color-red">*</span></label>
-        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control margin-bottom-20" })
-        @*@Html.ValidationMessageFor(model => model.UserName, "", new { @class = "note note-error" })*@
-
-        <label>Email Address <span class="color-red">*</span></label>
-        @Html.TextBoxFor(m => m.Email, new { @class = "form-control margin-bottom-20" })
-
-        <div class="row">
-            <div class="col-sm-6">
-                <label>Password <span class="color-red">*</span></label>
-                @Html.PasswordFor(m => m.Password, new { @class = "form-control margin-bottom-20" })
-            </div>
-            <div class="col-sm-6">
-                <label>Confirm Password <span class="color-red">*</span></label>
-                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control margin-bottom-20" })
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-6">
-                <label>Country <span class="color-red">*</span></label>
-                @Html.TextBoxFor(m => m.Country, new { @class = "form-control margin-bottom-20" })
-            </div>
-            <div class="col-sm-6">
-                <label>State <span class="color-red">*</span></label>
-                @Html.TextBoxFor(m => m.State, new { @class = "form-control margin-bottom-20" })
-            </div>
-        </div>
-
-        <hr>
-
-        <div class="row">
-            <div class="col-lg-6">
-                <label class="checkbox">
-                    @Html.CheckBoxFor(m=>m.TermsConditions)
-                    I read <a href="page_terms.html" class="color-green">Terms and Conditions</a>
-                </label>
-            </div>
-            <div class="col-lg-6 text-right">
-                <input type="submit" class="btn btn-u btn-block" value="Register" />
-            </div>
-        </div>
-
+@section styles
+{
+    <style type="text/css">
+        .fancybox-margin {
+            margin-right: 17px;
         }
-    </div>
+
+        .list-inline {
+            font-weight: bold;
+        }
+       
+    </style>
+    <link rel="stylesheet" href="~/assets/css/page_log_reg_v2.css">
+    <link href="~/assets/css/plugins/sky-forms.css" rel="stylesheet" />
+    <link href="~/assets/css/plugins/custom-sky-forms.css" rel="stylesheet" />
+    <link href="~/assets/css/pages/profile.css" rel="stylesheet" />
+    <link href="~/Content/less/forms.css" rel="stylesheet" />
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+}
+
+@section ngscripts
+{
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+    <script type="text/javascript" src="~/ng-App/plugins/x-angular-limitTo.js"></script>
+
+
+    <script src="~/ng-App/plugins/ngAutocomplete.js"></script>
+
+    <script src="~/ng-App/modules/account/dataServices.js"></script>
+    <script src="~/ng-App/modules/account/accountModule.js"></script>
+
+
+}
+
+
+
+<div class="container content" ng-controller="accountController" ng-cloak @Html.RequestVerificationToken()>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 margin-top-35">
+            <form class="reg-page sky-form" name="registerForm" novalidate="novalidate" ng-submit="createAccount(registerForm.$valid)">
+                <div class="reg-header">
+                    <h2>Create your account.</h2>
+                    <p>Already Signed Up? Click <a href="/Login" style="color: #72c02c;">Sign In</a> to login your account.</p>
+                </div>
+
+                <div class="row ">
+                    <div class="col-sm-6 margin-bottom-20">
+
+                        <ncg-input ng-model="registervm.firstName" required tooltip="First Name" label="First Name" placeholder="First Name" class="form-control">
+                            <span class="note" ng-message="required">First Name is Required</span>
+                        </ncg-input>
+                    </div>
+                    <div class="col-sm-6 ">
+                        <ncg-input ng-model="registervm.LastName" required tooltip="Last Name" label="Last Name" placeholder="Last Name" class="form-control">
+                        </ncg-input>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 margin-bottom-20">
+
+                        <ncg-input ng-model="registervm.email" required label="Email Address" placeholder="Email Address" class="form-control" icon="icon-append fa fa-envelope">
+                            <span class="note" ng-message="required">Email Address is Required</span>
+                        </ncg-input>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+
+                        <ncg-input type="text" ng-model="registervm.password" required  label="Password" placeholder="Password" class="form-control">
+
+                        </ncg-input>
+
+
+                    </div>
+                    <div class="col-sm-6">
+                        <ncg-input type="text" ng-model="registervm.confirmPassword" required label="Confirm Password"
+                                   placeholder="Confirm Password" class="form-control" compare-to="registervm.password">
+                            <span class="note" ng-message="compareTo">Must match the password field</span>
+                        </ncg-input>
+                    </div>
+                </div>
+
+
+                <hr>
+
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <p>
+                            By clicking Create, you indicate that you have read and agree to the
+                            <a href="/terms_of_service" style="color: #72c02c;">Terms of Service</a> and Privacy Policy.
+
+                        </p>
+                    </div>
+                    <div class="col-lg-12">
+                        <button class="btn-u btn-u-lg btn-block rounded" type="submit">Create Account</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
+
+@*<div class="container content" ng-controller="accountController">
+    <div class="row margin-top-35">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 margin-top-35">
+            <h2 class="heading-md">Create your account.</h2>
+            <hr />
+            <form class="sky-form registrationForm" name="basicProfileForm" novalidate="novalidate" ng-submit="submitForm(basicProfileForm.$valid)" >
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label>Password <span class="color-red">*</span></label>
+                        <input type="password" class="form-control margin-bottom-20">
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Confirm Password <span class="color-red">*</span></label>
+                        <input type="password" class="form-control margin-bottom-20">
+                    </div>
+                </div>
+                <dl class="dl-horizontal">
+                    <dt>Username</dt>
+                    <dd>
+
+                        <section>
+                            <label class="input" ng-class="{ 'state-error' : basicProfileForm.username.$invalid && !basicProfileForm.username.$pristine,
+                                                    'state-success' : basicProfileForm.username.$valid && !basicProfileForm.username.$pristine }">
+                                <i class="icon-append fa fa-user"></i>
+                                <input type="text" placeholder="Username" name="username" required ng-minlength=10 ng-maxlength=80 ng-model="basicProfile.userName" />
+                                <b class="tooltip tooltip-bottom-right">Needed to enter the website</b>
+                            </label>
+                            <div ng-messages="basicProfileForm.username.$error" ng-messages-multiple ng-messages-include="/ng-App/partials/ngMessages/ngMessages.html">
+                                @*<span class="note" ng-message="required">Title is Required</span>
+                                <span class="note" ng-message="minlength">Enter at-least 10 characters   </span>
+                                <span class="note" ng-message="maxlength">Do Not Exceed More Than 80 characters </span>
+                            </div>
+                        </section>
+                    </dd>
+                    <dt>City, State or Country</dt>
+                    <dd>
+                        <section>
+                            <label class="input" ng-class="{ 'state-error' : basicProfileForm.place.$invalid && !basicProfileForm.place.$pristine,
+                                                    'state-success' : basicProfileF0orm.usernameplace.$valid && !basicProfileForm.place.$pristine }">
+                                <i class="icon-append fa fa-flag-o"></i>
+                                <input type="text" placeholder="City, State, Country Or Region" name="place" required ng-model="basicProfile.location" ng-autocomplete="result1" details="details1" options="options1" />
+                                <b class="tooltip tooltip-bottom-right">Pick the closest place to where you live</b>
+                            </label>
+                            <span class="note" ng-show="basicProfileForm.place.$pristine || basicProfileForm.place.$error.required">Place is Required </span>
+                        </section>
+                    </dd>
+
+                    <!--<dt>Country</dt>
+            <dd>
+                <section>
+                    <label class="select" ng-class="{ 'state-error' : basicProfileForm.country.$invalid && !basicProfileForm.country.$pristine,
+                                                        'state-success' : basicProfileForm.country.$valid && !basicProfileForm.country.$pristine }">
+                        <country-select data-ng-model="basicProfile.country" name="country" required></country-select>
+                        <i></i>
+                    </label>
+
+                </section>
+            </dd>-->
+                    <field ng-model="basicProfile.biography" type="text" template="textarea" name="biography" label="Brief Biography" ng-minlength=10 ng-maxlength=350 required
+                           tooltip="Enter Your Brief Biography">
+                        <validator key="required">Biography is Required  </validator>
+                        <validator key="minlength"> Enter at-least 10 characters  </validator>
+                        <validator key="maxlength"> Do Not Exceed More Than 350 characters, Keep it short and sweet! </validator>
+                    </field>
+
+                </dl>
+                <div class="alert alert-warning fade in" ng-if="basicProfileForm.$invalid && basicProfileForm.$submitted ">
+                    <strong>Warning!</strong> Please make sure to complete the form.
+                </div>
+
+                <hr>
+
+                <button type="button" class="btn btn-default" ng-click="cancelForm()">Cancel</button>
+                <!--<button class="btn btn-warning" type="reset" ng-click="resetForm()">Reset</button>-->
+                <button class="btn btn-success" type="submit" ng-disabled="basicProfileForm.$invalid || basicProfileForm.$pending">Save Changes</button>
+
+            </form>
+        </div>
+    </div>
+</div>*@
+
+@*<div class="container content" >
+        <div class="row margin-top-35">
+    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "reg-page", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="reg-header">
+                <h2>Create your account</h2>
+          </div>
+
+           @Html.ValidationSummary("", new {@class = "fade in"})
+
+        <div class="row">
+            <div class="col-sm-6">
+                <label>First Name <span class="color-red">*</span></label>
+                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control margin-bottom-20" })
+            </div>
+            <div class="col-sm-6">
+                <label>Last Name <span class="color-red">*</span></label>
+                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control margin-bottom-20" })
+            </div>
+        </div>
+     <label>Email Address <span class="color-red">*</span></label>
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control margin-bottom-20" })
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>Password <span class="color-red">*</span></label>
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control margin-bottom-20" })
+                </div>
+                <div class="col-sm-6">
+                    <label>Confirm Password <span class="color-red">*</span></label>
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control margin-bottom-20" })
+                </div>
+            </div>
+            <hr>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <label class="checkbox">
+                        @Html.CheckBoxFor(m=>m.TermsConditions)
+                        I read <a href="page_terms.html" class="color-green">Terms and Conditions</a>
+                    </label>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <input type="submit" class="btn btn-u btn-block" value="Register" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>Already Signed Up? Click <a href="/Account/Login" class="color-green">Sign In</a> to login your account.</p>
+                </div>
+            </div>
+        }
+        </div>
+        </div>
+    </div>*@
 
 
 @*@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr /> 
-    @Html.ValidationSummary("", new { @class = "note note-error" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+    {
+        @Html.AntiForgeryToken()
+        <h4>Create a new account.</h4>
+        <hr />
+        @Html.ValidationSummary("", new { @class = "note note-error" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" value="Register" />
+            </div>
         </div>
-    </div>
-}*@
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+    }*@

@@ -61,7 +61,7 @@ angular.module('field-directive', [])
                 });
 
                 // Update the label's contents
-                var labelElement = newElement.find('label');
+                var labelElement = newElement.find('.control-label');
                 labelElement.html(labelContent);
 
                 return newElement;
@@ -87,6 +87,22 @@ angular.module('field-directive', [])
                     inputElement.attr('name', childScope.$modelId);
                     inputElement.attr('id', childScope.$modelId);
                     newElement.find('label').attr('for', childScope.$modelId);
+
+                    // Added by Vasanth
+                    var iconContent = '';
+                    if (element.attr('icon')) {
+                        iconContent = element.attr('icon');
+                        element[0].removeAttribute('icon');
+                        newElement.find('i').attr('class', iconContent);
+                    }
+                      
+                    var tooltipContent = '';
+                    if (element.attr('tooltip')) {
+                        tooltipContent = element.attr('tooltip');
+                        element[0].removeAttribute('tooltip');
+                        newElement.find('.tooltip').html(tooltipContent);
+                    }
+
 
                     // TODO: Consider moving this validator stuff into its own directive
                     // and use a directive controller to wire it all up

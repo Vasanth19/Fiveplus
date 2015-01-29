@@ -1,75 +1,208 @@
 ﻿@model Fiveplus.Kicker.Models.IndexViewModel
 @{
-    ViewBag.Title = "Manage your account";
+    ViewBag.Title = "Profile & More";
+    ViewBag.InitModule = "manageModule";
 }
 
-<h2>@ViewBag.Title.</h2>
-<p class="text-success">@ViewBag.StatusMessage</p>
-<div class="row">
-    <div class="col-md-8">
-        <p>
-            @if (Model.HasPassword)
-            {
-                @Html.ActionLink("Change your password", "ChangePassword")
-            }
-            else
-            {
-                @Html.ActionLink("Pick a password", "SetPassword")
-            }
-        </p>
-        <p>
-            Phone Number: @(Model.PhoneNumber ?? "None") [
-            @if (Model.PhoneNumber != null)
-            {
-                @Html.ActionLink("Change", "AddPhoneNumber")
-                @: &nbsp;|&nbsp;
-                @Html.ActionLink("Remove", "RemovePhoneNumber")
-            }
-            else
-            {
-                @Html.ActionLink("Add", "AddPhoneNumber")
-            }
-            ]
-        </p>
-        <p>
-            External Logins: @Model.Logins.Count
-            @Html.ActionLink("[Manage]", "ManageLogins")
-        </p>
-        @if (Model.TwoFactor)
-        {
-            <form method="post" action="/Manage/DisableTFA">
-                <p>
-                    Two factor is currently enabled:
-                    <input type="submit" value="Disable" class="btn btn-default"/>
-                </p>
-            </form>
+@section scripts
+{
+   
+   
+}
+
+@section ngscripts
+{
+   
+   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.js"></script>
+    <script src="~/ng-App/modules/manage/manageModule.js"></script>
+}
+
+@section styles
+{
+    <style type="text/css">
+        .fancybox-margin {
+            margin-right: 17px;
         }
-        else
-        {
-            <form method="post" action="/Manage/EnableTFA">
-                <p>
-                    Two factor is currently disabled:
-                    <input type="submit" value="Enable" class="btn btn-default"/>
-                </p>
-            </form>
-        }
-        @if (Model.BrowserRemembered)
-        {
-            <form method="post" action="/Manage/ForgetBrowser">
-                <p>
-                    Browser is curently remembered for two factor:
-                    <input type="submit" value="Forget Browser" class="btn btn-default" />
-                </p>
-            </form>
-        }
-        else
-        {
-            <form method="post" action="/Manage/RememberBrowser">
-                <p>
-                    Browser is curently not remembered for two factor:
-                    <input type="submit" value="Remember Browser" class="btn btn-default"/>
-                </p>
-            </form>
-        }
-    </div>
+        .list-inline {
+        font-weight: bold;
+    }
+    </style>
+    <link href="~/assets/css/plugins/sky-forms.css" rel="stylesheet" />
+    <link href="~/assets/css/plugins/custom-sky-forms.css" rel="stylesheet" />
+    <link href="~/assets/css/pages/profile.css" rel="stylesheet" />
+}
+<div class="breadcrumbs">
+    <div class="container margin-top-60">
+        <h1 class="pull-left">@ViewBag.Title</h1>
+        <ul class="pull-right breadcrumb margin-right-5">
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="/manage">Settings</a></li>
+        </ul>
+    </div><!--/container-->
 </div>
+
+<div ng-controller="indexController">
+    <div class="profile-body margin-bottom-20">
+        <div class="tab-v1">
+            <ul class="nav nav-justified nav-tabs" >
+                <li class="" ng-repeat="t in tabs">
+                    <a data-toggle="tab" href="{{t.route}}" ng-click="go(t.route)">{{t.heading}}</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                
+            </div>
+            <h2>View:</h2>
+            <div ui-view></div>
+
+        </div>
+
+        <div class="profile">
+            <div class="container content">
+                <div class="row">
+                    <!--Left Sidebar-->
+                    <div class="col-md-3 md-margin-bottom-40">
+                        <img class="img-responsive profile-img margin-bottom-20" src="~/assets/img/common/NoImage.png" alt="">
+
+                        <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
+                            <li class="list-group-item">
+                                <a href="profile.html"><i class="fa fa-bar-chart-o"></i> Overall</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="profile_me.html"><i class="fa fa-user"></i> Profile</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="profile_users.html"><i class="fa fa-group"></i> Users</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="profile_projects.html"><i class="fa fa-cubes"></i> My Projects</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="profile_comments.html"><i class="fa fa-comments"></i> Comments</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="profile_history.html"><i class="fa fa-history"></i> History</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="profile_settings.html"><i class="fa fa-cog"></i> Settings</a>
+                            </li>
+                        </ul>
+                        <hr>
+                        <div class="margin-bottom-50"></div>
+
+
+                    </div>
+                    <!--End Left Sidebar-->
+
+                    <div class="col-md-9">
+                        <!--Profile Body-->
+                        <div class="profile-body margin-bottom-20">
+                            <div class="tab-v1">
+                                <ul class="nav nav-justified nav-tabs">
+                                    <li class="active"><a data-toggle="tab" href="#profile">Account</a></li>
+                                    <li><a data-toggle="tab" href="#security">Change Password</a></li>
+                                    <li><a data-toggle="tab" href="#payment">Payment Options</a></li>
+                                    <li><a data-toggle="tab" href="#preferences">Notification Settings</a></li>
+                                </ul>
+                                <div class="tab-content">
+
+                                    <div id="profile" ng-include="'/ng-App/modules/manage/subPages/profile.html'"></div>
+                                    <div id="security" ng-include="'/ng-App/modules/manage/subPages/security.html'"></div>
+                                    <div id="payment" ng-include="'/ng-App/modules/manage/subPages/payment.html'"></div>
+                                    <div id="preferences" ng-include="'/ng-App/modules/manage/subPages/preferences.html'"></div>
+
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Profile Body-->
+                    </div>
+                </div><!--/end row-->
+            </div><!--/container-->
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <ul class="margin-15 list-inline margin-right-20">
+                    <li class="margin-right-20"><a href="/settings">Account</a></li>
+                    <li class="margin-right-20"><a href="/settings/profile">Edit Profile</a></li>
+                    <li class="margin-right-20"><a href="/settings/">Notifications</a></li>
+                    <li class="margin-right-20"><a href="/manage">Edit Profile</a></li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 ">
+
+                    <p>
+                        @if (Model.HasPassword)
+                        {
+                            @Html.ActionLink("Change your password", "ChangePassword")
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Pick a password", "SetPassword")
+                        }
+                    </p>
+                    <p>
+                        Phone Number: @(Model.PhoneNumber ?? "None") [
+                        @if (Model.PhoneNumber != null)
+                        {
+                            @Html.ActionLink("Change", "AddPhoneNumber")
+                            @: &nbsp;|&nbsp;
+                            @Html.ActionLink("Remove", "RemovePhoneNumber")
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Add", "AddPhoneNumber")
+                        }
+                        ]
+                    </p>
+                    <p>
+                        External Logins: @Model.Logins.Count
+                        @Html.ActionLink("[Manage]", "ManageLogins")
+                    </p>
+                </div>
+                <div class="col-sm-6 ">
+                    @if (Model.TwoFactor)
+                    {
+                        <form method="post" action="/Manage/DisableTFA">
+                            <p>
+                                Two factor is currently enabled:
+                                <input type="submit" value="Disable" class="btn btn-default" />
+                            </p>
+                        </form>
+                    }
+                    else
+                    {
+                        <form method="post" action="/Manage/EnableTFA">
+                            <p>
+                                Two factor is currently disabled:
+                                <input type="submit" value="Enable" class="btn btn-default" />
+                            </p>
+                        </form>
+                    }
+                    @if (Model.BrowserRemembered)
+                    {
+                        <form method="post" action="/Manage/ForgetBrowser">
+                            <p>
+                                Browser is curently remembered for two factor:
+                                <input type="submit" value="Forget Browser" class="btn btn-default" />
+                            </p>
+                        </form>
+                    }
+                    else
+                    {
+                        <form method="post" action="/Manage/RememberBrowser">
+                            <p>
+                                Browser is curently not remembered for two factor:
+                                <input type="submit" value="Remember Browser" class="btn btn-default" />
+                            </p>
+                        </form>
+                    }
+
+                </div>
+            </div>
+        </div>

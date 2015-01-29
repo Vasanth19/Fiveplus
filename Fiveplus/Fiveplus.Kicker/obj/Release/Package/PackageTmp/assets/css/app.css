@@ -7,10 +7,10 @@
 */
 
 /*Import Google Font*/
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
 
-@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic);
-@import "http://fonts.googleapis.com/css?family=Roboto:400,300,500,500italic,700,900,400italic,700italic";
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic);
+@import "https://fonts.googleapis.com/css?family=Roboto:400,300,500,500italic,700,900,400italic,700italic";
 @import url(../../Content/bootstrap/bootstrap.min.css);
 @import url(../../Content/font-awesome/font-awesome.css);
 /*Reset Styles
@@ -48,6 +48,10 @@ a:focus {
 a:hover {
    color: #72c02c;
    text-decoration: underline;
+}
+
+hr.no-margin {
+  margin: 0;
 }
 
 hr {
@@ -1601,7 +1605,6 @@ i.icon-bg-light-grey {
 .servive-block {
   padding: 20px 30px;
   text-align: center;
-  margin-bottom: 20px;
 }
 
 .servive-block p,
@@ -2548,6 +2551,9 @@ img.img-circle {
 ------------------------------------*/
 .margin-left-5 { margin-left: 5px;}
 .margin-right-5 { margin-right: 5px;}
+.margin-right-10 { margin-right: 10px;}
+.margin-right-15 { margin-right: 15px;}
+.margin-right-20 { margin-right: 20px;}
 
 .margin-5 { margin: 5px;}
 .margin-10 { margin: 10px;}

@@ -8,6 +8,7 @@ using System;
 using Fiveplus.Data.DbContexts;
 using Fiveplus.Data.Models;
 using Owin.Security.Providers.GooglePlus;
+using Newtonsoft.Json.Serialization;
 
 
 //Awesome Referecnce http://www.beabigrockstar.com/guides/aspnet-oauth
@@ -34,9 +35,9 @@ namespace Fiveplus.Kicker
                 Provider = new CookieAuthenticationProvider
                 {
                     // Enables the application to validate the security stamp when the user logs in.
-                    // This is a security feature which is used when you change a password or add an external login to your account.  
+                    // This is a security feature which is used when you change a password or add an external login to your account.  9471/1
                     OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<ApplicationUserManager, ApplicationUser>(
-                        validateInterval: TimeSpan.FromMinutes(30),
+                        validateInterval: TimeSpan.FromMinutes(300),
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
             });
@@ -66,6 +67,7 @@ namespace Fiveplus.Kicker
             app.UseGooglePlusAuthentication(
                 clientId: "492627460843-9jfu4bmib3v1691bra2g5rc8i2phfj4m.apps.googleusercontent.com",
                 clientSecret: "U6tcHVfxnTb_LEWT04RhV8dO");
+
         }
     }
 }

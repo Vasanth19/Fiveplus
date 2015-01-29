@@ -11,9 +11,10 @@
         }
     </style>
     <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.css" rel="stylesheet" />
-<link href="~/assets/css/plugins/brand-buttons/brand-buttons.css" rel="stylesheet" />
-<link href="~/assets/css/plugins/brand-buttons/brand-buttons-inversed.css" rel="stylesheet" />
-
+    <link href="~/assets/css/plugins/brand-buttons/brand-buttons.css" rel="stylesheet" />
+    <link href="~/assets/css/plugins/brand-buttons/brand-buttons-inversed.css" rel="stylesheet" />
+    <link href="~/assets/css/pages/blocks.css" rel="stylesheet" />
+    <link href="~/assets/css/pages/portfolio-v1.css" rel="stylesheet" />
 }
 
 @section scripts
@@ -33,81 +34,36 @@
 
 
 <!--=== Content Part ===-->
+<div class="relative" style="z-index: 2">
 
 
-    <div class="container content" ng-include="'/ng-App/modules/home/subPages/staffPick.html'"></div>
-
-    <!--
-        <div ng-include="'/ng-App/modules/home/subPages/categorySearch.html'"></div>
-        -->
+    <div class="container content relative" ng-include="'/ng-App/modules/home/subPages/staffPick.html'"></div>
 
 
-    <hr class="no-margin"/>
-    
-    <div class="container" ng-include=" '/ng-App/modules/home/subPages/popularGigs.html'" data-ng-controller="indexController"></div>
-    
+    <hr class="no-margin" />
+
+    <div class="container" ng-include=" '/ng-App/modules/home/subPages/popularGigs.html'" ng-controller="indexController"></div>
+
     <div class=" funny-boxes margin-top-60">
 
-    <div class="title-box-v2">
-        <h2>Discover <span class="color-green">great gigs</span> with your friends!</h2>
-        <h4 class="margin-top-15">Want to learn more? See how it works</h4>
-        <a class="btn btn-lg btn-facebook-inversed margin-top-15" href="/account/login">
-            <i class="fa fa-facebook"></i> Connect with Facebook <i class="fa fa-angle-right"></i>
-        </a>
+        <div class="title-box-v2">
+            <h2>Discover <span class="color-green">great gigs</span> with your friends!</h2>
+            <h4 class="margin-top-15">Want to learn more? See how it works</h4>
+            <a class="btn btn-lg btn-facebook-inversed margin-top-15" href="/account/login">
+                <i class="fa fa-facebook"></i> Connect with Facebook <i class="fa fa-angle-right"></i>
+            </a>
+        </div>
+
     </div>
 
+
+
+
+
+    <!--=== End Content Part ===-->
+    <!--=== Curated Gigs  ===-->
+    <div class="container" ng-include="'/ng-App/modules/home/subPages/curatedGigs.html'" ng-controller="indexController"></div>
+    <!--===Curated Gigs ===-->
+
+
 </div>
-
-
-         
-<!--=== End Content Part ===-->
-
-<!--=== Job Partners ===-->
-<div class="container job-partners">
-    <div class="heading-xs"><h2>Curated Gigs</h2></div>
-
-    <ul class="list-inline our-clients" id="effect-2">
-        <li>
-            <figure>
-                <img src="assets/img/clients2/ea-canada.png" alt="">
-                <div class="img-hover">
-                    <h4>Ea Canada</h4>
-                </div>
-            </figure>
-        </li>
-        <li>
-            <figure>
-                <img src="assets/img/clients2/inspiring.png" alt="">
-                <div class="img-hover">
-                    <h4>Inspiring</h4>
-                </div>
-            </figure>
-        </li>
-        <li>
-            <figure>
-                <img src="assets/img/clients2/ucweb.png" alt="">
-                <div class="img-hover">
-                    <h4>UcWeb</h4>
-                </div>
-            </figure>
-        </li>
-        <li>
-            <figure>
-                <img src="assets/img/clients2/clarks.png" alt="">
-                <div class="img-hover">
-                    <h4>Clarks</h4>
-                </div>
-            </figure>
-        </li>
-        <li>
-            <figure>
-                <img src="assets/img/clients2/corepreserves.png" alt="">
-                <div class="img-hover">
-                    <h4>Core Preserves</h4>
-                </div>
-            </figure>
-        </li>
-         
-    </ul>
-</div><!--/container-->
-<!--=== End Job Partners ===-->

@@ -80,6 +80,7 @@ function singleTopicController($scope, dataService, $routeParams, $location) {
 
 }
 
+homeIndexModule.controller("indexController", ["$scope","$http","dataService", indexController]);
 function indexController($scope, $http, dataService) {
     //http://jsoneditoronline.org/
 

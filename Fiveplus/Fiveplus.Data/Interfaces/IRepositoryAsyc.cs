@@ -29,7 +29,11 @@ namespace Fiveplus.Data.Repo
 
     public interface IUserInboxMessageRepositoryAsync : IEntityRepositoryAsync<UserInboxMessage> { }
     public interface IUserCollectedGigRepositoryAsync : IEntityRepositoryAsync<UserCollectedGig> { }
-    public interface IUserDetailRepositoryAsync : IEntityRepositoryAsync<UserDetail> { }
+
+    public interface IUserDetailRepositoryAsync : IEntityRepositoryAsync<UserDetail>
+    {
+        Task<UserDetail> FindAsync(string id);
+    }
 
     public interface ICategoryRepositoryAsync : IEntityRepositoryAsync<Category> { }
     public interface IAddonRepositoryAsync : IEntityRepositoryAsync<Addon> { }

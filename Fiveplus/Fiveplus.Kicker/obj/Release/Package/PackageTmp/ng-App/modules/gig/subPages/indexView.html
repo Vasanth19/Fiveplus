@@ -1,14 +1,18 @@
 ﻿
-<section class="slice animate-hover-slide bg-5 " data-ng-controller="gigIndexController">
-    <div class="w-section inverse margin-top-60">
+<div class="parallax-confetti parallaxBg margin-top-60" style="background-position: center">
+    <div class="container content">
+        <div class="title-box-v2">
+            <h2>Build Your <span class="color-green">Own</span> Talents</h2>
+            <h4>The world is but a canvas to our imagination —Henry David Thoreau</h4>
+            <a href="#/create" class="btn rounded btn-success btn-lg margin-top-15"><i class="fa fa-chain"></i> Start Now</a>
+        </div>
+
+    </div>
+    
+    <div class="margin-top-50 bg-white-50">
         <div class="container">
-            <h3 class="section-title">Most Popular</h3>
-            <span class="see-all pull-right inline"><a href="#/discover/popular?ref=popular">See all</a></span>
-            <div class="row">
-                <div class="col-md-3" ng-repeat="gigItem in gigs">
-                    <hm-gig-item gig="gigItem"></hm-gig-item>
-                </div>
-            </div>
+            <h3 class="title-box-v2 margin-bottom-20">Learn More <span class="color-green">about</span> categories</h3>
+            <div ng-include="'/ng-App/modules/discover/subPages/categories.html'"></div>
         </div>
     </div>
-</section>
+</div>

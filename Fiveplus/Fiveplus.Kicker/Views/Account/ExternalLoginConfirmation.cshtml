@@ -1,6 +1,7 @@
 ﻿@model Fiveplus.Kicker.Models.ExternalLoginConfirmationViewModel
 @{
     ViewBag.Title = "Register";
+    ViewBag.InitModule = "accountModule";
 }
 
 
@@ -34,6 +35,26 @@
     </div>
 }*@
 
+@section ngscripts
+{
+    @* Angular Plugins  *@
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+
+    <script src="~/ng-App/plugins/ngAutocomplete.js"></script>
+
+    <script src="~/ng-App/directives/uiField/uiField.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.js"></script>
+    <script src="~/ng-App/modules/account/dataServices.js"></script>
+    <script src="~/ng-App/modules/account/accountModule.js"></script>
+
+}
+
+
+
+
+
 
 @section styles{
     <link rel="stylesheet" href="~/assets/css/page_log_reg_v2.css">
@@ -57,7 +78,7 @@
     </div><!--/container-->
 </div>
 
-<div class="container content">
+<div class="container content" ng-controller="externalLoginController">
     <div class="row">
         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 
@@ -81,13 +102,9 @@
 
                 
                 <div class="row">
-                    <div class="col-sm-6">
-                        <label>Country <span class="color-red">*</span></label>
-                        @Html.TextBoxFor(m => m.Country, new { @class = "form-control margin-bottom-20" })
-                    </div>
-                    <div class="col-sm-6">
-                        <label>State <span class="color-red">*</span></label>
-                        @Html.TextBoxFor(m => m.State, new { @class = "form-control margin-bottom-20" })
+                    <div class="col-sm-12">
+                        <label>Choose Location <span class="color-red">*</span></label>
+                        @Html.TextBoxFor(m => m.Location, new { @class = "form-control margin-bottom-20", ng_model="location",ng_autocomplete="result1", details="details1", options="options1"})
                     </div>
                 </div>
 

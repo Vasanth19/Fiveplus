@@ -140,6 +140,8 @@ function gigIndexController($scope, $http, dataService) {
 
 function gigCreateController($scope, $http, gigDataService, WizardHandler, dataService) {
 
+    //assign Global Variable
+    $scope.user = user;
 
     $scope.categories = [];
 
@@ -154,7 +156,7 @@ function gigCreateController($scope, $http, gigDataService, WizardHandler, dataS
     $scope.info = {
         "gigId": "Gig1",
         "userId": "User1"
-    }
+    };
 
     $scope.newGig = {};
 
@@ -177,13 +179,13 @@ function gigCreateController($scope, $http, gigDataService, WizardHandler, dataS
     $scope.uploader = {}; //Holds the flow object
 
     $scope.flowTarget = function() {
-        return  {"target":'/api/upload/gig/' + $scope.newGig.gigId }
-    }
-    
-    $scope.flowSuccess = function (message) {
+        return { "target": '/api/upload/gig/' + $scope.newGig.gigId };
+    };
+
+    $scope.flowSuccess = function(message) {
         //Add it to media url
         console.log(message);
-    }
+    };
 
     //$scope.filesSubmitted = function (flow) {
     //    flow.opts.target = "/api/upload/gig/" + $scope.newGig.gigId;
@@ -194,43 +196,41 @@ function gigCreateController($scope, $http, gigDataService, WizardHandler, dataS
     //#region Step 1 functions
     $scope.reset = function() {
         $scope.newGig = {};
-    }
+    };
 
     //Test and works Great
-    $scope.setGigIdToTestUpload = function () {
+    $scope.setGigIdToTestUpload = function() {
         console.log($scope);
         $scope.newGig.gigId = 1;
         $scope.uploader.flow.opts.target = "/api/upload/gig/" + $scope.newGig.id;
         $scope.uploader.flow.defaults.target = "/api/upload/gig/" + $scope.newGig.id;
-    }
+    };
 
-    $scope.saveGigInfo = function () {
+    $scope.saveGigInfo = function() {
 
         $scope.newGig.state = "Added";
         //Save Gig and get the gig Id
         gigDataService.addGig($scope.newGig).
-            then(function (newlyCreatedGig) {
-            //Success
-             console.log("gig Saved");
-             $scope.newGig = newlyCreatedGig;
-             $scope.uploader.flow.opts.target = "/api/upload/gig/" + $scope.newGig.id;
-             $scope.uploader.flow.defaults.target = "/api/upload/gig/" + $scope.newGig.id;
-            WizardHandler.wizard().next();
+            then(function(newlyCreatedGig) {
+                //Success
+                console.log("gig Saved");
+                $scope.newGig = newlyCreatedGig;
+                $scope.uploader.flow.opts.target = "/api/upload/gig/" + $scope.newGig.id;
+                $scope.uploader.flow.defaults.target = "/api/upload/gig/" + $scope.newGig.id;
+                WizardHandler.wizard().next();
 
-        }, function (error) {
-            //Error
-            console.log( "Error Occured while saving gig");
-            console.log(error );
-        });
+            }, function(error) {
+                //Error
+                console.log("Error Occured while saving gig");
+                console.log(error);
+            });
 
-        
+
         //Enable continue button when the form is valid
-           
 
-    }
+
+    };
     //#endregion
 
-
-   
 
 }

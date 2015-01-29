@@ -15,6 +15,7 @@
 @import url(plugins/animate.css);
 @import url(plugins/box-shadows.css);
 
+
 /*Boxed Layout
 ------------------------------------*/
 .wrapper {
@@ -288,8 +289,8 @@
 .header .navbar-default .navbar-nav > li > a {
 	color: #687074;
 	font-size: 15px;
-	font-weight:400;
-	text-transform: uppercase;
+	font-weight:600;
+	text-transform: capitalize;
 }
 
 .header .navbar-default .navbar-nav > .active > a {
@@ -707,17 +708,17 @@
 ------------------------------------*/
 /*Header*/
 .header-fixed .header {
-	height: 78px;
+	/*height: 78px;*/
 }
 
 .header-fixed .header.header-fixed-shrink {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 95px;
+	/*height: 95px;*/
 	z-index: 9999;
 	position: fixed;
-	margin-top: -35px;
+	/*margin-top: -35px;*/
 	border-bottom-color: #f5f5f5;
 	background: rgba(255,255,255, 0.9); 
 	-webkit-transition: height 0.6s;
@@ -734,7 +735,7 @@
 }
 
 .header-fixed .header.header-fixed-shrink .navbar-brand img {
-	width: 90%;
+	height: 70%;
 }
 
 .header-fixed .header.header-fixed-shrink .search,
@@ -768,11 +769,11 @@
 @media (max-width: 992px) {
 	/*Header*/
 	.header-fixed .header {
-		height: 118px;
+		height: 60px;
 	}
 
 	.header-fixed .header.header-fixed-shrink {
-		height: 135px;
+		height: 60px;
 	}
 }
 
@@ -780,7 +781,7 @@
 	/*Header*/
 	.header-fixed .header,
 	.header-fixed .header.header-fixed-shrink {
-		height: 88px;
+		height: 60px;
 	}
 
 	/*Navbar*/
@@ -1202,6 +1203,7 @@
 	padding-right: 0;
 	background: none;
 	position: relative;
+    margin-right: 20px;
 }
 .breadcrumb a {
 	color: #777;
@@ -1429,7 +1431,7 @@ a.thumbnail {
 }
 
 .team .thumbnail-style h3 {
-	margin-bottom-bottom: 5px;
+	margin-bottom: 5px;
 }
 
 .team .thumbnail-style:hover h3 a {
@@ -1691,7 +1693,7 @@ ul.blog-tags a:hover i {
 	display: block;
 	font-size: 30px;
 	margin-bottom: 25px;
-	text-shadow: 0 !important;
+	text-shadow: 0 !important ;
 }
 
 .slider-promo-info p {
@@ -2059,18 +2061,24 @@ ul.labels-demo li {
 ------------------------------------*/
 .easy-block-v1 {
 	position: relative;
+    border: solid 1px #C5C0C0;
+    padding: 5px;
+    border-radius: 5px!important;
 }
 
 .easy-block-v1 img {
 	width: 100%;
+    height: 180px !important;
 }
 
 .easy-block-v1 .overflow-h h3 {
 	width: 60%;	
 	float: left;
-	font-size: 18px;
-	line-height: 24px;
+	font-size: 1.25em;
+    line-height: 1.25em;
 	margin-bottom: 5px;
+    font-weight: 400;
+
 }
 
 .easy-block-v1 .easy-block-v1-badge {
@@ -2445,10 +2453,13 @@ ul.labels-demo li {
 }
 
 /*Title-Box-V2*/
+.title-box-v2-nomargin {
+	text-align: center;
+}
+
 .title-box-v2 {
 	text-align: center;
-	margin-bottom: 40px;
-}
+	}
 
 .title-box-v2 h2 {
 	font-size: 25px;

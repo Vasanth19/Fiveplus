@@ -14,14 +14,11 @@ namespace Fiveplus.Kicker.Models
         public string Email { get; set; }
 
         [DataType(DataType.Text)]
-        [Display(Name = "Country")]
+        [Display(Name = "Location")]
         [Required]
-        public string Country { get; set; }
+        public string Location { get; set; }
 
-        [DataType(DataType.Text)]
-        [Display(Name = "State")]
-        [Required]
-        public string State { get; set; }
+   
     }
 
     public class ExternalLoginListViewModel
@@ -75,9 +72,18 @@ namespace Fiveplus.Kicker.Models
 
     public class RegisterViewModel
     {
-        [Required]
-        [Display(Name = "UserName")]
+       [Display(Name = "UserName")]
         public string UserName { get; set; }
+
+
+        [Required]
+        [Display(Name = "FirstName")]
+        public string FirstName { get; set; }
+
+
+        [Required]
+        [Display(Name = "LastName")]
+        public string LastName { get; set; }
 
         [Required]
         [EmailAddress]
@@ -96,14 +102,8 @@ namespace Fiveplus.Kicker.Models
         public string ConfirmPassword { get; set; }
 
         [DataType(DataType.Text)]
-        [Display(Name = "Country")]
-        [Required]
-        public string Country { get; set; }
-
-        [DataType(DataType.Text)]
-        [Display(Name = "State")]
-        [Required]
-        public string State { get; set; }
+        [Display(Name = "Location")]
+        public string Location { get; set; }
 
         [Display(Name = "Terms & Conditions")]
         [Required]

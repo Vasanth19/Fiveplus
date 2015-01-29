@@ -21,20 +21,27 @@ namespace Fiveplus.Data.Models
             return userIdentity;
         }
 
-        public UserDetail User { get; set; }
-        public string Country { get; set; }
-        public string State { get; set; }
+
+        public virtual UserDetail UserDetail { get; set; }
+        public string Location { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        //public string State { get; set; }
 
     }
 
     public class UserDetail : IBaseModel
     {
-        [Key,Column("UserId")]
-        public string Id { get; set; }
-        [ForeignKey("Id")]
+        //[Key, Column(Order = 0)]
+        //public int Id { get; set; }
+
+        [Key,ForeignKey("User")]
+        public string UserId { get; set; }
+
         public virtual ApplicationUser User { get; set; }
 
         public string FullName { get; set; }
+    
         public string ProfileImg { get; set; }
 
         public string Location { get; set; }

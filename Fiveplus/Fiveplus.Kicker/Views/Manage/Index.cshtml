@@ -1,75 +1,245 @@
-﻿@model Fiveplus.Kicker.Models.IndexViewModel
+﻿@using Fiveplus.Kicker.Helpers
+@using Fiveplus.Kicker.Models
+@model Fiveplus.Kicker.Models.IndexViewModel
+
 @{
-    ViewBag.Title = "Manage your account";
+    ViewBag.Title = "Profile & More";
+    ViewBag.InitModule = "manageModule";
+}
+@functions{
+    public string GetAntiForgeryToken()
+    {
+        string cookieToken, formToken;
+        return "Test Passing ASP.Net values to Angular";
+        // AntiForgery.GetTokens(null, out cookieToken, out formToken);
+        //  return cookieToken + ":" + formToken;
+    }
 }
 
-<h2>@ViewBag.Title.</h2>
-<p class="text-success">@ViewBag.StatusMessage</p>
-<div class="row">
-    <div class="col-md-8">
-        <p>
-            @if (Model.HasPassword)
-            {
-                @Html.ActionLink("Change your password", "ChangePassword")
-            }
-            else
-            {
-                @Html.ActionLink("Pick a password", "SetPassword")
-            }
-        </p>
-        <p>
-            Phone Number: @(Model.PhoneNumber ?? "None") [
-            @if (Model.PhoneNumber != null)
-            {
-                @Html.ActionLink("Change", "AddPhoneNumber")
-                @: &nbsp;|&nbsp;
-                @Html.ActionLink("Remove", "RemovePhoneNumber")
-            }
-            else
-            {
-                @Html.ActionLink("Add", "AddPhoneNumber")
-            }
-            ]
-        </p>
-        <p>
-            External Logins: @Model.Logins.Count
-            @Html.ActionLink("[Manage]", "ManageLogins")
-        </p>
-        @if (Model.TwoFactor)
-        {
-            <form method="post" action="/Manage/DisableTFA">
-                <p>
-                    Two factor is currently enabled:
-                    <input type="submit" value="Disable" class="btn btn-default"/>
-                </p>
-            </form>
+
+
+
+@section scripts
+{
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+    <script src="~/ng-App/plugins/ng-flow-file-upload/flow.js"></script>
+}
+
+@section ngscripts
+{
+    @* Angular Plugins  *@
+
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+
+    <script type="text/javascript" src="~/ng-App/plugins/x-angular-limitTo.js"></script>
+    <script src="~/ng-App/plugins/ng-flow-file-upload/ng-flow.js"></script>
+    <script src="~/ng-App/plugins/ngAutocomplete.js"></script>
+
+    <script src="~/ng-App/directives/uiField/uiField.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.js"></script>
+    <script src="~/ng-App/modules/manage/dataServices.js"></script>
+    <script src="~/ng-App/modules/manage/manageModule.js"></script>
+    <script type="text/javascript">
+        // Global Variables
+        var manageModule = angular.module("manageModule");
+        manageModule.service('antiForgeryService', function () { this.token = '@GetAntiForgeryToken()'; });
+        
+    </script>
+
+}
+
+
+@section styles
+{
+    <style type="text/css">
+        .fancybox-margin {
+            margin-right: 17px;
         }
-        else
-        {
-            <form method="post" action="/Manage/EnableTFA">
-                <p>
-                    Two factor is currently disabled:
-                    <input type="submit" value="Enable" class="btn btn-default"/>
-                </p>
-            </form>
+
+        .list-inline {
+            font-weight: bold;
         }
-        @if (Model.BrowserRemembered)
-        {
-            <form method="post" action="/Manage/ForgetBrowser">
-                <p>
-                    Browser is curently remembered for two factor:
-                    <input type="submit" value="Forget Browser" class="btn btn-default" />
-                </p>
-            </form>
-        }
-        else
-        {
-            <form method="post" action="/Manage/RememberBrowser">
-                <p>
-                    Browser is curently not remembered for two factor:
-                    <input type="submit" value="Remember Browser" class="btn btn-default"/>
-                </p>
-            </form>
-        }
-    </div>
+    </style>
+    <link href="~/assets/css/plugins/sky-forms.css" rel="stylesheet" />
+    <link href="~/assets/css/plugins/custom-sky-forms.css" rel="stylesheet" />
+    <link href="~/assets/css/pages/profile.css" rel="stylesheet" />
+}
+<div class="breadcrumbs">
+    <div class="container margin-top-60">
+        <h1 class="pull-left">@ViewBag.Title</h1>
+        <ul class="pull-right breadcrumb margin-right-5">
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="/manage">Settings</a></li>
+        </ul>
+    </div><!--/container-->
 </div>
+
+<div class="tokenHolder" ng-controller="indexController" @Html.RequestVerificationToken()>
+    <div class="profile-body margin-bottom-20">
+
+
+        <div class="profile" ng-cloak>
+            <div class="container content">
+                <div class="row">
+                    <!--Left Sidebar-->
+                    <div class="col-md-3 md-margin-bottom-40">
+                        <div flow-init="flowTarget()" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-files-submitted="$flow.upload()" class="ng-scope">
+                            <h3>
+                                <a name="image-example" class="anchor" href="#image-example"><span class="octicon octicon-link"></span></a>Profile Photo
+                            </h3>
+                            <div style="margin-top: 6px; padding: 0 1px; font-size: 11px; line-height: 15px; color: #999;">
+                                Only PNG,GIF,JPG,JEPG files allowed.
+                            </div>
+                            <div class="thumbnail ng-hide" ng-show="!$flow.files.length" style="margin-bottom:0;">
+                                <img ng-src="{{basicProfile.profileImg}}">
+                            </div>
+                            <div class="thumbnail" ng-show="$flow.files.length" style="margin-bottom:0;">
+                                <img flow-img="$flow.files[0]">
+                            </div>
+                            <div>
+                                <span class="btn btn-primary ng-hide" ng-show="!$flow.files.length" flow-btn="">Select image<input type="file" style="visibility: hidden; position: absolute;"></span>
+                                <span class="btn btn-info" ng-show="$flow.files.length" flow-btn="">Change<input type="file" style="visibility: hidden; position: absolute;"></span>
+                                <span class="btn btn-danger" ng-show="$flow.files.length" ng-click="$flow.cancel()">
+                                    Remove
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="margin-top-30"></div>
+
+                        <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
+                            <li class="list-group-item">
+                                <a href="profile.html"><i class="fa fa-bar-chart-o"></i> Overall</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="profile_me.html"><i class="fa fa-user"></i> Profile</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="profile_users.html"><i class="fa fa-group"></i> Users</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="profile_projects.html"><i class="fa fa-cubes"></i> My Projects</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="profile_comments.html"><i class="fa fa-comments"></i> Comments</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="profile_history.html"><i class="fa fa-history"></i> History</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="profile_settings.html"><i class="fa fa-cog"></i> Settings</a>
+                            </li>
+                        </ul>
+                        <hr>
+                        <div class="margin-bottom-50"></div>
+
+
+                    </div>
+                    <!--End Left Sidebar-->
+
+                    <div class="col-md-9">
+                        <div class="profile-body margin-bottom-20">
+                            <div class="tab-v1">
+                                <ul class="nav nav-justified nav-tabs">
+                                    <li ng-repeat="tab in tabs"
+                                        ng-class="{'active':tab.active}">
+                                        <a data-toggle="tab" ng-href="{{tab.route}}">{{tab.title}}</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div ng-view></div>
+                                </div>
+
+                                <pre>{{profileConfig}}</pre>
+                            </div>
+                        </div>
+
+                        <!--End Profile Body-->
+                    </div>
+                </div><!--/end row-->
+
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-9">
+
+                        @Html.Partial("ManageLogins", (Fiveplus.Kicker.Models.ManageLoginsViewModel)ViewBag.ManageLoginsViewModel)
+                    </div>
+                </div>
+            </div><!--/container-->
+        </div>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-sm-6 ">
+
+                    <p>
+                        @if (Model.HasPassword)
+                        {
+                            @Html.ActionLink("Change your password", "ChangePassword")
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Pick a password", "SetPassword")
+                        }
+                    </p>
+                    <p>
+                        Phone Number: @(Model.PhoneNumber ?? "None") [
+                        @if (Model.PhoneNumber != null)
+                        {
+                            @Html.ActionLink("Change", "AddPhoneNumber")
+                            @: &nbsp;|&nbsp;
+                            @Html.ActionLink("Remove", "RemovePhoneNumber")
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Add", "AddPhoneNumber")
+                        }
+                        ]
+                    </p>
+                    <p>
+                        External Logins: @Model.Logins.Count
+                        @Html.ActionLink("[Manage]", "ManageLogins")
+                    </p>
+                </div>
+                <div class="col-sm-6 ">
+                    @if (Model.TwoFactor)
+                    {
+                        <form method="post" action="/Manage/DisableTFA">
+                            <p>
+                                Two factor is currently enabled:
+                                <input type="submit" value="Disable" class="btn btn-default" />
+                            </p>
+                        </form>
+                    }
+                    else
+                    {
+                        <form method="post" action="/Manage/EnableTFA">
+                            <p>
+                                Two factor is currently disabled:
+                                <input type="submit" value="Enable" class="btn btn-default" />
+                            </p>
+                        </form>
+                    }
+                    @if (Model.BrowserRemembered)
+                    {
+                        <form method="post" action="/Manage/ForgetBrowser">
+                            <p>
+                                Browser is curently remembered for two factor:
+                                <input type="submit" value="Forget Browser" class="btn btn-default" />
+                            </p>
+                        </form>
+                    }
+                    else
+                    {
+                        <form method="post" action="/Manage/RememberBrowser">
+                            <p>
+                                Browser is curently not remembered for two factor:
+                                <input type="submit" value="Remember Browser" class="btn btn-default" />
+                            </p>
+                        </form>
+                    }
+
+                </div>
+            </div>
+        </div>

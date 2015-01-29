@@ -1,0 +1,186 @@
+﻿<div class="profile-edit tab-pane fade in active">
+    <h2 class="heading-md">Manage your Name, Phone and Email Addresses.</h2>
+    <p>Below are the name and email addresses on file for your account.</p>
+    <br>
+    <dl class="dl-horizontal" ng-hide="$parent.showForm">
+        <dt><strong>Your Username </strong></dt>
+        <dd>
+            <strong style="font-size: 14px;text-transform: capitalize">{{::basicProfile.userName}}</strong>
+            <span>
+                <a class="pull-right" href="" ng-click="$parent.showForm = true;" tooltip="Click here to edit">
+                    <i class="fa fa-pencil"></i>
+                </a>
+            </span>
+        </dd>
+        <hr>
+        <dt><strong>Primary Email Address </strong></dt>
+        <dd>
+            {{::basicProfile.email}}
+            <span>
+                <a class="pull-right" href="" ng-click="$parent.showForm = true;">
+                    <i class="fa fa-pencil"></i>
+                </a>
+            </span>
+        </dd>
+        <hr>
+        <dt><strong>Phone Number </strong></dt>
+        <dd>
+            {{::profileConfig.phonenumber}} &nbsp;
+            <span>
+                <a class="pull-right" href="" ng-click="$parent.showForm = true;">
+                    <i class="fa fa-pencil"></i>
+                </a>
+            </span>
+        </dd>
+        <hr>
+        <dt><strong>Location </strong></dt>
+        <dd>
+            {{::basicProfile.location}}&nbsp;
+            <span>
+                <a class="pull-right" href="" ng-click="$parent.showForm = true;">
+                    <i class="fa fa-pencil"></i>
+                </a>
+            </span>
+        </dd>
+        <hr>
+        <dt><strong>Biography </strong></dt>
+        <dd>
+            {{::basicProfile.biography}}&nbsp;
+            <span>
+                <a class="pull-right" href="" ng-click="$parent.showForm = true;">
+                    <i class="fa fa-pencil"></i>
+                </a>
+            </span>
+        </dd>
+        <hr>
+    </dl>
+    <form class="sky-form" name="basicProfileForm" novalidate="novalidate" ng-submit="submitForm(basicProfileForm.$valid)" ng-if="$parent.showForm">
+
+        <dl class="dl-horizontal">
+
+            <dt>Current Username</dt>
+            <dd>
+                <section>
+                    <strong style="font-size: 14px">{{::basicProfile.userName}}</strong>
+                    <button class="btn btn-xs rounded btn-default margin-left-5" ng-hide="basicProfile.changeUsername" ng-click="basicProfile.changeUsername = true" type="button"><span>I Don't Like It, Lets Change!</span></button>
+                    <button class="btn btn-xs rounded btn-default margin-left-5" ng-if="basicProfile.changeUsername" ng-click="basicProfile.changeUsername = false" type="button"><span>I Like It, Lets Keep!</span></button>
+                </section>
+            </dd>
+            <div ng-if="basicProfile.changeUsername">
+                <field ng-model="basicProfile.newUserName" type="text" name="username" label="Username" ng-minlength=6 ng-maxlength=24 required ng-model-options="{ debounce : { 'default' : 500 } }"
+                       icon="icon-append fa fa-user" tooltip="Enter Your Username" username-available-validator>
+                    <validator key="required">User Name is Required | </validator>
+                    <validator key="minlength"> Enter at-least 6 characters | </validator>
+                    <validator key="maxlength"> Do Not Exceed More Than 24 characters | </validator>
+                    <validator key="usernameAvailable"> Username is already taken </validator>
+                    <validator key="pending"> Checking for Username...</validator>
+                </field>
+                <div ng-if="basicProfileForm.username.$touched">
+                    <h1 class="note" ng-show="basicProfileForm.username.$error.usernameAvailable">UserName is not available </h1>
+                </div>
+
+            </div>
+
+            <field ng-model="basicProfile.email" type="email" name="email" label="Email address" ng-required="true"
+                   icon="icon-append fa fa-envelope" tooltip="Enter Your Email">
+                <validator key="required">Email is Required | </validator>
+                <validator key="email"> Enter a Valid email address | </validator>
+            </field>
+
+
+            <!--<dt>Username</dt>
+                <dd>
+                    <section>
+                        <label class="input" ng-class="{ 'state-error' : basicProfileForm.username.$invalid && !basicProfileForm.username.$pristine,
+                                                    'state-success' : basicProfileForm.username.$valid && !basicProfileForm.username.$pristine }">
+                            <i class="icon-append fa fa-user"></i>
+                            <input type="text" placeholder="Username" name="username" required ng-minlength=10 ng-maxlength=80 ng-model="basicProfile.userName" />
+                            <b class="tooltip tooltip-bottom-right">Needed to enter the website</b>
+                        </label>
+                        <span class="note" ng-show="basicProfileForm.username.$pristine || basicProfileForm.username.$error.required">Title is Required  |  </span>
+                        <span class="note" ng-show="basicProfileForm.username.$pristine || basicProfileForm.username.$error.minlength">Enter at-least 10 characters |  </span>
+                        <span class="note" ng-show="basicProfileForm.username.$pristine || basicProfileForm.username.$error.maxlength">Do Not Exceed More Than 80 characters </span>
+                    </section>
+                </dd>-->
+            <dt>City, State or Country</dt>
+            <dd>
+                <section>
+                    <label class="input" ng-class="{ 'state-error' : basicProfileForm.place.$invalid && !basicProfileForm.place.$pristine,
+                                                    'state-success' : basicProfileF0orm.usernameplace.$valid && !basicProfileForm.place.$pristine }">
+                        <i class="icon-append fa fa-flag-o"></i>
+                        <input type="text" placeholder="City, State, Country Or Region" name="place" required ng-model="basicProfile.location" ng-autocomplete="result1" details="details1" options="options1" />
+                        <b class="tooltip tooltip-bottom-right">Pick the closest place to where you live</b>
+                    </label>
+                    <span class="note" ng-show="basicProfileForm.place.$pristine || basicProfileForm.place.$error.required">Place is Required </span>
+                </section>
+            </dd>
+
+            <!--<dt>Country</dt>
+            <dd>
+                <section>
+                    <label class="select" ng-class="{ 'state-error' : basicProfileForm.country.$invalid && !basicProfileForm.country.$pristine,
+                                                        'state-success' : basicProfileForm.country.$valid && !basicProfileForm.country.$pristine }">
+                        <country-select data-ng-model="basicProfile.country" name="country" required></country-select>
+                        <i></i>
+                    </label>
+
+                </section>
+            </dd>-->
+            <field ng-model="basicProfile.biography" type="text" template="textarea" name="biography" label="Brief Biography" ng-minlength=10 ng-maxlength=350 required
+                   tooltip="Enter Your Brief Biography">
+                <validator key="required">Biography is Required  </validator>
+                <validator key="minlength"> Enter at-least 10 characters  </validator>
+                <validator key="maxlength"> Do Not Exceed More Than 350 characters, Keep it short and sweet! </validator>
+            </field>
+
+        </dl>
+        <div class="alert alert-warning fade in" ng-if="basicProfileForm.$invalid && basicProfileForm.$submitted ">
+            <strong>Warning!</strong> Please make sure to complete the form.
+        </div>
+
+        <hr>
+
+        <button type="button" class="btn btn-default" ng-click="cancelForm()">Cancel</button>
+        <!--<button class="btn btn-warning" type="reset" ng-click="resetForm()">Reset</button>-->
+        <button class="btn btn-success" type="submit" ng-disabled="basicProfileForm.$invalid || basicProfileForm.$pending">Save Changes</button>
+
+    </form>
+    <hr />
+    <form action="" class="sky-form" name="basicbrowserForm" novalidate="novalidate">
+        <section>
+            <label class="toggle">
+                <input type="checkbox" name="checkbox-toggle-2" ng-model="profileConfig.twoFactor" checked="" ng-trim="true"><i></i>Two factor is currently
+                <span ng-show="profileConfig.twoFactor"> <strong>: Enabled</strong></span>
+                <span ng-show="!profileConfig.twoFactor"> <strong>: Disabled</strong></span>
+                
+            </label>
+        </section>
+    </form>
+    <hr />
+    <form action="" class="sky-form" name="basicTFAForm" novalidate="novalidate">
+        <section>
+            <label class="toggle">
+                <input type="checkbox" name="checkbox-toggle-1" ng-model="profileConfig.browserRemembered" checked="" ng-trim="true"><i></i>Your Browser is currently
+                <span ng-show="profileConfig.browserRemembered"> <strong>: Remembered </strong></span>
+                <span ng-show="!profileConfig.browserRemembered"> <strong>: Not Remembered</strong></span>
+            </label>
+        </section>
+    </form>
+    <hr />
+    <!--<form action="" class="sky-form" name="basicPhoneForm" novalidate="novalidate"  ng-submit="submitForm(basicPhoneForm.$valid)">
+        <dl class="dl-horizontal">
+            <field ng-model="basicProfile.Phone" ng-maxlength=12 ng-pattern="/^[(]{0,1}[0-9]{3}[)\.\- ]{0,1}[0-9]{3}[\.\- ]{0,1}[0-9]{4}$/" type="tel" name="phone" label="Phone" ng-required="false"
+                   icon="icon-prepend fa fa-phone" tooltip="Enter Your Phone">
+                <validator key="required">Phone is Required | </validator>
+                <validator key="tel"> Enter a Valid Phone Number | </validator>
+                <validator key="maxlength"> Do not exceed 12 characters </validator>
+                <validator key="pattern"> Enter a Phone Number in 3-3-4 format </validator>
+            </field>
+        </dl>
+        <button class="btn btn-success" type="submit" ng-disabled="basicPhoneForm.$invalid">Save Phone Number</button>
+    </form>
+    <hr />-->
+
+            <pre>{{basicProfile}}</pre>
+
+</div>

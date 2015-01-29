@@ -1,15 +1,34 @@
 ﻿<!-- http://plnkr.co/edit/3zMsNnpNfOFwExSqLj2I?p=preview -->
 
-<div class="form-group" ng-class="{ 'has-info' : $field.$pristine && !optional ,'has-error' : $field.$invalid && !$field.$pristine && !optional,'has-success' : $field.$valid && !$field.$pristine && !optional }">
-    <label class="control-label col-xs-12 col-sm-3 no-padding-right">[replaced in uiField.js]</label>
+    <!--<dt><label class="control-label no-padding-right" >[replaced in uiField.js]</label></dt>
+    <dd>
+        <section hide-errors>
+            <label class="input" ng-class="{ 'state-error' : $field.$invalid && !$field.$pristine && !optional,
+                                                        'state-success' : $field.$valid && !$field.$pristine && !optional }">
+                <i class=""></i>
+                <input />
+                <b class="tooltip tooltip-bottom-right"></b>
+            </label>
+            <span class="note" ng-repeat="(key, error) in $field.$error" ng-show="$field.$pristine || (error && $field.$dirty)">{{$validationMessages[key]}}</span>
+        </section>
+    </dd>-->
 
-    <div class="col-xs-12 col-sm-5">
-        <span class="input-icon input-icon-right" style="display: block">
-            <input class="width-100">
-            <i class="ace-icon fa" ng-hide="optional" ng-class="{ 'fa-info-circle' : $field.$pristine,'fa-times-circle' : $field.$invalid && !$field.$pristine,'fa-check-circle' : $field.$valid && !$field.$pristine }"></i>
-        </span>
-
-    </div>
-    <div class="help-block col-xs-12 col-sm-reset inlineblock" ng-repeat="(key, error) in $field.$error" ng-show="$field.$pristine || (error && $field.$dirty)"> {{$validationMessages[key]}}</div>
-</div>
-
+<dt><label class="control-label no-padding-right">[replaced in uiField.js]</label></dt>
+<dd>
+    <section hide-errors>
+        <label class="input" ng-class="{ 'state-error' : $field.$invalid && !$field.$pristine && !optional,
+                                                        'state-success' : $field.$valid && !$field.$pristine && !optional }">
+            <i class=""></i>
+            <input />
+            <b class="tooltip tooltip-bottom-right"></b>
+        </label>
+        <span class="note" ng-repeat="(key, error) in $field.$error" ng-show="$field.$pristine || (error && $field.$dirty)">{{$validationMessages[key]}}</span>
+        <div ng-if="$field.$dirty">
+           
+            <div ng-if="$field.$pending" class="note">
+                <div ng-message="">{{$validationMessages["pending"]}}</div>
+            </div>
+        </div>
+        
+    </section>
+</dd>

@@ -3,7 +3,6 @@
 
 @if (Request.IsAuthenticated)
 {
-   
     <li class="dropdown ">
         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
             @User.Identity.GetUserName()
@@ -14,10 +13,30 @@
                 <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
                 <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
             }
-            <li><a href="index.html">User Profile</a></li>
-            <li><a target="_blank" href="One-Page/index.html">Settings</a></li>
-            <li><a id="logOut" href="javascript:document.getElementById('logoutForm').submit();"><b>Log Out</b></a></li>
-        </ul>
+          
+                <li><b style="margin-left: 10px">My Stuff</b></li>
+
+                <!-- Manage Gigs -->
+                <li><a href="/gig/#/create">Create a Gig</a></li>
+                <li><a href="/gig/#/myGigs">My Gigs</a></li>
+                <li><a href="/profile/activity">Activity</a></li>
+                <li><a href="/profile/collected">Favorite Gigs</a></li>
+                <li><a href="/settings/@User.Identity.GetUserName()">View Profile</a></li>
+         
+                <!-- End Manage Gigs -->
+                
+            <li><b style="margin-left: 10px">Settings</b></li>
+            <li><a href="/settings#/profile">Account</a></li>
+            <li><a href="/settings#/security">Security</a></li>
+            <li><a href="/settings#/payment">Payment Options</a></li>
+            <li><a href="/settings#/preferences">Preferences</a></li>
+            <li>
+                <div style="margin-left: 10px">
+                    <p> You are logged in as <b>@User.Identity.GetUserName()</b> <a id="logOut" href="javascript:document.getElementById('logoutForm').submit();">Log Out?</a></p>
+                    
+                </div>
+            </li>
+            </ul>
     </li>
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "" }))
     {
@@ -39,7 +58,8 @@ else
             Register
         </a>
     </li>
-   
+
+
 
 @*
 <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>

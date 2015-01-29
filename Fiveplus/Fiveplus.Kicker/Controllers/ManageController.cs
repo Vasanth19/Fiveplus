@@ -1,4 +1,7 @@
-﻿using Fiveplus.Data.Models;
+﻿using System;
+using Fiveplus.Data.DbContexts;
+using Fiveplus.Data.Models;
+using Fiveplus.Kicker.Helpers;
 using Fiveplus.Kicker.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
@@ -11,6 +14,7 @@ using System.Web.Mvc;
 namespace Fiveplus.Kicker.Controllers
 {
     [Authorize]
+    [RoutePrefix("manage")]
     public class ManageController : Controller
     {
         public ManageController()
@@ -35,6 +39,8 @@ namespace Fiveplus.Kicker.Controllers
             }
         }
 
+
+       
         //
         // GET: /Account/Index
         public async Task<ActionResult> Index(ManageMessageId? message)
@@ -56,6 +62,18 @@ namespace Fiveplus.Kicker.Controllers
                 Logins = await UserManager.GetLoginsAsync(User.Identity.GetUserId()),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(User.Identity.GetUserId())
             };
+
+
+            var userLogins = await UserManager.GetLoginsAsync(User.Identity.GetUserId());
+            var otherLogins = AuthenticationManager.GetExternalAuthenticationTypes().Where(auth => userLogins.All(ul => auth.AuthenticationType != ul.LoginProvider)).ToList();
+            ViewBag.ShowRemoveButton = userLogins.Count > 1;
+            ViewBag.ManageLoginsViewModel = new ManageLoginsViewModel
+            {
+                CurrentLogins = userLogins,
+                OtherLogins = otherLogins
+            };
+
+
             return View(model);
         }
 
@@ -89,7 +107,8 @@ namespace Fiveplus.Kicker.Controllers
             {
                 message = ManageMessageId.Error;
             }
-            return RedirectToAction("ManageLogins", new { Message = message });
+            //return RedirectToAction("ManageLogins", new { Message = message });
+            return RedirectToAction("index");
         }
 
         //
@@ -329,7 +348,8 @@ namespace Fiveplus.Kicker.Controllers
                 return RedirectToAction("ManageLogins", new { Message = ManageMessageId.Error });
             }
             var result = await UserManager.AddLoginAsync(User.Identity.GetUserId(), loginInfo.Login);
-            return result.Succeeded ? RedirectToAction("ManageLogins") : RedirectToAction("ManageLogins", new { Message = ManageMessageId.Error });
+            //return result.Succeeded ? RedirectToAction("ManageLogins") : RedirectToAction("ManageLogins", new { Message = ManageMessageId.Error });
+            return result.Succeeded ? RedirectToAction("index") : RedirectToAction("index", new { Message = ManageMessageId.Error });
         }
 
         #region Helpers

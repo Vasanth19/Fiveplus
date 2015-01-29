@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Security.Claims;
+using Fiveplus.Data.Repo;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 using System.Web;
 using Fiveplus.Data.DbContexts;
 using Fiveplus.Data.Models;
+using Fiveplus.Data.Uow;
 
 namespace Fiveplus.Kicker.Models
 {
@@ -38,7 +40,7 @@ namespace Fiveplus.Kicker.Models
             manager.PasswordValidator = new PasswordValidator
             {
                 RequiredLength = 6,
-                RequireNonLetterOrDigit = true,
+                RequireNonLetterOrDigit = false,
                 RequireDigit = true,
                 RequireLowercase = true,
                 RequireUppercase = true,
@@ -68,6 +70,8 @@ namespace Fiveplus.Kicker.Models
             }
             return manager;
         }
+
+      
     }
 
     // Configure the RoleManager used in the application. RoleManager is defined in the ASP.NET Identity core assembly
@@ -146,7 +150,7 @@ namespace Fiveplus.Kicker.Models
         {
             var userManager = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var roleManager = HttpContext.Current.GetOwinContext().Get<ApplicationRoleManager>();
-            const string name = "admin@example.com";
+            const string name = "admin@123.com";
             const string password = "Admin@123456";
             const string roleName = "Admin";
 

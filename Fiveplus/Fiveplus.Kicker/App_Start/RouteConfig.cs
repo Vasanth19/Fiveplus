@@ -15,6 +15,8 @@ namespace Fiveplus.Kicker
                 new { controller = "Home", action = "Landing" }
             );
 
+            routes.MapMvcAttributeRoutes();
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

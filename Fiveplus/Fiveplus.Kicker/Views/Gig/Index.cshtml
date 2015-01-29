@@ -1,4 +1,5 @@
-﻿@{
+﻿@using Microsoft.AspNet.Identity
+@{
     ViewBag.Title = "Gigs";
     ViewBag.InitModule = "gigModule";
 }
@@ -22,9 +23,6 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.1.0/chosen.jquery.min.js"></script>
     <script src="~/ng-App/plugins/ng-flow-file-upload/flow.js"></script>
-
-   
-
 }
 
 @section ngscripts
@@ -47,3 +45,8 @@
 <div ng-view></div>
 
 
+<script type="text/javascript">
+    
+    // Global Variables
+    var user = '@User.Identity.GetUserName()';
+</script>

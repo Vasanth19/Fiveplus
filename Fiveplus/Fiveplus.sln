@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiveplus.Data", "Fiveplus.Data\Fiveplus.Data.csproj", "{6360DCDE-8EB7-4DFC-AA42-D88C81A66706}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiveplus.Kicker", "Fiveplus.Kicker\Fiveplus.Kicker.csproj", "{B93E27FE-13DC-41F8-A5C1-8BE3493010B2}"

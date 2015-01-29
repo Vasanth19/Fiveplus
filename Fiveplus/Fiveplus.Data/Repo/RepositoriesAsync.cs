@@ -37,6 +37,31 @@ namespace Fiveplus.Data.Repo
     public class UserDetailRepositoryAsync : BaseRepository<UserDetail>, IUserDetailRepositoryAsync
     {
         public UserDetailRepositoryAsync(ExplorerUow explorerUow) : base(explorerUow) { }
+
+        public async Task<UserDetail> FindAsync(string userId)
+        {
+            return await DbSet.FindAsync(userId);
+        }
+
+        public  UserDetail FindByUserId(string userId)
+        {
+            return DbSet.Find(userId);
+        }
+
+        public override void InsertOrUpdate(UserDetail entity)
+        {
+            string _userId = (string)entity.GetType().GetProperty("UserId").GetValue(entity);
+            if (String.IsNullOrEmpty(_userId))
+            {
+                // New entity
+                context.Entry(entity).State = System.Data.Entity.EntityState.Added;
+            }
+            else
+            {
+                // Existing entity
+                context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+            }
+        }
     }
 
     public class UserCollectedGigRepositoryAsync : BaseRepository<UserCollectedGig>, IUserCollectedGigRepositoryAsync

@@ -48,7 +48,7 @@ namespace Fiveplus.Data.DbContexts
             modelBuilder.Configurations.Add(new GigConfiguration());
             modelBuilder.Configurations.Add(new MediaConfiguration());
 
-            modelBuilder.Configurations.Add(new IdentityUserConfiguration());
+            modelBuilder.Configurations.Add(new UserDetailConfiguration());
             modelBuilder.Configurations.Add(new UserInboxConfiguration());
             modelBuilder.Configurations.Add(new UserCollectedGigConfiguration());
 

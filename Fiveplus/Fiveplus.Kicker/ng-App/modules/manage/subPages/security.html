@@ -1,0 +1,67 @@
+﻿<div class="profile-edit tab-pane fade in active">
+    <h2 class="heading-md" >Manage your Security Settings</h2>
+    <h3 ng-show="profileConfig.HasPassword">Change your password.</h3>
+    <hr>
+    
+    <div class="row" ng-show="!profileConfig.hasPassword && !$parent.showForm" >
+        <div class="col-md-12">
+            <div class="alert alert-info fade in text-center">
+                <h4>You don't have any password set!</h4>
+                <p>Do you want to set it now? <a class="btn-u btn-u-xs btn-u-sea" href="" ng-click="$parent.showForm=true">Set Password</a> </p>
+            </div>
+        </div>
+    </div>
+    <div class="row" ng-show="profileConfig.hasPassword && !$parent.showForm">
+        <div class="col-md-12">
+            <div class="alert alert-info fade in text-center">
+                <h4>We have your password safe with us!</h4>
+                <p>Do you want to change it now? <a class="btn-u btn-u-xs btn-u-sea" href="" ng-click="$parent.showForm=true">Change Password</a> </p>
+            </div>
+        </div>
+    </div>
+    <form class="sky-form" id="basicSecurityForm" name="basicSecurityForm" novalidate="novalidate" ng-submit="submitSetPassword(basicSecurityForm.$valid)" ng-if="$parent.showForm">
+        <input id="antiForgeryToken" ng-model="$parent.$parent.antiForgeryToken" type="hidden" ng-init="$parent.$parent.antiForgeryToken='@Functions.GetAntiForgeryToken()'" />
+
+        <h3 ng-show="!profileConfig.hasPassword">Set your password.</h3>
+        <br />
+        <dl class="dl-horizontal">
+            <div ng-if="profileConfig.hasPassword == false">
+                <field ng-model="basicSecurity.newPassword" type="text" name="password" label="New Password" required ng-pattern="/^(?=.{6,20}$)(?=.*\d)(?=.*[a-zA-Z]).*$/"
+                       icon="icon-append fa fa-lock" tooltip="Enter Your password">
+                    <validator key="pattern">Enter a Valid password - 6 - 20 characters with at-least one number </validator>
+                    <validator key="required">Password is Required </validator>
+                </field>
+                <field ng-model="basicSecurity.confirmPassword" type="text" name="confirmPassword" label="Confirm Password" required compare-to="basicSecurity.newPassword"
+                       icon="icon-append fa fa-lock" tooltip="Confirm Your password">
+                    <validator key="required">Confirm password is Required, </validator>
+                    <validator key="compareTo">Must match the password field,</validator>
+                </field>
+
+            </div>
+            <div ng-if="profileConfig.hasPassword == true">
+                <field ng-model="basicSecurity.currentpassword" type="text" name="password" label="Current Password" required ng-pattern="/^(?=.{6,20}$)(?=.*\d)(?=.*[a-zA-Z]).*$/"
+                       icon="icon-append fa fa-lock" tooltip="Enter Your password">
+                    <validator key="pattern">Enter a Valid password - 6 - 20 characters with at-least one number </validator>
+                    <validator key="required">Password is Required </validator>
+                </field>
+                <field ng-model="basicSecurity.newPassword" type="text" name="newPassword" label="New Password" required
+                       icon="icon-append fa fa-lock" tooltip="Set your new password">
+                    <validator key="required">Confirm password is Required, </validator>
+                    <validator key="compareTo">Must match the password field,</validator>
+                </field>
+                <field ng-model="basicSecurity.confirmPassword" type="text" name="confirmPassword" label="Confirm Password" required compare-to="basicSecurity.newPassword"
+                       icon="icon-append fa fa-lock" tooltip="Confirm your password">
+                    <validator key="required">Confirm password is Required, </validator>
+                    <validator key="compareTo">Must match the password field,</validator>
+                </field>
+            </div>
+        </dl>
+        <br>
+        <section>
+            <button type="button" class="btn btn-default" ng-click="cancelForm()">Cancel</button>
+            <button class="btn btn-success" type="submit" ng-disabled="basicProfileForm.$invalid || basicProfileForm.$pending">Save Changes</button>
+        </section>
+
+    </form>
+    <pre>{{basicSecurity}}</pre>
+</div>

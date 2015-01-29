@@ -140,6 +140,13 @@ var App = function () {
         });
     }
 
+    //Header Mega Menu
+    function handleMegaMenu() {
+        jQuery(document).on('click', '.mega-menu .dropdown-menu', function(e) {
+            e.stopPropagation()
+        });
+    }
+
     return {
         init: function () {
             handleBootstrap();
@@ -148,7 +155,7 @@ var App = function () {
             handleToggle();
             handleSwitcher();
             handleBoxed();
-            handleHeader();
+            handleMegaMenu();
         },
 
         initSliders: function () {

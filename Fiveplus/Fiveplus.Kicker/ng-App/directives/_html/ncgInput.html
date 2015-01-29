@@ -1,0 +1,53 @@
+﻿<!-- http://plnkr.co/edit/3zMsNnpNfOFwExSqLj2I?p=preview -->
+
+    <!--<dt><label class="control-label no-padding-right" >[replaced in uiField.js]</label></dt>
+    <dd>
+        <section hide-errors>
+            <label class="input" ng-class="{ 'state-error' : $field.$invalid && !$field.$pristine && !optional,
+                                                        'state-success' : $field.$valid && !$field.$pristine && !optional }">
+                <i class=""></i>
+                <input />
+                <b class="tooltip tooltip-bottom-right"></b>
+            </label>
+            <span class="note" ng-repeat="(key, error) in $field.$error" ng-show="$field.$pristine || (error && $field.$dirty)">{{$validationMessages[key]}}</span>
+        </section>
+    </dd>-->
+
+<!--<dt><label class="control-label no-padding-right">[replaced in uiField.js]</label></dt>
+<dd>
+    <section hide-errors>
+        <label class="input" ng-class="{ 'state-error' : $field.$invalid && !$field.$pristine && !optional,
+                                                        'state-success' : $field.$valid && !$field.$pristine && !optional }">
+            <i class=""></i>
+            <input />
+            <b class="tooltip tooltip-bottom-right"></b>
+        </label>
+        <span class="note" ng-repeat="(key, error) in $field.$error" ng-show="$field.$pristine || (error && $field.$dirty)">{{$validationMessages[key]}}</span>
+        <div ng-if="$field.$dirty">
+           
+            <div ng-if="$field.$pending" class="note">
+                <div ng-message="">{{$validationMessages["pending"]}}</div>
+            </div>
+        </div>
+        
+    </section>
+</dd>-->
+<div>
+    <label class="control-label no-padding-right">
+        <i ng-show="$field.$touched" class=" icon-append fa " ng-class="{'icon-success fa-check': $field.$valid, 'icon-error fa-asterisk': $field.$invalid}"></i>
+    </label>
+    <label class="input" ng-class="{ 'state-error' : $field.$touched && $field.$invalid && !$field.$pristine ,
+                                                        'state-success' : $field.$touched && $field.$valid && !$field.$pristine }">
+        <div ng-show="statusIcon && $field.$touched">
+            <i ng-show="$field.$valid" class="icon-success icon-append fa fa-check "></i>
+            <i ng-show="$field.$invalid" class="icon-error icon-append fa fa-asterisk"></i>
+        </div>
+        <i id="displayIcon" class=""></i>
+        <input class="form-control" />
+        <b class="tooltip tooltip-bottom-right"></b>
+    </label>
+    <div ng-show="$field.$touched || $form.$submitted">
+        <div class="ngMessages" ng-messages="$field.$error" ng-messages-multiple ng-messages-include="/ng-App/partials/ngMessages/ngMessages.html">
+        </div>
+    </div>
+</div>

@@ -10,6 +10,10 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Fiveplus.Data.Models;
+using System.Collections.Generic;
+using Fiveplus.Data.Uow;
+using Fiveplus.Data.Repo;
+using Fiveplus.Data.DbContexts;
 
 namespace Fiveplus.Kicker.Controllers
 {
@@ -52,6 +56,7 @@ namespace Fiveplus.Kicker.Controllers
                 : message == ManageMessageId.Error ? "An error has occurred."
                 : "";
             ViewBag.HasLocalPassword = HasPassword();
+            ViewBag.ShowRemoveButton = true;
             ViewBag.ReturnUrl = Url.Action("Manage");
             return View();
         }
@@ -168,20 +173,24 @@ namespace Fiveplus.Kicker.Controllers
         // POST: /Account/Register
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, Country = model.Country, State = model.State};
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Location = model.Location};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    //Code added by Vasanth
+                    CreateUserdetails(user);
+
                     var code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>");
                     ViewBag.Link = callbackUrl;
                     ViewBag.Errors = false;
+                    var result1 = await SignInManager.PasswordSignInAsync(model.Email, model.Password, true, shouldLockout: false);
                     return View("DisplayEmail");
                 }
                 AddErrors(result);
@@ -189,6 +198,23 @@ namespace Fiveplus.Kicker.Controllers
             ViewBag.Errors = true;
             // If we got this far, something failed, redisplay form
             return View(model);
+        }
+
+        //Added by Vasanth
+
+        private void CreateUserdetails(ApplicationUser user)
+        {
+            IdentityContext context = HttpContext.GetOwinContext().Get<IdentityContext>();
+
+                    context.UserDetails.Add(
+                        new UserDetail
+                        {
+                            Preference = NotificationPreference.Weekly,
+                            ProfileImg = "/assets/img/common/NoImage.png",
+                            User = user
+                        });
+            context.SaveChanges();
+
         }
 
         //
@@ -385,10 +411,12 @@ namespace Fiveplus.Kicker.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, Country = model.Country, State = model.State};
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, Location = model.Location};
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
+                    //Added by Vasanth
+                    CreateUserdetails(user);
                     result = await UserManager.AddLoginAsync(user.Id, info.Login);
                     if (result.Succeeded)
                     {
@@ -495,5 +523,37 @@ namespace Fiveplus.Kicker.Controllers
             }
         }
         #endregion
+
+
+
+        //Vas : Added it from https://github.com/johndpalm/IdentityUserPropertiesSample/blob/master/MySample.MVC/Controllers/AccountController.cs
+
+        [AllowAnonymous]
+        [ChildActionOnly]
+        public ActionResult ExternalLoginsList(string returnUrl)
+        {
+            ViewBag.ReturnUrl = returnUrl;
+            return (ActionResult)PartialView("_ExternalLoginsListPartial", new List<AuthenticationDescription>(AuthenticationManager.GetExternalAuthenticationTypes()));
+        }
+
+        [ChildActionOnly]
+        public ActionResult RemoveAccountList()
+        {
+            var linkedAccounts = UserManager.GetLogins(User.Identity.GetUserId());
+            ViewBag.ShowRemoveButton = HasPassword() || linkedAccounts.Count > 1;
+            return (ActionResult)PartialView("_RemoveAccountPartial", linkedAccounts);
+        }
+
+       
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && UserManager != null)
+            {
+                UserManager.Dispose();
+                UserManager = null;
+            }
+            base.Dispose(disposing);
+        }
+
     }
 }

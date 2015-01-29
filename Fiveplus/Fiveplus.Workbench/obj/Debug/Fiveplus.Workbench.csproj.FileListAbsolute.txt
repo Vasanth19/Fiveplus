@@ -35,3 +35,6 @@ C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus.Workbench\obj\Debug\Fiveplus.Workb
 C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus\Fiveplus.Workbench\bin\Debug\Fiveplus.Workbench.exe.config
 C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus\Fiveplus.Workbench\obj\Debug\Fiveplus.Workbench.exe
 C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus\Fiveplus.Workbench\obj\Debug\Fiveplus.Workbench.pdb
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Workbench\bin\Debug\Fiveplus.Workbench.exe.config
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Workbench\obj\Debug\Fiveplus.Workbench.exe
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Workbench\obj\Debug\Fiveplus.Workbench.pdb

@@ -48,7 +48,7 @@ namespace Fiveplus.Data.Repo
             return query;
         }
 
-        public async Task<TEntity> FindAsync(int id) 
+        public virtual async Task<TEntity> FindAsync(int id) 
         { 
             return await DbSet.FindAsync(id); 
         } 

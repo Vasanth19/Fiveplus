@@ -140,6 +140,8 @@ function gigIndexController($scope, $http, dataService) {
 
 function gigCreateController($scope, $http, gigDataService, WizardHandler, dataService) {
 
+    //assign Global Variable
+    $scope.user = user;
 
     $scope.categories = [];
 
@@ -154,7 +156,7 @@ function gigCreateController($scope, $http, gigDataService, WizardHandler, dataS
     $scope.info = {
         "gigId": "Gig1",
         "userId": "User1"
-    }
+    };
 
     $scope.newGig = {};
 
@@ -179,11 +181,11 @@ function gigCreateController($scope, $http, gigDataService, WizardHandler, dataS
     $scope.flowTarget = function() {
         return  {"target":'/api/upload/gig/' + $scope.newGig.gigId }
     }
-    
-    $scope.flowSuccess = function (message) {
+
+    $scope.flowSuccess = function(message) {
         //Add it to media url
         console.log(message);
-    }
+    };
 
     //$scope.filesSubmitted = function (flow) {
     //    flow.opts.target = "/api/upload/gig/" + $scope.newGig.gigId;

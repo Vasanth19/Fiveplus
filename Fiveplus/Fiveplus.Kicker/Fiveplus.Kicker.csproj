@@ -227,13 +227,17 @@
     </Compile>
     <Compile Include="Controllers\DiscoverController.cs" />
     <Compile Include="Controllers\GigController.cs" />
+    <Compile Include="Controllers\HelpController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RolesAdminController.cs" />
     <Compile Include="Controllers\UserAdminController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\AntiForgeryExtension.cs" />
+    <Compile Include="Helpers\JsonCamelCaseResult.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -243,8 +247,27 @@
   <ItemGroup>
     <Content Include="assets\css\app.css" />
     <Content Include="assets\css\custom.css" />
+    <Content Include="assets\css\footers\footer-default.css" />
+    <Content Include="assets\css\footers\footer-v1.css" />
+    <Content Include="assets\css\footers\footer-v2.css" />
+    <Content Include="assets\css\footers\footer-v3.css" />
+    <Content Include="assets\css\footers\footer-v4.css" />
+    <Content Include="assets\css\footers\footer-v5.css" />
+    <Content Include="assets\css\footers\footer-v6.css" />
+    <Content Include="assets\css\footers\footer-v7.css" />
+    <Content Include="assets\css\headers\header-default.css" />
+    <Content Include="assets\css\headers\header-v1.css" />
+    <Content Include="assets\css\headers\header-v2.css" />
+    <Content Include="assets\css\headers\header-v3.css" />
+    <Content Include="assets\css\headers\header-v4.css" />
+    <Content Include="assets\css\headers\header-v5.css" />
     <Content Include="assets\css\ie8.css" />
+    <Content Include="assets\css\pages\blocks.css" />
+    <Content Include="assets\css\pages\cubeportfolio.css" />
+    <Content Include="assets\css\pages\header-default.css" />
     <Content Include="assets\css\pages\page_job.css" />
+    <Content Include="assets\css\pages\portfolio-v1.css" />
+    <Content Include="assets\css\pages\profile.css" />
     <Content Include="assets\css\page_log_reg_v2.css" />
     <Content Include="assets\css\plugins.css" />
     <Content Include="assets\css\plugins\animate.css" />
@@ -253,12 +276,15 @@
     <Content Include="assets\css\plugins\brand-buttons\brand-buttons.css" />
     <Content Include="assets\css\plugins\custom-sky-forms.css" />
     <Content Include="assets\css\plugins\sky-forms.css" />
+    <Content Include="assets\css\styleV1.6.css" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\css\themes\dark-blue.css" />
     <Content Include="assets\css\themes\default.css" />
     <Content Include="assets\css\themes\light.css" />
     <Content Include="assets\img\bg\7.jpg" />
+    <Content Include="assets\img\bg\confetti-bg.jpg" />
     <Content Include="assets\img\clients2\ea-canada.png" />
+    <Content Include="assets\img\common\NoImage.png" />
     <Content Include="assets\img\icons\social\facebook.png" />
     <Content Include="assets\img\icons\social\googleplus.png" />
     <Content Include="assets\img\icons\social\linkedin.png" />
@@ -278,6 +304,8 @@
     <Content Include="assets\img\job\high-rated-job-4.2 -high-rated-job-4.2 - Copy high-rated-job-4.2 - CopyCopy.jpg" />
     <Content Include="assets\img\job\high-rated-job-4.2.jpg" />
     <Content Include="assets\img\job\high-rated-job-4.3.jpg" />
+    <Content Include="assets\img\portfolio\02.jpg" />
+    <Content Include="assets\img\portfolio\06.jpg" />
     <Content Include="assets\img\team\1.jpg" />
     <Content Include="assets\img\team\2.jpg" />
     <Content Include="assets\img\team\3.jpg" />
@@ -373,7 +401,12 @@
     <Content Include="Content\less\navigation.min.css">
       <DependentUpon>navigation.css</DependentUpon>
     </Content>
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\svgBg.css">
+      <DependentUpon>svgBg.less</DependentUpon>
+    </Content>
+    <Content Include="Content\svgBg.min.css">
+      <DependentUpon>svgBg.css</DependentUpon>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
@@ -400,12 +433,26 @@
     <Content Include="ng-App\directives\uiField\_html\input.html" />
     <Content Include="ng-App\directives\uiField\_html\select.html" />
     <Content Include="ng-App\directives\uiField\_html\textarea.html" />
+    <Content Include="ng-App\directives\_html\ncgInput.html" />
+    <Content Include="ng-App\modules\discover\subPages\categories.html" />
+    <Content Include="ng-App\modules\discover\subPages\tags.html" />
     <Content Include="ng-App\modules\gig\js\gigDataServices.js" />
     <Content Include="ng-App\modules\gig\subPages\_createGig\step2.html" />
     <Content Include="ng-App\modules\gig\subPages\_createGig\step1.html" />
+    <Content Include="ng-App\modules\account\dataServices.js" />
+    <Content Include="ng-App\modules\account\accountModule.js" />
+    <Content Include="ng-App\modules\manage\dataServices.js" />
+    <Content Include="ng-App\modules\manage\manageModule.js" />
+    <Content Include="ng-App\modules\manage\subPages\profile.html" />
+    <Content Include="ng-App\modules\manage\subPages\security.html" />
+    <Content Include="ng-App\modules\manage\subPages\payment.html" />
+    <Content Include="ng-App\modules\manage\subPages\preferences.html" />
     <Content Include="ng-App\modules\home\subPages\categorySearch.html" />
+    <Content Include="ng-App\modules\home\subPages\curatedGigs.html" />
     <Content Include="ng-App\modules\home\subPages\popularGigs.html" />
     <Content Include="ng-App\modules\home\subPages\staffPick.html" />
+    <Content Include="ng-App\partials\ngMessages\ngMessages.html" />
+    <Content Include="ng-App\partials\svgBg\svgHalfMoon.html" />
     <Content Include="ng-App\plugins\mgo-angular-wizard\angular-wizard.less" />
     <Content Include="ng-App\plugins\mgo-angular-wizard\angular-wizard.min.js.map">
       <DependentUpon>angular-wizard.min.js</DependentUpon>
@@ -418,9 +465,9 @@
       <DependentUpon>loop.min.js</DependentUpon>
     </Content>
     <Content Include="assets\landing\fonts\brankic.ttf" />
+    <Content Include="Content\svgBg.less" />
     <None Include="Properties\PublishProfiles\fiveplus - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\fiveplus - Web Deploy.pubxml" />
-    <Content Include="ng-App\js_delete\gig-index.js" />
     <Content Include="ng-App\modules\gig\gigModule.js" />
     <Content Include="ng-App\modules\gig\subPages\createGig.html" />
     <Content Include="ng-App\modules\gig\subPages\indexView.html" />
@@ -433,6 +480,7 @@
     <Content Include="ng-App\plugins\ng-flow-file-upload\ng-flow-standalone.min.js" />
     <Content Include="ng-App\plugins\ng-flow-file-upload\ng-flow.js" />
     <Content Include="ng-App\plugins\ng-flow-file-upload\ng-flow.min.js" />
+    <Content Include="ng-App\plugins\ngAutocomplete.js" />
     <Content Include="Scripts\custom\fiveplus.custom.js" />
     <None Include="Properties\PublishProfiles\fiveplus.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
@@ -441,7 +489,6 @@
     <Content Include="ng-App\directives\directives.js" />
     <Content Include="ng-App\filters\filters.js" />
     <Content Include="ng-App\modules\home\homeModule.js" />
-    <Content Include="ng-App\js_delete\user-Index.js" />
     <Content Include="ng-App\modules\gig\subPages\newGigView.html" />
     <Content Include="ng-App\directives\_html\hmCategorySearch.html" />
     <Content Include="ng-App\directives\_html\easyblock.html" />
@@ -466,6 +513,7 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Home\StyleSheet1.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -521,7 +569,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Index_3.cshtml" />
-    <Content Include="Views\Gig\Create.cshtml" />
     <Content Include="Views\Home\Index_4.cshtml" />
     <Content Include="Views\Shared\_Layout_Landing.cshtml" />
     <Content Include="Views\Home\Landing.cshtml" />
@@ -530,10 +577,14 @@
     <Content Include="Views\Shared\_NavbarPartial.cshtml" />
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
     <Content Include="Views\Discover\Index.cshtml" />
+    <Content Include="Views\Help\Terms.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ng-App\modules\account\js\" />
+    <Folder Include="ng-App\modules\account\subPages\" />
     <Folder Include="ng-App\modules\home\js\" />
+    <Folder Include="ng-App\modules\manage\js\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

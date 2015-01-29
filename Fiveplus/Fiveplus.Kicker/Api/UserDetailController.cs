@@ -61,7 +61,7 @@ namespace Fiveplus.Kicker.Api
                 return BadRequest(ModelState);
             }
 
-            if (id != userDetail.Id)
+            if (id != userDetail.UserId)
             {
                 return BadRequest();
             }
@@ -88,7 +88,7 @@ namespace Fiveplus.Kicker.Api
             }
 
             //  return StatusCode(HttpStatusCode.OK);
-            return CreatedAtRoute("UserDetailById", new { id = userDetail.Id }, userDetail);
+            return CreatedAtRoute("UserDetailById", new { id = userDetail.UserId }, userDetail);
             //return Ok("Updated UserDetail");
 
         }
@@ -110,7 +110,7 @@ namespace Fiveplus.Kicker.Api
 
             await _explorerUow.SaveAsync();
 
-            return CreatedAtRoute("UserDetailById", new { id = userDetail.Id }, userDetail);
+            return CreatedAtRoute("UserDetailById", new { id = userDetail.UserId}, userDetail);
         }
 
 
@@ -132,7 +132,7 @@ namespace Fiveplus.Kicker.Api
 
         private bool UserDetailExists(string id)
         {
-            return _repo.All().Count(m => m.Id == id) > 0;
+            return _repo.All().Count(m => m.UserId == id) > 0;
         }
 
         protected override void Dispose(bool disposing)

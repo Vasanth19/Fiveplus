@@ -14,7 +14,7 @@ using Fiveplus.Data.Models;
 
 namespace Fiveplus.Kicker.Controllers
 {
-    [Authorize(Roles = "Administrator")]
+    //[Authorize(Roles = "Administrator")]
     public class UsersAdminController : Controller
     {
         public UsersAdminController()
