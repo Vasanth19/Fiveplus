@@ -101,3 +101,4 @@ C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Storage\bin\Debug\zh-H
 C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Storage\bin\Debug\zh-Hant\Microsoft.Data.Services.Client.resources.dll
 C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Storage\obj\Debug\Fiveplus.Storage.dll
 C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Storage\obj\Debug\Fiveplus.Storage.pdb
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Storage\obj\Debug\Fiveplus.Storage.csprojResolveAssemblyReference.cache

@@ -13,7 +13,7 @@ using System.Web.Mvc;
 
 namespace Fiveplus.Kicker.Controllers
 {
-    [Authorize]
+   // [Authorize]
     [RoutePrefix("manage")]
     public class ManageController : Controller
     {

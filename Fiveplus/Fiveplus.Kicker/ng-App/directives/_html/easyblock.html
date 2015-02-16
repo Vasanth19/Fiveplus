@@ -9,7 +9,7 @@
                                 </ol>
                                 <div class="carousel-inner" >
                                     <div ng-class="{item:true, active:$first}" id="gig{{gig.id}}media{{media.id}}" ng-repeat="media in gig.mediaUrls">
-                                        <img alt="" src="{{media.url}}">
+                                        <img alt="" ng-src="{{media.url}}">
                                     </div>
                                 </div>
                             </div>

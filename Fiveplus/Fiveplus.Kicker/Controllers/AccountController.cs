@@ -18,7 +18,7 @@ using Fiveplus.Data.DbContexts;
 namespace Fiveplus.Kicker.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public partial class AccountController : Controller
     {
         public AccountController()
         {

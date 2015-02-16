@@ -11,8 +11,8 @@
 
 @import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic);
 @import "https://fonts.googleapis.com/css?family=Roboto:400,300,500,500italic,700,900,400italic,700italic";
-@import url(../../Content/bootstrap/bootstrap.min.css);
-@import url(../../Content/font-awesome/font-awesome.css);
+@import url(plugins/bootstrap/bootstrap.min.css);
+@import url(plugins/font-awesome/font-awesome.css);
 /*Reset Styles
 ------------------------------------*/
 * {
@@ -1378,7 +1378,7 @@ i.icon-4x.icon-line {
 }
 
 .link-bg-icon:hover i {
-  color: #72c02c;
+  /*color: #72c02c;*/
   background: #72c02c;
   border-color: #72c02c;
   color: #fff !important;
@@ -1399,7 +1399,7 @@ i.icon-color-aqua,
 i.icon-color-brown,
 i.icon-color-dark-blue,
 i.icon-color-light-grey,
-i.icon-color-light-green, {
+i.icon-color-light-green {
   background: none;
 }
 

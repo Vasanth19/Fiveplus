@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="~/assets/css/themes/default.css" id="style_color">
 
 
-    <link href="~/Content/kicker.css" rel="stylesheet" />
+    <link href="~/assets/less/kicker.css" rel="stylesheet" />
  @*   <link href="~/Content/less/navigation.css" rel="stylesheet" />*@
     
 <!-- Google Fonts -->
@@ -55,6 +55,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
     <!-- JS Implementing Plugins -->
+    <script src="~/assets/plugins/back-to-top.js"></script>
     <script type="text/javascript" src="~/assets/plugins/jquery.parallax.js"></script>
     <script type="text/javascript" src="~/assets/plugins/image-hover/js/modernizr.js"></script>
     <script type="text/javascript" src="~/assets/plugins/image-hover/js/touch.js"></script>
@@ -72,7 +73,7 @@
     <![endif]-->
     @RenderSection("scripts", required: false)
 
-    <script src="~/Scripts/jquery.ui.totop.js"></script>
+    @*<script src="~/Scripts/jquery.ui.totop.js"></script>*@
     <script src="~/Scripts/jquery.sticky.js"></script>
     <script src="~/Scripts/custom/fiveplus.custom.js"></script>
 
@@ -91,8 +92,7 @@
 
     @RenderSection("ngscripts", required: false)
     
-    
-    <a href="#" id="toTop" style="display: inline;"><span id="toTopHover" style="opacity: 0;"></span>To Top</a>
+
 </body>
 
 

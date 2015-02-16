@@ -17,7 +17,7 @@
     });
 
     // Scroll to top
-    $().UItoTop({ easingType: 'easeOutQuart' });
+ //   $().UItoTop({ easingType: 'easeOutQuart' });
 
     // Aside Menu
     $("#cmdAsideMenu, #btnHideAsideMenu, .navbar-toggle-aside-menu").click(function () {

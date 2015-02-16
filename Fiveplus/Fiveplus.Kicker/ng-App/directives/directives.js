@@ -293,7 +293,7 @@ myDirectives.directive('ncgInput', function ($compile, $http, $templateCache, $i
                         newElement.find('.tooltip').attr('class', 'Hide');
                     }
 
-                    //Copy Custum ngMessage to the directive
+                    //Copy Custum ngMessage to the directive - sort of transclude
 
                     var ngMessageContent = element[0].innerHTML.trim();
                     if (ngMessageContent != '')

@@ -225,6 +225,7 @@
       <SubType>
       </SubType>
     </Compile>
+    <Compile Include="Controllers\AccountApiController.cs" />
     <Compile Include="Controllers\DiscoverController.cs" />
     <Compile Include="Controllers\GigController.cs" />
     <Compile Include="Controllers\HelpController.cs" />
@@ -238,6 +239,7 @@
     </Compile>
     <Compile Include="Helpers\AntiForgeryExtension.cs" />
     <Compile Include="Helpers\JsonCamelCaseResult.cs" />
+    <Compile Include="Helpers\TypeExtensions.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -246,6 +248,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\css\app.css" />
+    <Content Include="assets\css\blocks.css" />
     <Content Include="assets\css\custom.css" />
     <Content Include="assets\css\footers\footer-default.css" />
     <Content Include="assets\css\footers\footer-v1.css" />
@@ -271,18 +274,28 @@
     <Content Include="assets\css\page_log_reg_v2.css" />
     <Content Include="assets\css\plugins.css" />
     <Content Include="assets\css\plugins\animate.css" />
+    <Content Include="assets\css\plugins\bootstrap\bootstrap-theme.css" />
+    <Content Include="assets\css\plugins\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="assets\css\plugins\bootstrap\bootstrap.css" />
+    <Content Include="assets\css\plugins\bootstrap\bootstrap.min.css" />
     <Content Include="assets\css\plugins\box-shadows.css" />
     <Content Include="assets\css\plugins\brand-buttons\brand-buttons-inversed.css" />
     <Content Include="assets\css\plugins\brand-buttons\brand-buttons.css" />
+    <Content Include="assets\css\plugins\chosen\chosen.css" />
     <Content Include="assets\css\plugins\custom-sky-forms.css" />
+    <Content Include="assets\css\plugins\font-awesome\font-awesome.css" />
+    <Content Include="assets\css\plugins\font-awesome\font-awesome.min.css" />
     <Content Include="assets\css\plugins\sky-forms.css" />
     <Content Include="assets\css\styleV1.6.css" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\css\themes\dark-blue.css" />
     <Content Include="assets\css\themes\default.css" />
     <Content Include="assets\css\themes\light.css" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="assets\img\bg\7.jpg" />
     <Content Include="assets\img\bg\confetti-bg.jpg" />
+    <Content Include="assets\img\breadcrumbs.png" />
     <Content Include="assets\img\clients2\ea-canada.png" />
     <Content Include="assets\img\common\NoImage.png" />
     <Content Include="assets\img\icons\social\facebook.png" />
@@ -366,6 +379,30 @@
     <Content Include="assets\landing\js\supersized.shutter.min.js" />
     <Content Include="assets\landing\js\twitter-fetcher.js" />
     <Content Include="assets\landing\js\wow.js" />
+    <Content Include="assets\less\forms.css">
+      <DependentUpon>forms.less</DependentUpon>
+    </Content>
+    <Content Include="assets\less\forms.min.css">
+      <DependentUpon>forms.css</DependentUpon>
+    </Content>
+    <Content Include="assets\less\kicker.css">
+      <DependentUpon>kicker.less</DependentUpon>
+    </Content>
+    <Content Include="assets\less\kicker.min.css">
+      <DependentUpon>kicker.css</DependentUpon>
+    </Content>
+    <Content Include="assets\less\navigation.css">
+      <DependentUpon>navigation.less</DependentUpon>
+    </Content>
+    <Content Include="assets\less\navigation.min.css">
+      <DependentUpon>navigation.css</DependentUpon>
+    </Content>
+    <Content Include="assets\less\svgBg.css">
+      <DependentUpon>svgBg.less</DependentUpon>
+    </Content>
+    <Content Include="assets\less\svgBg.min.css">
+      <DependentUpon>svgBg.css</DependentUpon>
+    </Content>
     <Content Include="assets\plugins\back-to-top.js" />
     <Content Include="assets\plugins\bootstrap\bootstrap.min.js" />
     <Content Include="assets\plugins\image-hover\css\img-hover.css" />
@@ -376,58 +413,8 @@
     <Content Include="assets\plugins\jquery.parallax.js" />
     <Content Include="assets\plugins\line-icons\fonts\Simple-Line-Icons.svg" />
     <Content Include="assets\plugins\line-icons\line-icons.css" />
-    <Content Include="Content\bootstrap\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap\bootstrap.css" />
-    <Content Include="Content\bootstrap\bootstrap.min.css" />
-    <Content Include="Content\chosen\chosen.css" />
-    <Content Include="Content\font-awesome\font-awesome.css" />
-    <Content Include="Content\font-awesome\font-awesome.min.css" />
-    <Content Include="Content\images\banner-img-4.jpg" />
-    <Content Include="Content\images\carousel-img-3.png" />
-    <Content Include="Content\images\carousel-img-5.png" />
-    <Content Include="Content\images\carousel-img-7.png" />
-    <Content Include="Content\images\carousel-kickstarter.jpg" />
-    <Content Include="Content\images\carousel-mural.jpg" />
-    <Content Include="Content\kicker.css">
-      <DependentUpon>kicker.less</DependentUpon>
-    </Content>
-    <Content Include="Content\kicker.min.css">
-      <DependentUpon>kicker.css</DependentUpon>
-    </Content>
-    <Content Include="Content\less\navigation.css">
-      <DependentUpon>navigation.less</DependentUpon>
-    </Content>
-    <Content Include="Content\less\navigation.min.css">
-      <DependentUpon>navigation.css</DependentUpon>
-    </Content>
-    <Content Include="Content\svgBg.css">
-      <DependentUpon>svgBg.less</DependentUpon>
-    </Content>
-    <Content Include="Content\svgBg.min.css">
-      <DependentUpon>svgBg.css</DependentUpon>
-    </Content>
     <Content Include="favicon.ico" />
-    <Content Include="Content\fonts\fontawesome-webfont.svg" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap\bootstrap.css.map" />
-    <Content Include="Content\kicker.less" />
-    <Content Include="Content\less\navigation.less" />
-    <Content Include="Content\kicker.css.map">
-      <DependentUpon>kicker.css</DependentUpon>
-    </Content>
-    <Content Include="Content\less\navigation.css.map">
-      <DependentUpon>navigation.css</DependentUpon>
-    </Content>
-    <Content Include="Content\fonts\fontawesome-webfont.woff" />
-    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Content\fonts\fontawesome-webfont.eot" />
-    <Content Include="Content\fonts\FontAwesome.otf" />
     <Content Include="ng-App\directives\chosen.js" />
     <Content Include="ng-App\directives\uiField\uiField.js" />
     <Content Include="ng-App\directives\uiField\_html\input.html" />
@@ -465,7 +452,25 @@
       <DependentUpon>loop.min.js</DependentUpon>
     </Content>
     <Content Include="assets\landing\fonts\brankic.ttf" />
-    <Content Include="Content\svgBg.less" />
+    <Content Include="assets\less\kicker.less" />
+    <Content Include="assets\less\kicker.css.map">
+      <DependentUpon>kicker.css</DependentUpon>
+    </Content>
+    <Content Include="assets\less\svgBg.less" />
+    <Content Include="assets\less\forms.less" />
+    <Content Include="assets\less\navigation.less" />
+    <Content Include="assets\less\navigation.css.map">
+      <DependentUpon>navigation.css</DependentUpon>
+    </Content>
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\css\plugins\bootstrap\bootstrap-theme.css.map" />
+    <Content Include="assets\css\plugins\bootstrap\bootstrap.css.map" />
     <None Include="Properties\PublishProfiles\fiveplus - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\fiveplus - Web Deploy.pubxml" />
     <Content Include="ng-App\modules\gig\gigModule.js" />

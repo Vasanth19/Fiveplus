@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Net;
 using System.Web.Http;
 using Fiveplus.Data.DbContexts;
 using Fiveplus.Data.Models;
@@ -108,6 +110,15 @@ namespace Fiveplus.Kicker.Controllers
         {
            await UserManager.SetTwoFactorEnabledAsync(User.Identity.GetUserId(), Convert.ToBoolean(status));
            return new HttpStatusCodeResult(System.Net.HttpStatusCode.OK);
+        }
+
+        [System.Web.Mvc.HttpPost]
+        [System.Web.Mvc.Route("Test/{status}")]
+        public async Task<ActionResult> Test(String status)
+        {
+            IEnumerable<string> result = new List<string>() { "X", "Y", "Z" };
+            return new HttpStatusCodeResult(HttpStatusCode.BadRequest, result.ConvertToJson("errors"));
+           // return new HttpStatusCodeResult(System.Net.HttpStatusCode.OK);
         }
 
         [System.Web.Mvc.HttpPost]
