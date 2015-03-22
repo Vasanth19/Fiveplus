@@ -34,6 +34,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Breeze.ContextProvider">
+      <HintPath>..\packages\Breeze.Server.ContextProvider.1.5.3\lib\Breeze.ContextProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Breeze.ContextProvider.EF6">
+      <HintPath>..\packages\Breeze.Server.ContextProvider.EF6.1.5.3\lib\Breeze.ContextProvider.EF6.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
@@ -46,6 +52,10 @@
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.0.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -64,6 +74,7 @@
     <Compile Include="DbContexts\SalesContext.cs" />
     <Compile Include="DbContexts\ExplorerContext.cs" />
     <Compile Include="DbContexts\IdentityContext.cs" />
+    <Compile Include="Interfaces\IOdataRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Interfaces\Sync\IEntityRepository.cs" />
     <Compile Include="Models\DBMappings\SalesDbMapping.cs" />
@@ -74,6 +85,7 @@
     <Compile Include="Models\ExplorerModels.cs" />
     <Compile Include="Repo\BaseRepository.cs" />
     <Compile Include="Repo\GigRepositoryAsync.cs" />
+    <Compile Include="Repo\OdataExplorerRepository.cs" />
     <Compile Include="Repo\RepositoriesAsync.cs" />
     <Compile Include="Repo\Sync\MediaRepository.cs" />
     <Compile Include="Repo\Sync\GigRepository.cs" />
@@ -90,6 +102,7 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

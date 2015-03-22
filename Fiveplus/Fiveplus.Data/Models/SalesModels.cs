@@ -50,4 +50,5 @@ namespace Fiveplus.Data.Models
         public DateTime Created { get; set; }
       
     }
+
 }

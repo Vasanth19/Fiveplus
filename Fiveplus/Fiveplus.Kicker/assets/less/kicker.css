@@ -1,4 +1,7 @@
 ﻿/*@import url('less/navigation.less');*/
+pre {
+  /*display:none;*/
+}
 .title-card {
   float: left;
   margin-left: 10px;

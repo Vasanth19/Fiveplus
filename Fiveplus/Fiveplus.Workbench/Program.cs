@@ -13,7 +13,7 @@ namespace Fiveplus.Workbench
         {
             using (var fileStream = System.IO.File.OpenRead(@"C:\Projects\GitHub\Fiveplus\Fiveplus\Fiveplus.Kicker\assets\img\bg\7.jpg"))
             {
-                StorageManager.UploadImage(fileStream, "7x.jpg","image/png");
+              //  StorageManager.UploadImage(fileStream, "7x.jpg","image/png");
             }
         }
     }

@@ -81,6 +81,8 @@ namespace Fiveplus.Kicker.App_Start
             kernel.Bind<IUserDetailRepositoryAsync>().To<UserDetailRepositoryAsync>().InRequestScope();
             kernel.Bind<ICategoryRepositoryAsync>().To<CategoryRepositoryAsync>().InRequestScope();
 
+            kernel.Bind<OdataExplorerRepository>().To<OdataExplorerRepository>().InRequestScope();
+
             kernel.Bind<FiveplusContext>().To<FiveplusContext>().InRequestScope();
 
              //kernel.Bind<ApplicationUserManager>().To<ApplicationUserManager>().InRequestScope();

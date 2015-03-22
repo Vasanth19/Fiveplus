@@ -46,3 +46,7 @@ C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Tests\bin\Debug\Micros
 C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Tests\obj\Debug\Fiveplus.Tests.csprojResolveAssemblyReference.cache
 C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Tests\obj\Debug\Fiveplus.Tests.dll
 C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Tests\obj\Debug\Fiveplus.Tests.pdb
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Tests\bin\Debug\Breeze.ContextProvider.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Tests\bin\Debug\Newtonsoft.Json.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Tests\bin\Debug\Breeze.ContextProvider.EF6.dll
+C:\BeOrganized\Projects\Github\Fiveplus\Fiveplus\Fiveplus.Tests\bin\Debug\Newtonsoft.Json.xml

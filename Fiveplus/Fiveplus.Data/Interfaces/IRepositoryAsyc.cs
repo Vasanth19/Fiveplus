@@ -38,7 +38,7 @@ namespace Fiveplus.Data.Repo
     public interface ICategoryRepositoryAsync : IEntityRepositoryAsync<Category> { }
     public interface IAddonRepositoryAsync : IEntityRepositoryAsync<Addon> { }
     public interface IMediaRepositoryAsync : IEntityRepositoryAsync<Media>{}
-    public interface IGigRepositoryAsync : IEntityRepositoryAsync<Gig> { }
+    public interface IGigRepositoryAsync : IEntityRepositoryAsync<Gig> {}
 
     public interface IEntityRepositoryAsync<T> : IDisposable
     {
@@ -50,4 +50,5 @@ namespace Fiveplus.Data.Repo
         void InsertOrUpdate(T entity);
 
     }
+
 }

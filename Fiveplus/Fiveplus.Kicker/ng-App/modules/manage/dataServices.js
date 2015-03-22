@@ -79,12 +79,19 @@ dataServiceModule.factory("dataService", function ($http, $q) {
 
     };
 
+
+    var _createAccount = function (registervm) {
+        return $http.post('/account/register', registervm);
+
+    };
+
     return {
         getProfileConfig: _getProfileConfig,
         getBasicProfile: _getBasicProfile,
         setTFA: _setTFA,
         setBrowser: _setBrowser,
-        setPassword: _setPassword
+        setPassword: _setPassword,
+        createAccount: _createAccount
     };
 
 });

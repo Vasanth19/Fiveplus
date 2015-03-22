@@ -1,0 +1,30 @@
+﻿<div class="col-md-3 md-margin-bottom-40">
+    <div flow-init="flowTarget()" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-files-submitted="$flow.upload()" class="ng-scope">
+        <h3>
+            <a name="image-example" class="anchor" href="#image-example"><span class="octicon octicon-link"></span></a>Profile Photo
+        </h3>
+        <div style="margin-top: 6px; padding: 0 1px; font-size: 11px; line-height: 15px; color: #999;">
+            Only PNG,GIF,JPG,JEPG files allowed.
+        </div>
+        <div class="thumbnail ng-hide" ng-show="!$flow.files.length" style="margin-bottom:0;">
+            <img ng-src="{{sharedData.basicProfile.profileImg}}">
+        </div>
+        <div class="thumbnail" ng-show="$flow.files.length" style="margin-bottom:0;">
+            <img flow-img="$flow.files[0]">
+        </div>
+        <div>
+            <span class="btn btn-primary ng-hide" ng-show="!$flow.files.length" flow-btn="">Select image<input type="file" style="visibility: hidden; position: absolute;"></span>
+            <span class="btn btn-info" ng-show="$flow.files.length" flow-btn="">Change<input type="file" style="visibility: hidden; position: absolute;"></span>
+            <span class="btn btn-danger" ng-show="$flow.files.length" ng-click="$flow.cancel()">
+                Remove
+            </span>
+        </div>
+
+    </div>
+    <div class="margin-top-30"></div>
+
+    <hr>
+    <div class="margin-bottom-50"></div>
+
+
+</div>

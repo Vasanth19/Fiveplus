@@ -8,11 +8,13 @@ namespace Fiveplus.Kicker
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+          
+            //routes.IgnoreRoute(""); // support for index.html
 
             routes.MapRoute(
                 "Landing", // Route name
                 "landing", // URL with parameters
-                new { controller = "Home", action = "Landing" }
+                new { controller = "Explore", action = "Landing" }
             );
 
             routes.MapMvcAttributeRoutes();
@@ -20,7 +22,7 @@ namespace Fiveplus.Kicker
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "index", id = UrlParameter.Optional }
+                defaults: new { controller = "Explore", action = "home", id = UrlParameter.Optional }
             );
 
 

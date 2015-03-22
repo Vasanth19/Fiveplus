@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net;
-using System.Web.Http;
 using Fiveplus.Data.DbContexts;
 using Fiveplus.Data.Models;
 using Fiveplus.Kicker.Helpers;
@@ -16,17 +15,20 @@ using System.Web.Mvc;
 
 namespace Fiveplus.Kicker.Controllers
 {
-    [System.Web.Mvc.Authorize]
-    [System.Web.Mvc.RoutePrefix("manage")]
+    [Authorize]
+    [RoutePrefix("manage")]
     public class ProfileController : Controller
     {
+         #region  Constructor
+
         public ProfileController()
         {
         }
 
-        public ProfileController(ApplicationUserManager userManager)
+        public ProfileController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
+            SignInManager = signInManager;
         }
 
         private ApplicationUserManager _userManager;
@@ -41,11 +43,111 @@ namespace Fiveplus.Kicker.Controllers
                 _userManager = value;
             }
         }
+        private ApplicationSignInManager _signInManager;
+
+        public ApplicationSignInManager SignInManager
+        {
+            get
+            {
+                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+            }
+            private set { _signInManager = value; }
+        } 
+        #endregion
 
 
-        [System.Web.Mvc.Route("profileconfig")]
-        [System.Web.Mvc.HttpGet]
-        [System.Web.Mvc.AllowAnonymous]
+        #region Account API
+        // POST: /Account/Login
+        [HttpPost]
+        [AllowAnonymous]
+        [AngularAntiForgeryToken]
+        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            // This doen't count login failures towards lockout only two factor authentication
+            // To enable password failures to trigger lockout, change to shouldLockout: true
+            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            switch (result)
+            {
+                case SignInStatus.Success:
+                //    return RedirectToLocal(returnUrl);
+                case SignInStatus.LockedOut:
+                    return View("Lockout");
+                case SignInStatus.RequiresVerification:
+                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl });
+                case SignInStatus.Failure:
+                default:
+                    ModelState.AddModelError("", "Invalid login attempt.");
+                    return View(model);
+            }
+        }
+
+        // POST: /Account/Register
+        [HttpPost]
+        [AllowAnonymous]
+        [AngularAntiForgeryToken]
+        public async Task<ActionResult> Register(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Location = model.Location };
+                var result = await UserManager.CreateAsync(user, model.Password);
+                if (result.Succeeded)
+                {
+                    //Code added by Vasanth
+                    CreateUserdetails(user);
+
+                    var code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>");
+                    var resultSignIn = await SignInManager.PasswordSignInAsync(model.Email, model.Password, true, shouldLockout: false);
+                    return new HttpStatusCodeResult(System.Net.HttpStatusCode.OK);
+                }
+
+                //   var errors = result.Errors;
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, result.Errors.ConvertToJson("errors"));
+            }
+
+
+
+            return new HttpStatusCodeResult(HttpStatusCode.BadRequest, ModelState.Values.ToString());
+
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [Route("testregister")]
+        public async Task<ActionResult> TestRegister()
+        {
+            IEnumerable<string> result = new List<string>() { "X", "Y", "Z" };
+            return new HttpStatusCodeResult(HttpStatusCode.BadRequest, result.ConvertToJson("errors"));
+
+        }
+
+        private void CreateUserdetails(ApplicationUser user)
+        {
+            IdentityContext context = HttpContext.GetOwinContext().Get<IdentityContext>();
+
+            context.UserDetails.Add(
+                new UserDetail
+                {
+                    Preference = NotificationPreference.Weekly,
+                    ProfileImg = "/assets/img/common/NoImage.png",
+                    User = user
+                });
+            context.SaveChanges();
+
+        }
+
+        #endregion
+
+        [Route("profileconfig")]
+        [HttpGet]
+        [AllowAnonymous]
         public ActionResult ProfileConfig()
         {
             var model = new IndexViewModel
@@ -61,9 +163,9 @@ namespace Fiveplus.Kicker.Controllers
             //return new HttpStatusCodeResult(HttpStatusCode.OK);  // OK = 200
         }
 
-        [System.Web.Mvc.Route("basicprofile")]
-        [System.Web.Mvc.HttpGet]
-        [System.Web.Mvc.AllowAnonymous]
+        [Route("basicprofile")]
+        [HttpGet]
+        [AllowAnonymous]
         public ActionResult BasicProfile()
         {
 
@@ -78,7 +180,8 @@ namespace Fiveplus.Kicker.Controllers
                 Email = UserManager.GetEmail(User.Identity.GetUserId()),
                 Location = currentUser.Location,
                 TimeZone = userDetail.Timezone,
-                ProfileImg = String.IsNullOrEmpty(userDetail.ProfileImg)? "~/assets/img/common/NoImage.png":userDetail.ProfileImg
+                ProfileImg = String.IsNullOrEmpty(userDetail.ProfileImg)? "~/assets/img/common/NoImage.png":userDetail.ProfileImg,
+                Biography = userDetail.Biography
                 
             };
             return new JsonCamelCaseResult(model, JsonRequestBehavior.AllowGet);
@@ -88,9 +191,9 @@ namespace Fiveplus.Kicker.Controllers
             //return new HttpStatusCodeResult(HttpStatusCode.OK);  // OK = 200
         }
 
-        [System.Web.Mvc.Route("userNameCheck/{userName}")]
-        [System.Web.Mvc.HttpGet]
-        [System.Web.Mvc.AllowAnonymous]
+        [Route("userNameCheck/{userName}")]
+        [HttpGet]
+        [AllowAnonymous]
         public ActionResult UserNameCheck(string userName)
         {
             userName = userName.Trim();
@@ -103,17 +206,18 @@ namespace Fiveplus.Kicker.Controllers
             return new HttpStatusCodeResult(System.Net.HttpStatusCode.OK);
         }
 
+
         // POST: /Manage/DisableTFA
-        [System.Web.Mvc.HttpPost]
-        [System.Web.Mvc.Route("TFA/{status}")]
+        [HttpPost]
+        [Route("TFA/{status}")]
         public async Task<ActionResult> TFA(String status)
         {
            await UserManager.SetTwoFactorEnabledAsync(User.Identity.GetUserId(), Convert.ToBoolean(status));
            return new HttpStatusCodeResult(System.Net.HttpStatusCode.OK);
         }
 
-        [System.Web.Mvc.HttpPost]
-        [System.Web.Mvc.Route("Test/{status}")]
+        [HttpPost]
+        [Route("Test/{status}")]
         public async Task<ActionResult> Test(String status)
         {
             IEnumerable<string> result = new List<string>() { "X", "Y", "Z" };
@@ -121,8 +225,8 @@ namespace Fiveplus.Kicker.Controllers
            // return new HttpStatusCodeResult(System.Net.HttpStatusCode.OK);
         }
 
-        [System.Web.Mvc.HttpPost]
-        [System.Web.Mvc.Route("RememberBrowser/{status}")]
+        [HttpPost]
+        [Route("RememberBrowser/{status}")]
         public async Task<ActionResult> RememberBrowser(String status)
         {
             
@@ -161,11 +265,11 @@ namespace Fiveplus.Kicker.Controllers
             return new JsonCamelCaseResult(model, JsonRequestBehavior.AllowGet);
         }
 
-        [System.Web.Mvc.HttpPost]
+        [HttpPost]
         //[ValidateAntiForgeryToken]
         [AngularAntiForgeryToken]
-        [System.Web.Mvc.Route("setPwd")]
-        public async Task<ActionResult> SetPassword([FromBody] SetPasswordViewModel model)
+        [Route("setPassword")]
+        public async Task<ActionResult> SetPassword(SetPasswordViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -185,6 +289,69 @@ namespace Fiveplus.Kicker.Controllers
             // If we got this far, something failed, redisplay form
             return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
         }
+
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        [AngularAntiForgeryToken]
+        [Route("changePassword")]
+        public async Task<ActionResult> ChangePassword(ChangePasswordViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.CurrentPassword,model.NewPassword);
+                if (result.Succeeded)
+                {
+                    var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+                    if (user != null)
+                    {
+                        await SignInAsync(user, isPersistent: false);
+                    }
+                    return new HttpStatusCodeResult(System.Net.HttpStatusCode.OK);
+                }
+                AddErrors(result);
+            }
+
+            return JsonFormResponse();
+            // If we got this far, something failed, redisplay form
+         //   return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+        }
+
+
+        public ActionResult JsonFormResponse(JsonRequestBehavior jsonRequestBehaviour = JsonRequestBehavior.DenyGet)
+        {
+            if (ModelState.IsValid)
+            {
+                return new HttpStatusCodeResult(200);
+            }
+
+            var errorList = new List<JsonValidationError>();
+            foreach (var key in ModelState.Keys)
+            {
+                ModelState modelState = null;
+                if (ModelState.TryGetValue(key, out modelState))
+                {
+                    foreach (var error in modelState.Errors)
+                    {
+                        errorList.Add(new JsonValidationError()
+                        {
+                            Key = key,
+                            Message = error.ErrorMessage
+                        });
+                    }
+                }
+            }
+
+            var response = new JsonResponse()
+            {
+                Type = "Validation",
+                Message = "",
+                Errors = errorList
+            };
+
+            Response.StatusCode = 400;
+            return new JsonCamelCaseResult(response, jsonRequestBehaviour);
+        }
+
 
         #region Helpers
         // Used for XSRF protection when adding external logins

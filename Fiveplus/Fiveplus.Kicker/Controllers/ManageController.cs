@@ -14,7 +14,9 @@ using System.Web.Mvc;
 namespace Fiveplus.Kicker.Controllers
 {
    // [Authorize]
+
     [RoutePrefix("manage")]
+    [Route("{action=index}")]
     public class ManageController : Controller
     {
         public ManageController()
@@ -40,8 +42,8 @@ namespace Fiveplus.Kicker.Controllers
         }
 
 
-       
-        //
+
+
         // GET: /Account/Index
         public async Task<ActionResult> Index(ManageMessageId? message)
         {
@@ -259,7 +261,7 @@ namespace Fiveplus.Kicker.Controllers
             {
                 return View(model);
             }
-            var result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword, model.NewPassword);
+            var result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.CurrentPassword, model.NewPassword);
             if (result.Succeeded)
             {
                 var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());

@@ -1,208 +1,260 @@
 ﻿/// <reference path="../data/Gigs.js" />
+/// <reference path="~/assets/plugins/angular/angular.js" />
 //1. Make controllers a object instrad of function for minimizing to work. Refer Shawn wildermuth Course 8.11 minification.
 
-var manageModule = angular.module("manageModule", ["ui.router", "ngRoute", "ngSanitize",
-    "myDataService", "myDirectives", "myFilters", "flow", "field-directive", 'ngAutocomplete']);
+(function () {
+    'use strict';
+
+    var manageModule = angular.module(globalVars.moduleId);
 
 
-manageModule.config(function ($routeProvider,$stateProvider) {
+
+    var sidebarControllerId = 'sidebarController';
+    manageModule.controller(sidebarControllerId, sidebarController);
+
+    sidebarController.$inject = ['$scope'];
+    function sidebarController($scope) {
+
+            var vm = this;
+
+             //#region ngFLow
+
+            vm.uploader = {}; //Holds the flow object
+
+            vm.flowTarget = function () {
+                return {
+                    "target": '/api/upload/user',
+                    "singleFile": "true"
+                };
+            };
+
+            vm.flowSuccess = function (message) {
+                //Add it to media url
+                //console.log(message);
+            };
+
+        //#endregion
+
+
+            vm.title = 'sideBar';
+
+            activate();
+
+            function activate() { }
+
+}
+ 
+
+
+var indexControllerId = 'indexController';
+manageModule.controller(indexControllerId,
+ function ($rootScope, $scope, $modal, $log, $state, $route, $location, $window, $timeout, dataService, common, moduleConfigService, datacontext) {
+    
+    var log = common.logger.getLogFn(indexControllerId);
+    
+    var vm = this;
+    var shell = $scope.$parent;
+
+    vm.profileConfig = {};
+
+
+    vm.status = {
+        success:false,
+        error:false
+    };
    
-    $routeProvider.when("/profile", { controller: "dummyController", templateUrl: "/ng-App/modules/manage/subPages/profile.html" });
-    $routeProvider.when("/security", { controller: "dummyController", templateUrl: "/ng-App/modules/manage/subPages/security.html" });
-    $routeProvider.when("/payment", { controller: "dummyController", templateUrl: "/ng-App/modules/manage/subPages/payment.html" });
-    $routeProvider.when("/preferences", { controller: "dummyController", templateUrl: "/ng-App/modules/manage/subPages/preferences.html" });
 
-  
-    //$stateProvider
-    //    .state("profile", { url: "/profile", templateUrl: "/ng-App/modules/manage/subPages/profile.html" })
-    //    .state("security", { url: "/security", templateUrl: "/ng-App/modules/manage/subPages/security.html" })
-    //    .state("payment", { url: "/payment", templateUrl: "/ng-App/modules/manage/subPages/payment.html" })
-    //    .state("preferences", { url: "/preferences", templateUrl: "/ng-App/modules/manage/subPages/preferences.html" });
-
-    $routeProvider.otherwise("/profile");
-    $routeProvider.otherwise({ redirectTo: "/profile" });
-
-});
-
-
-
-manageModule.controller("indexController", function ($rootScope, $scope, $state, $route, $location, $window, $timeout, dataService, antiForgeryService)
-{
-
-    $scope.requestVerificationToken = angular.element(".tokenHolder").attr('RequestVerificationToken');
-
-    $scope.result1 = '';
-    $scope.options1 = null;
-    $scope.details1 = '';
-    console.log(antiForgeryService.token);
-
-    $scope.profileConfig = {};
-    dataService.getProfileConfig()
-        .then(function(profileConfig) {
-            //Success
-            $scope.profileConfig = profileConfig;
-        }, function() { //Error
-            console.log("Error Occured while fetching profileConfig");
-        });
-
-
-    $scope.uploader = {}; //Holds the flow object
-
-    $scope.flowTarget = function() {
-        return {
-            "target": '/api/upload/user',
-            "singleFile": "true"
-        };
-    };
-
-    $scope.flowSuccess = function(message) {
-        //Add it to media url
-        console.log(message);
-    };
-
-    $scope.tabs = [
-        { title: "Profile", route: "#profile", active: false },
-        { title: "Security", route: "#security", active: false },
-        { title: "Payment", route: "#payment", active: false },
-        { title: "Preferences", route: "#preferences", active: false }
+    vm.tabs = [
+      { title: "Profile", route: "#profile", active: false },
+      { title: "Security", route: "#security", active: false },
+      //{ title: "Payment", route: "#payment", active: false },
+      { title: "Preferences", route: "#preferences", active: false }
     ];
 
-    $scope.tabs.forEach(function(entry)
-    {
+    // Set the Active property on initialization
+    vm.tabs.forEach(function (entry) {
         if ($location.path().substring(1) == entry.route.substring(1)) {
             entry.active = true;
         } else {
             entry.active = false;
         }
     });
+    
+    //Show how to get the value of element in controller for ASP.net
+    vm.requestVerificationToken = angular.element(".tokenHolder").attr('RequestVerificationToken');
 
 
-    $scope.basicProfile = {};
-    dataService.getBasicProfile()
+    activate();
+
+    function activate() {
+
+        console.log("moduleId = " + moduleConfigService.moduleId);
+        var promises = [getBasicProfile()];
+        common.activateController(promises, "indexController")
+            .then(function ()
+            {
+                if (datacontext.lookup.cachedLookups.profileConfig == undefined) {
+                    $timeout(function () {
+                        vm.profileConfig = datacontext.lookup.cachedLookups.profileConfig;
+                    });
+                } else {
+                    vm.profileConfig = datacontext.lookup.cachedLookups.profileConfig;
+                }
+                log('Activated index controller');
+
+            });
+
+    }
+
+    function getBasicProfile() {
+       return  dataService.getBasicProfile()
        .then(function (basicProfile)
        {
            //Success
-           $scope.basicProfile = basicProfile;
+           return vm.basicProfile = $scope.sharedData.basicProfile =  basicProfile;
        }, function ()
        { //Error
            console.log("Error Occured while fetching basicProfile");
        });
-
-    $scope.submitForm = function (isValid)
-    {
-        $scope.showForm = false;
-        console.log(isValid);
-    };
-
-    $scope.submitSetPassword = function (isValid) {
-        console.log($scope.requestVerificationToken);
-        if (isValid) {
-
-            dataService.setPassword($scope.basicSecurity,$scope.requestVerificationToken). //global variable
-            then(function (result)
-            {
-                            console.log(result);
-             }, function(result) {
-                console.log(result);
-            });
-        }
-    };
-
-
-    $scope.resetForm = function ()
-    {
-        $timeout(function ()
-        {
-            $scope.$broadcast('hide-errors-event');
-        });
-     
-    };
-    $scope.cancelForm = function ()
-    {
-        $scope.showForm = false;
+    }
     
-       // $window.history.back();
-    };
-
-    $scope.basicSecurity = {};
-
-    $scope.$watch('profileConfig.twoFactor', function () {
-        if (angular.isDefined($scope.profileConfig.twoFactor)) {
-            dataService.setTFA($scope.profileConfig.twoFactor);
-        }
-    });
-
-    $scope.$watch('profileConfig.browserRemembered', function ()
+    vm.cancelForm = function ()
     {
-        if (angular.isDefined($scope.profileConfig.browserRemembered)) {
-            dataService.setBrowser($scope.profileConfig.browserRemembered);
-        }
-    });
-
-
-
-});
-
-
-manageModule.controller("dummyController", function ($rootScope, $scope, $state, $route, $location, dataService) {
-    $scope.$parent.showForm = false;
-    //Needed to trigger it when the route changes
-    $scope.tabs.forEach(function (entry)
-    {
-        if ($location.path().substring(1) == entry.route.substring(1)) {
-            entry.active = true;
-        } else {
-            entry.active = false;
-        }
-    });
-
-});
-
-function index1Controller($scope, $http, dataService) {
-    //http://jsoneditoronline.org/
-
-    
-    $scope.filterSubcategory = "";
-    $scope.isBusy = true;
-    $scope.i = 0;
-    $scope.data = "I am Awesome";
-    $scope.someHtml = '<img src="http://angularjs.org/img/AngularJS-large.png" />';
-    $scope.gigs = [];
-
-    $scope.images = [1, 2, 3, 4, 5, 6, 7, 8];
-
-    $scope.loadMore = function() {
-        var last1 = $scope.images[$scope.images.length - 1];
-        for (var i = 1; i <= 8; i++) {
-            $scope.images.push(last1 + i);
-        }
-    };
-
-  
-    $scope.categories = [];
-
-    dataService.getCategories()
-        .then(function (categories) {
-            //Success
-            $scope.categories = categories;
-        }, function () { //Error
-        console.log("Error Occured while fetching categories");
+        datacontext.rejectChanges();
+        $timeout(function () {
+            common.$broadcast('hide-errors-event');
         });
+    };
 
-    dataService.getGigs()
-    .then(function (_gigs) {
-        //Success
-        $scope.gigs = _gigs;
-        console.log(_gigs);
-    }, function () { //Error
-        console.log("Error Occured while fetching Gigs");
-
-    });
-
+    vm.saveChanges = function () {
+        datacontext.saveChanges();
+        vm.status.success = true;
+    };
  
-    $scope.GetResultsByCategory = function (subcategory) {
-        console.log("Selected " + subcategory);
-        //Get new results based on subcategory
-    };
 
-}
+    $scope.$watch('vm.profileConfig.twoFactor', function () {
+        if (angular.isDefined(vm.profileConfig.twoFactor)) {
+            dataService.setTFA(vm.profileConfig.twoFactor);
+        }
+    });
+
+    $scope.$watch('vm.profileConfig.browserRemembered', function ()
+    {
+        if (angular.isDefined(vm.profileConfig.browserRemembered)) {
+            dataService.setBrowser(vm.profileConfig.browserRemembered);
+        }
+    });
+
+
+});
+
+
+
+ var profileControllerId = 'profileController';
+ manageModule.controller(profileControllerId, ['common', 'datacontext',profileController]);
+ 
+ function profileController(common, datacontext) {
+
+     var vm = this;
+     //Breeze variables
+     vm.userdetail = {};
+     vm.mybio = 'my bio';
+     vm.disableEdit = true;
+
+     vm.showForm = false;
+    
+     activate();
+
+     function activate() {
+
+         common.activateController([getUserDetail()], profileControllerId).then(function () {
+             vm.newUserName = vm.userdetail.user.userName;
+             vm.mybio = vm.userdetail.biography;
+         });
+     }
+
+     function getUserDetail() {
+         return datacontext.userdetail.getAll()
+           .then(function (data) {
+               //Success
+               return vm.userdetail = data[0];
+           });
+     }
+
+ }
+
+
+
+ var securityControllerId = 'securityController';
+ manageModule.controller(securityControllerId, ['common', 'datacontext', securityController]);
+
+ function securityController(common, datacontext) {
+
+     var log = common.logger.getLogFn(securityControllerId);
+
+     var vm = this;
+     vm.basicSecurity = {};
+     //Breeze variables
+     vm.userdetail = {};
+     vm.user = {};
+     vm.errors = [];
+
+
+     activate();
+
+     function activate() {
+         common.activateController([getUserDetail()], securityControllerId).then(function () {
+             vm.user = vm.userdetail.user;
+         });
+     }
+
+     vm.submitPassword = function (isValid) {
+         if (isValid) {
+             if (vm.user.passwordHash == '') {
+                 setPassword();
+             } else {
+                 changePassword();
+             }
+
+         }
+
+         function setPassword() {
+             datacontext.userdetail.setPassword(vm.basicSecurity).then(
+                             _success,
+                             _failed);
+         }
+
+         function changePassword() {
+             datacontext.userdetail.changePassword(vm.basicSecurity).then(
+                             _success,
+                             _failed);
+         }
+
+       
+     };
+
+     function _success(result) {
+         log('Data Saved Successfully');
+     }
+
+     function _failed(result) {
+         vm.errors = result.data.errors;
+     }
+
+     function getUserDetail() {
+         return datacontext.userdetail.getAll()
+           .then(function (data) {
+               //Success
+               return vm.userdetail = data[0];
+
+           });
+     }
+
+ }
+
+
+
+
+})();
+
+
